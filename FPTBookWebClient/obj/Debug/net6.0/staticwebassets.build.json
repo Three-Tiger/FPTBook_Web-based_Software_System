@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uyrNfYgPcf/6dxFeIwu1J+9/13rJXYH1XpRtdgA31WA=",
+  "Hash": "tJyQKPm6s1fjMDtFOeVt3O83I3/JayxRGZGg04DrbCI=",
   "Source": "FPTBookWebClient",
   "BasePath": "_content/FPTBookWebClient",
   "Mode": "Default",
@@ -1207,6 +1207,23 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\userProfile.css",
+      "SourceId": "FPTBookWebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\",
+      "BasePath": "_content/FPTBookWebClient",
+      "RelativePath": "css/userProfile.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\userProfile.css"
+    },
+    {
       "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\favicon.ico",
       "SourceId": "FPTBookWebClient",
       "SourceType": "Discovered",
@@ -1445,6 +1462,23 @@
       "OriginalItemSpec": "wwwroot\\img\\bg_1.jpg"
     },
     {
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\bg_login.jpg",
+      "SourceId": "FPTBookWebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\",
+      "BasePath": "_content/FPTBookWebClient",
+      "RelativePath": "img/bg_login.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bg_login.jpg"
+    },
+    {
       "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\book\\1.jpg",
       "SourceId": "FPTBookWebClient",
       "SourceType": "Discovered",
@@ -1511,6 +1545,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\book\\4.jpg"
+    },
+    {
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\default-avt.jpg",
+      "SourceId": "FPTBookWebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\",
+      "BasePath": "_content/FPTBookWebClient",
+      "RelativePath": "img/default-avt.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\default-avt.jpg"
     },
     {
       "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\details-1.png",

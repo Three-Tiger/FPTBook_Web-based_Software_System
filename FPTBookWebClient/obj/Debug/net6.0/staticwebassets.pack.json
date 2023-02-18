@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
+      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\userProfile.css",
+      "PackagePath": "staticwebassets\\css\\userProfile.css"
+    },
+    {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -101,6 +105,10 @@
       "PackagePath": "staticwebassets\\img\\bg_1.jpg"
     },
     {
+      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\bg_login.jpg",
+      "PackagePath": "staticwebassets\\img\\bg_login.jpg"
+    },
+    {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\book\\1.jpg",
       "PackagePath": "staticwebassets\\img\\book\\1.jpg"
     },
@@ -115,6 +123,10 @@
     {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\book\\4.jpg",
       "PackagePath": "staticwebassets\\img\\book\\4.jpg"
+    },
+    {
+      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\default-avt.jpg",
+      "PackagePath": "staticwebassets\\img\\default-avt.jpg"
     },
     {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\details-1.png",
