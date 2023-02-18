@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using BusinessObjects
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<div class="col-lg-3 col-md-12 col-12">
+	@if (SignInManager.IsSignedIn(User))
+	{
+		<div class="nav navbar navbar-expand-md d-flex justify-content-center ms-lg-5 ms-xl-5">
+			<a class="text-dark" href="/cart">
+				<i class="bi bi-cart-fill"></i>
+			</a>
+			<a class="text-dark mx-5" href="/notification"><i class="bi bi-bell-fill"></i></a>
+			<div class="dropdown">
+				<a class="dropdown-toggle d-flex align-items-center text-dark" href="#" id="navbarDropdownMenuAvatar" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="bi bi-person-circle" style="color: black;" loading="lazy"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+					<li>
+						<a class="dropdown-item disabled">Hi @User.Identity?.Name!</a>
+					</li>
+					<li>
+						<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="/user/ordered">Order infomation</a>
+					</li>
+					@if (User.IsInRole("Admin"))
+					{
+						<li>
+							<a class="dropdown-item" href="/manage">Administration</a>
+						</li>
+					}
+					<div class="dropdown-divider"></div>
+					<li>
+						<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" }) onclick="return confirm('Are you sure to log out?')">Log out</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		@*<li class="nav-item">
+	<a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+	</li>
+	<li class="nav-item">
+	<form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+	<button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+	</form>
+	</li>*@
+	}
+	else
+	{
+		<div class="d-flex justify-content-lg-end justify-content-center pe-lg-5 pe-0">
+			<a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-info mx-2" class="btn btn-outline-primary" role="button">
+				Sign up
+			</a>
+			<a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-secondary me-2" role="button">
+				Sign in
+			</a>
+		</div>
+	}
+</div>

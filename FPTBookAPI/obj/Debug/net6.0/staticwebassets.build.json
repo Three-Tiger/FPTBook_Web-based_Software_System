@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "YVrvH8FKsCr3qhd6dtIJqkW32LUKkRglENGPyIdlIVE=",
+  "Source": "FPTBookAPI",
+  "BasePath": "_content/FPTBookAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
