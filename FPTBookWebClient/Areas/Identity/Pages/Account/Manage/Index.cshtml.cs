@@ -89,7 +89,6 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account.Manage
             [Required(ErrorMessage = "Address can not empty!")]
             [Display(Name = "Address")]
             public string Address { get; set; }
-
             public string ProfilePicture { get; set; }
             public IFormFile ImageFile { get; set; }
         }

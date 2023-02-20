@@ -14,4 +14,9 @@
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\BookImages\" />
+  </ItemGroup>
+
 </Project>

@@ -36,7 +36,6 @@
                 imageFile.CopyTo(stream);
                 stream.Close();
                 return new Tuple<int, string>(1, newFileName);
-                ;
             }
             catch (Exception ex)
             {

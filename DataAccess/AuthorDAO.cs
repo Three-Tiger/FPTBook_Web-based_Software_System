@@ -16,7 +16,7 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					listAuthors = context.Authors.ToList();
+					listAuthors = context.Authors.Where(x => x.IsDeleted == false).ToList();
 				}
 			}
 			catch (Exception e)
@@ -49,7 +49,16 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					context.Authors.Add(author);
+					var obj = context.Authors.SingleOrDefault(x => x.AuthorName == author.AuthorName || x.AuthorMail== author.AuthorMail || x.AuthorPhone == author.AuthorPhone);
+					if (obj != null)
+					{
+						obj.IsDeleted = false;
+						context.Entry<Author>(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					}
+					else
+					{
+						context.Authors.Add(author);
+					}
 					context.SaveChanges();
 				}
 			}

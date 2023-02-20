@@ -152,9 +152,6 @@ namespace BusinessObjects.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("BookCount")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("BookCreated")
                         .HasColumnType("datetime2");
 
@@ -178,6 +175,9 @@ namespace BusinessObjects.Migrations
 
                     b.Property<decimal>("BookPrice")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("BookStock")
+                        .HasColumnType("int");
 
                     b.Property<string>("BookTitle")
                         .IsRequired()

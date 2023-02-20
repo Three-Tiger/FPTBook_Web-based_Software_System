@@ -16,7 +16,7 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					listGenres = context.Genres.ToList();
+					listGenres = context.Genres.Where(x => x.IsDeleted == false).ToList();
 				}
 			}
 			catch (Exception e)
@@ -49,7 +49,16 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					context.Genres.Add(genre);
+					var obj = context.Genres.SingleOrDefault(x => x.GenreName == genre.GenreName || x.GenreDescription == genre.GenreDescription);
+					if (obj != null)
+					{
+						obj.IsDeleted = false;
+						context.Entry<Genre>(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					}
+					else
+					{
+						context.Genres.Add(genre);
+					}
 					context.SaveChanges();
 				}
 			}
