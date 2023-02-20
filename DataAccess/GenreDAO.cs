@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using BusinessObjects.Constraints;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,23 @@ namespace DataAccess
 				using (var context = new ApplicationDbContext())
 				{
 					listGenres = context.Genres.Where(x => x.IsDeleted == false).ToList();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return listGenres;
+		}
+
+		public static List<Genre> GetApprovelGenres()
+		{
+			var listGenres = new List<Genre>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					listGenres = context.Genres.Where(x => x.IsDeleted == false && x.Status == GenreApproval.Approved).ToList();
 				}
 			}
 			catch (Exception e)
@@ -57,6 +75,7 @@ namespace DataAccess
 					}
 					else
 					{
+						genre.Status = GenreApproval.Pending;
 						context.Genres.Add(genre);
 					}
 					context.SaveChanges();
@@ -75,6 +94,42 @@ namespace DataAccess
 				using (var context = new ApplicationDbContext())
 				{
 					context.Entry<Genre>(genre).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					context.SaveChanges();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+		}
+
+		public static void ApprovelGenre(Genre genre)
+		{
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					var g = context.Genres.SingleOrDefault(c => c.GenreId == genre.GenreId);
+					g.Status = GenreApproval.Approved;
+					context.Entry<Genre>(g).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					context.SaveChanges();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+		}
+
+		public static void RejectGenre(Genre genre)
+		{
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					var g = context.Genres.SingleOrDefault(c => c.GenreId == genre.GenreId);
+					g.Status = GenreApproval.Rejected;
+					context.Entry<Genre>(g).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 					context.SaveChanges();
 				}
 			}

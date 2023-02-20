@@ -20,6 +20,9 @@
 					<li>
 						<a class="dropdown-item disabled">Hi @User.Identity?.Name!</a>
 					</li>
+					@*<li>
+				<a class="dropdown-item disabled">Hi @UserManager.GetUserId(User)</a>
+				</li>*@
 					<li>
 						<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a>
 					</li>

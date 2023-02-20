@@ -19,6 +19,13 @@ namespace FPTBookAPI.Controllers
 			return repository.GetGenres();
 		}
 
+		// GET: api/<GenresController>/Approvel
+		[HttpGet("Approvel")]
+		public ActionResult<IEnumerable<Genre>> GetApprovel()
+		{
+			return repository.GetApprovelGenres();
+		}
+
 		// GET api/<GenresController>/5
 		[HttpGet("{id}")]
 		public ActionResult<Genre> Get(int id)
@@ -43,7 +50,34 @@ namespace FPTBookAPI.Controllers
 			{
 				return NotFound();
 			}
+			obj.Status = genre.Status;
 			repository.UpdateGenre(obj);
+			return NoContent();
+		}
+
+		// PUT api/<GenresController>/Approvel/5
+		[HttpPut("Approvel/{id}")]
+		public IActionResult Approvel(int id)
+		{
+			var genre = repository.GetGenreById(id);
+			if (genre == null)
+			{
+				return NotFound();
+			}
+			repository.ApprovelGenre(genre);
+			return NoContent();
+		}
+
+		// PUT api/<GenresController>/Reject/5
+		[HttpPut("Reject/{id}")]
+		public IActionResult Reject(int id)
+		{
+			var genre = repository.GetGenreById(id);
+			if (genre == null)
+			{
+				return NotFound();
+			}
+			repository.RejectGenre(genre);
 			return NoContent();
 		}
 

@@ -262,6 +262,9 @@ namespace BusinessObjects.Migrations
                     b.Property<DateTime>("FeedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("FeedStatus")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 

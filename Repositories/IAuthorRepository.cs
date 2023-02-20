@@ -11,8 +11,8 @@ namespace Repositories
 	{
 		List<Author> GetAuthors();
 		Author GetAuthorById(int id);
-		void SaveAuthor(Author genre);
-		void UpdateAuthor(Author genre);
-		void DeleteAuthor(Author genre);
+		void SaveAuthor(Author author);
+		void UpdateAuthor(Author author);
+		void DeleteAuthor(Author author);
 	}
 }

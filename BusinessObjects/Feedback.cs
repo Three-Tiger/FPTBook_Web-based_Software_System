@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessObjects.Constraints;
 
 namespace BusinessObjects
 {
@@ -16,6 +17,7 @@ namespace BusinessObjects
 		public string Content { get; set; }
 		public DateTime FeedDate { get; set; } = DateTime.Now;
 		public bool IsDeleted { get; set; } = false;
+		public FeedStatus? FeedStatus { get; set; }
 		public string UserId { get; set; }
 		public int BookId { get; set; }
 

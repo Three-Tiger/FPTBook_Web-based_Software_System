@@ -90,10 +90,10 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					//var g = context.Genres.SingleOrDefault(c => c.GenreId == genre.GenreId);
+					var a = context.Authors.SingleOrDefault(c => c.AuthorId == author.AuthorId);
 					//context.Genres.Remove(c);
-					author.IsDeleted = true;
-					context.Entry<Author>(author).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+					a.IsDeleted = true;
+					context.Entry<Author>(a).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 					context.SaveChanges();
 				}
 			}
