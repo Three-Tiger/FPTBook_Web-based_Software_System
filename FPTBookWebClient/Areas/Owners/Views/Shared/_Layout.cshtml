@@ -34,12 +34,13 @@
 					<div class="position-sticky">
 						<div class="list-group list-group-flush">
 							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Statistic" asp-action="Index">Data Statistics</a>
-							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Order" asp-action="Index">Order management</a>
-							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Genre" asp-action="Index">Genre management</a>
-							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Publisher" asp-action="Index">Publisher management</a>
-							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Author" asp-action="Index">Author management</a>
-							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Book" asp-action="Index">Book management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Order" asp-action="Index">Orders management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Genre" asp-action="Index">Genres management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Publisher" asp-action="Index">Publishers management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Author" asp-action="Index">Authors management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Book" asp-action="Index">Books management</a>
 							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Feedback" asp-action="Index">Feedback management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Contact" asp-action="Index">Contacts management</a>
 							<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" onsubmit="return confirm('Are you sure to log out?')">
 								<button type="submit" class="list-group-item list-group-item-action py-4 bg-info text-light">Logout</button>
 							</form>

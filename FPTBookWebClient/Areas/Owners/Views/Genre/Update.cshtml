@@ -1,0 +1,27 @@
+﻿@model BusinessObjects.Genre
+@{
+	ViewData["Title"] = "Updating Genre";
+}
+<div class="pt-3 col-lg-10 col-md-9 col-12">
+	<h1 class="text-center pb-4">Updating Genre</h1>
+	<form asp-area="Owners" asp-controller="Genre" asp-action="Update">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="form-group">
+			<label class="form-label font-weight-bold">Genre Name</label>
+			<input asp-for="GenreName" class="form-control" required />
+			<span asp-validation-for="GenreName" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label class="form-label font-weight-bold">Genre Name</label>
+			<input asp-for="GenreDescription" class="form-control" required />
+			<span asp-validation-for="GenreDescription" class="text-danger"></span>
+		</div>
+		<div class="form-group text-center">
+			<input type="submit" class="btn btn-info" asp-area="Owners" asp-controller="Genre" asp-action="Update" value="Update" />
+			<a class="btn btn-info" asp-action="Index">Cancel</a>
+		</div>
+	</form>
+</div>
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
