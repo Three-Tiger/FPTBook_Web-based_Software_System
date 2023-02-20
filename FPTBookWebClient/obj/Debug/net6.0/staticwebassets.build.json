@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tJyQKPm6s1fjMDtFOeVt3O83I3/JayxRGZGg04DrbCI=",
+  "Hash": "C7w+uGR6tW9dFYx173AUN++yZAuOAmaEeIew0ELB5bs=",
   "Source": "FPTBookWebClient",
   "BasePath": "_content/FPTBookWebClient",
   "Mode": "Default",
@@ -3043,12 +3043,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\ProfilePicture\\4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg",
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\ProfilePicture\\d7e692c7-f040-474b-a638-02bd96f599d9.jpg",
       "SourceId": "FPTBookWebClient",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\",
       "BasePath": "_content/FPTBookWebClient",
-      "RelativePath": "ProfilePicture/4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg",
+      "RelativePath": "ProfilePicture/d7e692c7-f040-474b-a638-02bd96f599d9.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3057,7 +3057,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfilePicture\\4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg"
+      "OriginalItemSpec": "wwwroot\\ProfilePicture\\d7e692c7-f040-474b-a638-02bd96f599d9.jpg"
     },
     {
       "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\aos\\aos.css",
