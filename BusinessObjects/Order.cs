@@ -22,7 +22,7 @@ namespace BusinessObjects
 		public bool IsDeleted { get; set; }
 		public string UserId { get; set; }
 
-		[ForeignKey("Id")]
+		[ForeignKey("UserId")]
 		public virtual AppUser User { get; set; }
 		public virtual ICollection<OrderDetail> OrderDetails { get; set; }
 	}

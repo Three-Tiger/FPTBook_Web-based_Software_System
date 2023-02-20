@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using BusinessObjects;
 using FPTBookWebClient.Data;
+using FPTBookWebClient.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
@@ -13,6 +14,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
 	.AddEntityFrameworkStores<ApplicationDbContext>()
 	.AddDefaultUI()
 	.AddDefaultTokenProviders();
+
+builder.Services.AddScoped<IFileService, FileService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -39,6 +42,11 @@ app.MapAreaControllerRoute(
     name: "areas",
     areaName: "Owners",
     pattern: "Owners/{controller=Order}/{action=Index}/{id?}");
+
+app.MapAreaControllerRoute(
+    name: "areas",
+    areaName: "Admins",
+    pattern: "Admins/{controller=Owner}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
 	name: "default",

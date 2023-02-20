@@ -28,7 +28,7 @@ namespace FPTBookAPI.Controllers
 
 		// POST api/<AuthorsController>
 		[HttpPost]
-		public IActionResult Post([FromBody]Author obj)
+		public IActionResult Post([FromBody] Author obj)
 		{
 			repository.SaveAuthor(obj);
 			return NoContent();
@@ -36,7 +36,7 @@ namespace FPTBookAPI.Controllers
 
 		// PUT api/<AuthorsController>/5
 		[HttpPut("{id}")]
-		public IActionResult Put(int id, [FromBody]Author obj)
+		public IActionResult Put(int id, [FromBody] Author obj)
 		{
 			var author = repository.GetAuthorById(id);
 			if (author == null)

@@ -20,6 +20,9 @@
 					<li>
 						<a class="dropdown-item disabled">Hi @User.Identity?.Name!</a>
 					</li>
+					@*<li>
+				<a class="dropdown-item disabled">Hi @UserManager.GetUserId(User)</a>
+				</li>*@
 					<li>
 						<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a>
 					</li>
@@ -34,7 +37,9 @@
 					}
 					<div class="dropdown-divider"></div>
 					<li>
-						<a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" }) onclick="return confirm('Are you sure to log out?')">Log out</a>
+						<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" onsubmit="return confirm('Are you sure to log out?')">
+							<button type="submit" class="dropdown-item">Logout</button>
+						</form>
 					</li>
 				</ul>
 			</div>

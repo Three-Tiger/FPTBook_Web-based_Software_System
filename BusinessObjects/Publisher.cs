@@ -17,7 +17,7 @@ namespace BusinessObjects
 		public string PublisherPhone { get; set; }
 		public string PublisherMail { get; set; }
 		public string PublisherAddress { get; set; }
-		public bool IsDeleted { get; set; }
-		public virtual ICollection<Book> Books { get; set; }
+		public bool IsDeleted { get; set; } = false;
+		public virtual ICollection<Book>? Books { get; set; }
 	}
 }

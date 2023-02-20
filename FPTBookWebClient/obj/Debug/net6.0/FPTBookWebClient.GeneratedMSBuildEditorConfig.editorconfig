@@ -16,8 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Areas/Admins/Views/Owner/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5zXFZpZXdzXE93bmVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Areas/Admins/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5zXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Areas/Admins/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5zXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Areas/Admins/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5zXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Areas/Identity/Pages/Account/AccessDenied.cshtml]

@@ -29,6 +29,7 @@ namespace BusinessObjects
 		public DbSet<Order> Orders { get; set; }
 		public DbSet<OrderDetail> OrderDetails { get; set; }
 		public DbSet<Feedback> Feedbacks { get; set; }
+		public DbSet<Contact> Contacts { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{

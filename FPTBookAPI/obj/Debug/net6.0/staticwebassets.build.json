@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "YVrvH8FKsCr3qhd6dtIJqkW32LUKkRglENGPyIdlIVE=",
+  "Hash": "w222saUmS7MydbqeWNy6btS/+L3VRw52h+cdvDeOftg=",
   "Source": "FPTBookAPI",
   "BasePath": "_content/FPTBookAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FPTBookAPI\\wwwroot",
+      "Source": "FPTBookAPI",
+      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\wwwroot\\",
+      "BasePath": "_content/FPTBookAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\wwwroot\\BookImages\\6271ee91-3567-40bf-b3d9-fdddfe20b29d.jpg",
+      "SourceId": "FPTBookAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\wwwroot\\",
+      "BasePath": "_content/FPTBookAPI",
+      "RelativePath": "BookImages/6271ee91-3567-40bf-b3d9-fdddfe20b29d.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\BookImages\\6271ee91-3567-40bf-b3d9-fdddfe20b29d.jpg"
+    }
+  ]
 }

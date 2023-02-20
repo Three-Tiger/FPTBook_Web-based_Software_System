@@ -110,7 +110,12 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-        }
+
+			[Phone]
+			[Display(Name = "Phone number")]
+			[Required(ErrorMessage = "Phone number can not empty!")]
+			public string PhoneNumber { get; set; }
+		}
 
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -131,6 +136,7 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
                 user.Gender = Input.Gender;
                 user.Birthday = Input.Birthday;
                 user.Address = Input.Address;
+                user.PhoneNumber = Input.PhoneNumber;
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);

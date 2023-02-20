@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>@ViewData["Title"] - Identity</title>
+	<title>@ViewData["Title"] - FBTBook</title>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
 		  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -35,26 +35,13 @@
 						<div class="list-group list-group-flush">
 							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Order" asp-action="Index">Order management</a>
 							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Genre" asp-action="Index">Genre management</a>
-							<a href="../publisher/list.html"
-							   class="list-group-item list-group-item-action py-4 bg-info text-light">
-								Publisher
-								management
-							</a>
-							<a href="../author/list.html"
-							   class="list-group-item list-group-item-action py-4 bg-info text-light">
-								Author
-								management
-							</a>
-							<a href="../book/list.html"
-							   class="list-group-item list-group-item-action py-4 bg-info text-light">
-								Book
-								management
-							</a>
-							<a href="../feedback/list.html"
-							   class="list-group-item list-group-item-action py-4 bg-info text-light">
-								Feedback
-								management
-							</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Publisher" asp-action="Index">Publisher management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Author" asp-action="Index">Author management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Book" asp-action="Index">Book management</a>
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Owners" asp-controller="Feedback" asp-action="Index">Feedback management</a>
+							<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" onsubmit="return confirm('Are you sure to log out?')">
+								<button type="submit" class="list-group-item list-group-item-action py-4 bg-info text-light">Logout</button>
+							</form>
 						</div>
 					</div>
 				</nav>

@@ -152,9 +152,6 @@ namespace BusinessObjects.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("BookCount")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("BookCreated")
                         .HasColumnType("datetime2");
 
@@ -167,7 +164,6 @@ namespace BusinessObjects.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("BookImage")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("BookLastUpdated")
@@ -178,6 +174,9 @@ namespace BusinessObjects.Migrations
 
                     b.Property<decimal>("BookPrice")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("BookStock")
+                        .HasColumnType("int");
 
                     b.Property<string>("BookTitle")
                         .IsRequired()
@@ -206,6 +205,47 @@ namespace BusinessObjects.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("BusinessObjects.Contact", b =>
+                {
+                    b.Property<int>("ContactId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactId"), 1L, 1);
+
+                    b.Property<DateTime>("ContactDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ContactEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactMessage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactSubject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Reply")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ReplyDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ContactId");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("BusinessObjects.Feedback", b =>
                 {
                     b.Property<int>("FeedId")
@@ -224,21 +264,21 @@ namespace BusinessObjects.Migrations
                     b.Property<DateTime>("FeedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("FeedStatus")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("FeedId");
 
                     b.HasIndex("BookId");
 
-                    b.HasIndex("Id");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Feedbacks");
                 });
@@ -262,6 +302,9 @@ namespace BusinessObjects.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("Status")
+                        .HasColumnType("int");
+
                     b.HasKey("GenreId");
 
                     b.ToTable("Genres");
@@ -281,9 +324,6 @@ namespace BusinessObjects.Migrations
                     b.Property<string>("DeliveryLocal")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -305,11 +345,11 @@ namespace BusinessObjects.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("OrderId");
 
-                    b.HasIndex("Id");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
@@ -539,7 +579,9 @@ namespace BusinessObjects.Migrations
 
                     b.HasOne("BusinessObjects.AppUser", "User")
                         .WithMany("Feedbacks")
-                        .HasForeignKey("Id");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Book");
 
@@ -550,7 +592,9 @@ namespace BusinessObjects.Migrations
                 {
                     b.HasOne("BusinessObjects.AppUser", "User")
                         .WithMany("Orders")
-                        .HasForeignKey("Id");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
