@@ -1,7 +1,10 @@
-﻿using FPTBookWebClient.Constants;
+﻿using BusinessObjects;
+using FPTBookWebClient.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace FPTBookWebClient.Areas.Owners.Controllers
 {
@@ -9,79 +12,77 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
     [Area("Owners")]
     public class AuthorController : Controller
     {
-        // GET: PublisherController
-        public ActionResult Index()
-        {
-            return View();
-        }
+		private readonly HttpClient client = null;
+		private string api;
+		public AuthorController()
+		{
+			client = new HttpClient();
+			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+			client.DefaultRequestHeaders.Accept.Add(contentType);
+			this.api = "https://localhost:7076/api/Authors";
+		}
+		public async Task<IActionResult> Index()
+		{
+			HttpResponseMessage httpResponse = await client.GetAsync(api);
+			string data = await httpResponse.Content.ReadAsStringAsync();
+			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data, options);
+			return View(authors);
+		}
+		public IActionResult Create()
+		{
+			return View();
+		}
 
-        // GET: PublisherController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+		[HttpPost]
+		public async Task<IActionResult> Create(Author author)
+		{
+			if (ModelState.IsValid)
+			{
+				string data = JsonSerializer.Serialize(author);
+				var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
+				HttpResponseMessage response = await client.PostAsync(api, content);
+				if (response.IsSuccessStatusCode)
+				{
+					return RedirectToAction("Index");
+				}
+			}
+			return View(author);
+		}
+		public async Task<IActionResult> Update(int id)
+		{
+			HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
+			if (reponse.IsSuccessStatusCode)
+			{
+				var data = reponse.Content.ReadAsStringAsync().Result;
+				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				var obj = JsonSerializer.Deserialize<Author>(data, options);
+				return View(obj);
+			}
+			return NotFound();
+		}
 
-        // GET: PublisherController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: PublisherController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: PublisherController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: PublisherController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: PublisherController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: PublisherController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-    }
+		[HttpPost]
+		public async Task<IActionResult> Update(int id, Author author)
+		{
+			author.AuthorId = id;
+			string data = JsonSerializer.Serialize<Author>(author);
+			var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
+			HttpResponseMessage response = await client.PutAsync(api + "/" + id, content);
+			if (response.IsSuccessStatusCode)
+			{
+				return RedirectToAction("Index");
+			}
+			return View(author);
+		}
+		public async Task<IActionResult> Delete(int id)
+		{
+			HttpResponseMessage reponse = await client.DeleteAsync(api + "/" + id);
+			if (reponse.IsSuccessStatusCode)
+			{
+				return RedirectToAction("Index");
+			}
+			return NotFound();
+		}
+	}
 }

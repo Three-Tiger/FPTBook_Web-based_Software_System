@@ -1,11 +1,15 @@
-﻿<div class="pt-2 mb-2">
+﻿@model IEnumerable<BusinessObjects.Author>
+@{
+    ViewData["Title"] = "Authors List";
+}
+<div class="pt-2 mb-2">
     <h1 class="text-center">Authors List</h1>
     <div class="text-center mb-2 row">
         <div class="col-6 d-flex justify-content-start align-items-center">
-            <a href="add.html" class="btn btn-outline-info">
-                <i class="bi bi-plus-circle"></i>
-                Add
-            </a>
+            <a asp-area="Owners" asp-controller="Author" asp-action="Create" class="btn btn-outline-info">
+				<i class="bi bi-plus-circle"></i>
+				Add
+			</a>
         </div>
         <div class="col-6 d-flex justify-content-end align-items-center">
             <form action="/manage/category" method="GET" class="d-flex input-group w-auto">
@@ -41,29 +45,22 @@
                 </th>
             </tr>
         </thead>
-
-        <tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
-            <tr>
-                <td class="text-center align-middle" id="category31">
-                    <a href="/shop?cid=31&page=1" style="text-decoration: none;">1</a>
-                </td>
-                <td class="text-center align-middle" id="category31">
-                    <a href="/shop?cid=31&page=1" style="text-decoration: none;">1</a>
-                </td>
-                <td class="text-center align-middle">Harry Potter</td>
-                <td class="align-middle">Harry Potter Product</td>
-                <td class="text-center align-middle">
-                    <a href="category/show/31"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                </td>
-                <td class="text-center align-middle">
-                    <form method="POST" action="category/delete/31?_method=DELETE"
-                          onsubmit="return deleteConfirm()">
-                        <button type="submit" style="border: none; cursor: pointer;">
-                            <i class="bi bi-trash-fill" style="color: red;"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
+        @foreach (var item in Model)
+        {
+            <tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
+				<tr>
+					<td class="text-center align-middle">@item.AuthorId</td>
+					<td class="text-center align-middle">@item.AuthorName</td>
+					<td class="text-center align-middle">@item.AuthorPhone</td>
+					<td class="text-center align-middle">@item.AuthorMail</td>
+					<td class="text-center align-middle">
+                        <a asp-area="Owners" asp-controller="Author" asp-action="Update" asp-route-id="@item.AuthorId"><i class="bi bi-pen-fill" style="color: black;"></i></a>
+                    </td>
+                    <td class="text-center align-middle">
+                        <a asp-action="Delete" asp-route-id="@item.AuthorId" onclick="return confirm('Are you sure you want to delete this?')"><i class="bi bi-trash-fill" style="color: red;"></i></a>
+                    </td>
+				</tr>
+			</tbody>
+        }
     </table>
 </div>

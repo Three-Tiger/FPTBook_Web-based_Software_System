@@ -192,8 +192,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GW/1670 - Application Development/Source_Code/FPTBookWebClient/Areas/Owners/Views/Author/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3duZXJzXFZpZXdzXEF1dGhvclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GW/1670 - Application Development/Source_Code/FPTBookWebClient/Areas/Owners/Views/Author/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3duZXJzXFZpZXdzXEF1dGhvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GW/1670 - Application Development/Source_Code/FPTBookWebClient/Areas/Owners/Views/Author/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3duZXJzXFZpZXdzXEF1dGhvclxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GW/1670 - Application Development/Source_Code/FPTBookWebClient/Areas/Owners/Views/Book/Index.cshtml]
@@ -224,8 +232,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3duZXJzXFZpZXdzXE9yZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GW/1670 - Application Development/Source_Code/FPTBookWebClient/Areas/Owners/Views/Publisher/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3duZXJzXFZpZXdzXFB1Ymxpc2hlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GW/1670 - Application Development/Source_Code/FPTBookWebClient/Areas/Owners/Views/Publisher/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3duZXJzXFZpZXdzXFB1Ymxpc2hlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GW/1670 - Application Development/Source_Code/FPTBookWebClient/Areas/Owners/Views/Publisher/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3duZXJzXFZpZXdzXFB1Ymxpc2hlclxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GW/1670 - Application Development/Source_Code/FPTBookWebClient/Areas/Owners/Views/Shared/_Layout.cshtml]
