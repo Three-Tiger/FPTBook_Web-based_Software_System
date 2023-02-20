@@ -8,20 +8,17 @@ using System.Threading.Tasks;
 
 namespace BusinessObjects
 {
-	public class Feedback
+	public class Contact
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int FeedId { get; set; }
-		public string Content { get; set; }
-		public DateTime FeedDate { get; set; } = DateTime.Now;
+		public int ContactId { get; set; }
+		public string ContactName { get; set; }
+		public string ContactEmail { get; set; }
+		public string ContactSubject { get; set; }
+		public string ContactMessage { get; set; }
+		public string Reply { get; set; }
+		public DateTime ContactDate { get; set; } = DateTime.Now;
 		public bool IsDeleted { get; set; } = false;
-		public string UserId { get; set; }
-		public int BookId { get; set; }
-
-		[ForeignKey("UserId")]
-		public virtual AppUser? User { get; set; }
-		[ForeignKey("BookId")]
-		public virtual Book? Book { get; set; }
 	}
 }
