@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\ProfilePicture\\d7e692c7-f040-474b-a638-02bd96f599d9.jpg"
     },
     {
+      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\about.css",
+      "PackagePath": "staticwebassets\\css\\about.css"
+    },
+    {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\cart.css",
       "PackagePath": "staticwebassets\\css\\cart.css"
     },
@@ -215,6 +219,10 @@
     {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\icon-3.png",
       "PackagePath": "staticwebassets\\img\\icon-3.png"
+    },
+    {
+      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\introduction.jpg",
+      "PackagePath": "staticwebassets\\img\\introduction.jpg"
     },
     {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-1.jpg",
@@ -747,6 +755,10 @@
     {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\swiper\\swiper-bundle.min.js.map",
       "PackagePath": "staticwebassets\\vendor\\swiper\\swiper-bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\video\\introduction.mp4",
+      "PackagePath": "staticwebassets\\video\\introduction.mp4"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FPTBookWebClient.Microsoft.AspNetCore.StaticWebAssets.props",

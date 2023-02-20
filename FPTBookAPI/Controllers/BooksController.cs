@@ -53,6 +53,7 @@ namespace FPTBookAPI.Controllers
 			{
 				return NotFound();
 			}
+			obj.BookCreated = book.BookCreated;
 			if (obj.ImageFile != null)
 			{
 				var result = _fileService.SaveBookImage(obj.ImageFile);

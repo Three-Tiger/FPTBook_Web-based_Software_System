@@ -212,12 +212,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcT3duZXJzXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Views/Home/Shop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaG9wLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Greenwich/Personal/Junior/1670 - Application Development/Assignment/Source_code/FPTBook_Web-based_Software_System/FPTBookWebClient/Views/Shared/Error.cshtml]
