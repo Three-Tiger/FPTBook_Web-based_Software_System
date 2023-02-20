@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w222saUmS7MydbqeWNy6btS/+L3VRw52h+cdvDeOftg=",
+  "Hash": "CKkGLnN/xRg8PuYEr6zvf0UQdnP22JuSWfX53GazclQ=",
   "Source": "FPTBookAPI",
   "BasePath": "_content/FPTBookAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "FPTBookAPI\\wwwroot",
       "Source": "FPTBookAPI",
-      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\wwwroot\\",
+      "ContentRoot": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookAPI\\wwwroot\\",
       "BasePath": "_content/FPTBookAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\wwwroot\\BookImages\\6271ee91-3567-40bf-b3d9-fdddfe20b29d.jpg",
+      "Identity": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookAPI\\wwwroot\\BookImages\\6271ee91-3567-40bf-b3d9-fdddfe20b29d.jpg",
       "SourceId": "FPTBookAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\wwwroot\\",
+      "ContentRoot": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookAPI\\wwwroot\\",
       "BasePath": "_content/FPTBookAPI",
       "RelativePath": "BookImages/6271ee91-3567-40bf-b3d9-fdddfe20b29d.jpg",
       "AssetKind": "All",
