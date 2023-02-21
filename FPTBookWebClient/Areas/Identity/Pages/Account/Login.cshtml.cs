@@ -123,7 +123,7 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
                     var role = await _userManager.GetRolesAsync(user);
                     if (role[0] == "Owner")
                     {
-                        returnUrl = Url.Content("~/Owners/Order/Index");
+                        returnUrl = Url.Content("~/Owners/Statistic/Index");
                     }
                     if (role[0] == "Admin")
                     {
