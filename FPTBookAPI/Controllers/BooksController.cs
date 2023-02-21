@@ -13,6 +13,7 @@ namespace FPTBookAPI.Controllers
 	public class BooksController : ControllerBase
 	{
 		private IBookRepository repository = new BookRepository();
+		private IFeedbackRepository feedbackRepository = new FeedbackRepository();
 		private readonly IBookFileService _fileService;
 
 		public BooksController(IBookFileService fileService)
@@ -81,6 +82,14 @@ namespace FPTBookAPI.Controllers
 			{
 				return NotFound();
 			}
+			var feedbacks = feedbackRepository.GetFeedbacks();
+			foreach (var feedback in feedbacks)
+			{
+				if (feedback.BookId == book.BookId)
+				{
+					feedbackRepository.DeleteFeedback(feedback);
+				}
+			}	
 			repository.DeleteBook(book);
 			return NoContent();
 		}
