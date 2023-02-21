@@ -1,751 +1,751 @@
 {
   "Files": [
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FPTBookWebClient.bundle.scp.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FPTBookWebClient.bundle.scp.css",
       "PackagePath": "staticwebassets\\FPTBookWebClient.bundle.scp.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\ProfilePicture\\4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\ProfilePicture\\4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg",
       "PackagePath": "staticwebassets\\ProfilePicture\\4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\cart.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\cart.css",
       "PackagePath": "staticwebassets\\css\\cart.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\homepage.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\homepage.css",
       "PackagePath": "staticwebassets\\css\\homepage.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\login.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\owl.carousel.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\payment.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\payment.css",
       "PackagePath": "staticwebassets\\css\\payment.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\shop.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\shop.css",
       "PackagePath": "staticwebassets\\css\\shop.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\site.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\style.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\userProfile.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\css\\userProfile.css",
       "PackagePath": "staticwebassets\\css\\userProfile.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\favicon.ico",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\.DS_Store",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\.DS_Store",
       "PackagePath": "staticwebassets\\fonts\\.DS_Store"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\Read Me.txt",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\Read Me.txt",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\Read Me.txt"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\demo-files\\demo.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\demo-files\\demo.css",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\demo-files\\demo.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\demo-files\\demo.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\demo-files\\demo.js",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\demo-files\\demo.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\demo.html",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\demo.html",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\demo.html"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.eot",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.eot",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\fonts\\icomoon.eot"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.svg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.svg",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\fonts\\icomoon.svg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.ttf",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.ttf",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\fonts\\icomoon.ttf"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.woff",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\fonts\\icomoon.woff",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\fonts\\icomoon.woff"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\selection.json",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\selection.json",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\selection.json"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\style.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\fonts\\icomoon\\style.css",
       "PackagePath": "staticwebassets\\fonts\\icomoon\\style.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\THELIGHTTOY.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\THELIGHTTOY.png",
       "PackagePath": "staticwebassets\\img\\THELIGHTTOY.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\apple-touch-icon.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\img\\apple-touch-icon.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\bg_1.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\bg_1.jpg",
       "PackagePath": "staticwebassets\\img\\bg_1.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\bg_login.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\bg_login.jpg",
       "PackagePath": "staticwebassets\\img\\bg_login.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\book\\1.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\book\\1.jpg",
       "PackagePath": "staticwebassets\\img\\book\\1.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\book\\2.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\book\\2.jpg",
       "PackagePath": "staticwebassets\\img\\book\\2.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\book\\3.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\book\\3.jpg",
       "PackagePath": "staticwebassets\\img\\book\\3.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\book\\4.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\book\\4.jpg",
       "PackagePath": "staticwebassets\\img\\book\\4.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\default-avt.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\default-avt.jpg",
       "PackagePath": "staticwebassets\\img\\default-avt.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\details-1.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\details-1.png",
       "PackagePath": "staticwebassets\\img\\details-1.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\details-2.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\details-2.png",
       "PackagePath": "staticwebassets\\img\\details-2.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\details-3.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\details-3.png",
       "PackagePath": "staticwebassets\\img\\details-3.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\details-4.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\details-4.png",
       "PackagePath": "staticwebassets\\img\\details-4.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\favicon.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\favicon.png",
       "PackagePath": "staticwebassets\\img\\favicon.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\features.svg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\features.svg",
       "PackagePath": "staticwebassets\\img\\features.svg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-1.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-1.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-1.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-10.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-10.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-10.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-11.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-11.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-11.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-12.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-12.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-12.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-2.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-2.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-2.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-3.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-3.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-3.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-4.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-4.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-4.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-5.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-5.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-5.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-6.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-6.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-6.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-7.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-7.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-7.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-8.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-8.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-8.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-9.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\gallery\\gallery-9.png",
       "PackagePath": "staticwebassets\\img\\gallery\\gallery-9.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\hero-img.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\hero-img.png",
       "PackagePath": "staticwebassets\\img\\hero-img.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\icon-1.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\icon-1.png",
       "PackagePath": "staticwebassets\\img\\icon-1.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\icon-2.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\icon-2.png",
       "PackagePath": "staticwebassets\\img\\icon-2.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\icon-3.png",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\icon-3.png",
       "PackagePath": "staticwebassets\\img\\icon-3.png"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-1.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-1.jpg",
       "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-1.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-2.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-2.jpg",
       "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-2.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-3.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-3.jpg",
       "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-3.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-4.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-4.jpg",
       "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-4.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-5.jpg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-5.jpg",
       "PackagePath": "staticwebassets\\img\\testimonials\\testimonials-5.jpg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\js\\main.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\js\\site.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\aos\\aos.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\aos\\aos.css",
       "PackagePath": "staticwebassets\\vendor\\aos\\aos.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\aos\\aos.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\aos\\aos.js",
       "PackagePath": "staticwebassets\\vendor\\aos\\aos.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap-icons\\bootstrap-icons.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap-icons\\bootstrap-icons.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\bootstrap-icons.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap-icons\\bootstrap-icons.json",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap-icons\\bootstrap-icons.json",
       "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\bootstrap-icons.json"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
       "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
       "PackagePath": "staticwebassets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\vendor\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\css\\animations.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\css\\animations.css",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\css\\animations.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\css\\boxicons.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\css\\boxicons.css",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\css\\boxicons.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\css\\boxicons.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\css\\boxicons.min.css",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\css\\boxicons.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\css\\transformations.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\css\\transformations.css",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\css\\transformations.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.eot",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.eot",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.eot"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.svg",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.svg",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.svg"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.ttf",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.ttf",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.ttf"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.woff",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.woff",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.woff"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.woff2",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\boxicons\\fonts\\boxicons.woff2",
       "PackagePath": "staticwebassets\\vendor\\boxicons\\fonts\\boxicons.woff2"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\css\\glightbox.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\css\\glightbox.css",
       "PackagePath": "staticwebassets\\vendor\\glightbox\\css\\glightbox.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\css\\glightbox.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\css\\glightbox.min.css",
       "PackagePath": "staticwebassets\\vendor\\glightbox\\css\\glightbox.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\css\\plyr.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\css\\plyr.css",
       "PackagePath": "staticwebassets\\vendor\\glightbox\\css\\plyr.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\css\\plyr.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\css\\plyr.min.css",
       "PackagePath": "staticwebassets\\vendor\\glightbox\\css\\plyr.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\js\\glightbox.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\js\\glightbox.js",
       "PackagePath": "staticwebassets\\vendor\\glightbox\\js\\glightbox.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\js\\glightbox.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\glightbox\\js\\glightbox.min.js",
       "PackagePath": "staticwebassets\\vendor\\glightbox\\js\\glightbox.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\php-email-form\\validate.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\php-email-form\\validate.js",
       "PackagePath": "staticwebassets\\vendor\\php-email-form\\validate.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\swiper\\swiper-bundle.min.css",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\swiper\\swiper-bundle.min.css",
       "PackagePath": "staticwebassets\\vendor\\swiper\\swiper-bundle.min.css"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\swiper\\swiper-bundle.min.js",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\swiper\\swiper-bundle.min.js",
       "PackagePath": "staticwebassets\\vendor\\swiper\\swiper-bundle.min.js"
     },
     {
-      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\swiper\\swiper-bundle.min.js.map",
+      "Id": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\wwwroot\\vendor\\swiper\\swiper-bundle.min.js.map",
       "PackagePath": "staticwebassets\\vendor\\swiper\\swiper-bundle.min.js.map"
     },
     {
