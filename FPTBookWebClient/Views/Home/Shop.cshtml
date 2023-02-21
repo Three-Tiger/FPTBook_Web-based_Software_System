@@ -1,0 +1,258 @@
+﻿@{
+	ViewData["Title"] = "Shop";
+}
+@section stylesheets {
+	<link href="~/css/shop.css" rel="stylesheet">
+}
+<section class="container-fluid row">
+	<nav class="accordion arrows col-lg-2 col-md-3 custom-dropdown">
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-md navbar-light bg-info rounded">
+			<!-- Toggle button -->
+			<button class="navbar-toggler ms-2" type="button" data-toggle="collapse" data-target="#sidebarMenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Brand -->
+			<a class="text-white" style="text-decoration: none;" href="/">
+				<h3 class="fw-bold mx-3">FPT Book</h3>
+			</a>
+		</nav>
+		<!-- Navbar -->
+		<nav id="sidebarMenu" class="collapse d-md-block bg-white">
+			<input type="radio" name="accordion" id="cb1" />
+			<section class="box">
+				<label class="all-book"><a href="#" class="nav-link">All Book</a></label>
+			</section>
+			<input type="radio" name="accordion" id="cb2" />
+			<section class="box">
+				<label class="box-title" for="cb2">Genre</label>
+				<label class="box-close" for="acc-close"></label>
+				<div class="box-content"><a href="#" class="nav-link">Genre 1</a></div>
+				<div class="box-content"><a href="#" class="nav-link">Genre 2</a></div>
+				<div class="box-content"><a href="#" class="nav-link">Genre 3</a></div>
+				<div class="box-content"><a href="#" class="nav-link">Genre 4</a></div>
+			</section>
+			<input type="radio" name="accordion" id="cb3" />
+			<section class="box">
+				<label class="box-title" for="cb3">Author</label>
+				<label class="box-close" for="acc-close"></label>
+				<div class="box-content"><a href="#" class="nav-link">Autor 1</a></div>
+				<div class="box-content"><a href="#" class="nav-link">Autor 2</a></div>
+				<div class="box-content"><a href="#" class="nav-link">Autor 3</a></div>
+				<div class="box-content"><a href="#" class="nav-link">Autor 4</a></div>
+			</section>
+			<input type="radio" name="accordion" id="acc-close" />
+		</nav>
+	</nav>
+	<div class="col-lg-10 col-md-9 col-12">
+		<div class="text-center">
+			<div class="row">
+				<div class="col-lg-4 col-md-12 mb-4">
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+							 data-mdb-ripple-color="light">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp"
+								 class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-primary ms-2">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+							 data-mdb-ripple-color="light">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
+								 class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-success ms-2">Eco</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="card">
+						<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/shoes%20(3).webp"
+								 class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-danger ms-2">-10%</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">
+								<s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
+							</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-12 mb-4">
+					<div class="card">
+						<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(23).webp"
+								 class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5>
+											<span class="badge bg-success ms-2">Eco</span><span class="badge bg-danger ms-2">-10%</span>
+										</h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">
+								<s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
+							</h6>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="card">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+							 data-mdb-ripple-color="light">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(17).webp"
+								 class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100"></div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">$61.99</h6>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 mb-4">
+					<div class="card">
+						<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(30).webp"
+								 class="w-100" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5>
+											<span class="badge bg-primary ms-2">New</span><span class="badge bg-success ms-2">Eco</span><span class="badge bg-danger ms-2">-10%</span>
+										</h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body">
+							<a href="" class="text-reset">
+								<h5 class="card-title mb-3">Product name</h5>
+							</a>
+							<a href="" class="text-reset">
+								<p>Category</p>
+							</a>
+							<h6 class="mb-3">
+								<s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
+							</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+@section scripts {
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$('.custom-dropdown').on('show.bs.dropdown', function () {
+			var that = $(this);
+			setTimeout(function () {
+				that.find('.dropdown-menu').addClass('active');
+			}, 100);
+
+
+		});
+
+		$('.custom-dropdown').on('hide.bs.dropdown', function () {
+			$(this).find('.dropdown-menu').removeClass('active');
+		});
+	</script>
+}

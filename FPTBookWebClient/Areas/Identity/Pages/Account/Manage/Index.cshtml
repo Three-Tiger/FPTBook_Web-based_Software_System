@@ -119,44 +119,43 @@
 							<div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
 								<!-- Profile Edit Form -->
-								<form>
+								<form id="profile-form" method="post" enctype="multipart/form-data">
 									<div class="row mb-3">
 										<label for="profileImage" class="col-md-4 col-lg-3 col-form-label">
 											Profile
 											Image
 										</label>
 										<div class="col-md-8 col-lg-9">
-											<img src="~/img/default-avt.jpg" alt="Profile">
+											@{
+												if (!string.IsNullOrEmpty(Model.Input.ProfilePicture))
+												{
+													<img src="/ProfilePicture/@Model.Input.ProfilePicture" alt="Profile">
+												}
+												else
+												{
+													<img src="~/img/default-avt.jpg" alt="Profile">
+												}
+											}
 											<div class="pt-2">
-												<a href="#" class="btn btn-primary btn-sm"
-												   title="Upload new profile image">
-													<i class="bi bi-upload"></i>
-												</a>
-												<a href="#" class="btn btn-danger btn-sm"
-												   title="Remove my profile image"><i class="bi bi-trash"></i></a>
+												<input asp-for="Input.ImageFile" class="btn btn-primary btn-sm" />
+												<a class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
 											</div>
 										</div>
 									</div>
 
 									<div class="row mb-3">
-										<label for="fullName" class="col-md-4 col-lg-3 col-form-label">
-											First
-											Name
-										</label>
+										<label asp-for="Input.FirstName" class="col-md-4 col-lg-3 col-form-label"></label>
 										<div class="col-md-8 col-lg-9">
-											<input name="fullName" type="text" class="form-control" id="fullName"
-												   value="Kevin">
+											<input asp-for="Input.FirstName" class="form-control" />
+											<span asp-validation-for="Input.FirstName" class="text-danger"></span>
 										</div>
 									</div>
 
 									<div class="row mb-3">
-										<label for="fullName" class="col-md-4 col-lg-3 col-form-label">
-											Last
-											Name
-										</label>
+										<label asp-for="Input.LastName" class="col-md-4 col-lg-3 col-form-label"></label>
 										<div class="col-md-8 col-lg-9">
-											<input name="fullName" type="text" class="form-control" id="fullName"
-												   value="Anderson">
+											<input asp-for="Input.LastName" class="form-control" />
+											<span asp-validation-for="Input.LastName" class="text-danger"></span>
 										</div>
 									</div>
 
@@ -164,104 +163,58 @@
 										<label class="col-md-4 col-lg-3 col-form-label">Gender</label>
 										<div class="col-md-8 col-lg-9">
 											<div class="form-check">
-												<input class="form-check-input" type="radio" name="gridRadios"
-													   id="gridRadios1" value="option1" checked>
-												<label class="form-check-label" for="gridRadios1">
+												<input class="form-check-input" type="radio" asp-for="Input.Gender" id="maleGender" value="true" />
+												<label class="form-check-label" for="maleGender">
 													Male
 												</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" type="radio" name="gridRadios"
-													   id="gridRadios2" value="option2">
-												<label class="form-check-label" for="gridRadios2">
+												<input class="form-check-input" type="radio" asp-for="Input.Gender" id="femaleGender" value="false">
+												<label class="form-check-label" for="femaleGender">
 													Female
 												</label>
 											</div>
+											<span asp-validation-for="Input.Gender" class="text-danger"></span>
 										</div>
 									</fieldset>
 
 									<div class="row mb-3">
-										<label for="inputDate"
-											   class="col-md-4 col-lg-3 col-form-label">Birthday</label>
+										<label asp-for="Input.Birthday" class="col-md-4 col-lg-3 col-form-label"></label>
 										<div class="col-md-8 col-lg-9">
-											<input type="date" class="form-control">
+											<input type="date" asp-for="Input.Birthday" class="form-control">
+											<span asp-validation-for="Input.Birthday" class="text-danger"></span>
 										</div>
 									</div>
 
 									<div class="row mb-3">
-										<label for="Address"
-											   class="col-md-4 col-lg-3 col-form-label">Address</label>
+										<label asp-for="Input.Address" class="col-md-4 col-lg-3 col-form-label"></label>
 										<div class="col-md-8 col-lg-9">
-											<input name="address" type="text" class="form-control" id="Address"
-												   value="A108 Adam Street, New York, NY 535022">
+											<input asp-for="Input.Address" class="form-control" />
+											<span asp-validation-for="Input.Address" class="text-danger"></span>
 										</div>
 									</div>
 
 									<div class="row mb-3">
-										<label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+										<label asp-for="Input.PhoneNumber" class="col-md-4 col-lg-3 col-form-label"></label>
 										<div class="col-md-8 col-lg-9">
-											<input name="phone" type="text" class="form-control" id="Phone"
-												   value="(436) 486-3538 x29071">
+											<input asp-for="Input.PhoneNumber" class="form-control" />
+											<span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
 										</div>
 									</div>
 
 									<div class="row mb-3">
-										<label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+										<label asp-for="Input.Email" class="col-md-4 col-lg-3 col-form-label"></label>
 										<div class="col-md-8 col-lg-9">
-											<input name="email" type="email" class="form-control" id="Email"
-												   value="k.anderson@example.com">
+											<input asp-for="Input.Email" class="form-control" readonly />
 										</div>
 									</div>
 
 									<div class="text-center">
-										<button type="submit" class="btn btn-primary">Save Changes</button>
+										<button id="update-profile-button" type="submit" class="btn btn-primary">Save Changes</button>
 									</div>
 								</form><!-- End Profile Edit Form -->
 
 							</div>
-
-							<div class="tab-pane fade pt-3" id="profile-change-password">
-								<!-- Change Password Form -->
-								<form>
-
-									<div class="row mb-3">
-										<label for="currentPassword"
-											   class="col-md-4 col-lg-3 col-form-label">Current Password</label>
-										<div class="col-md-8 col-lg-9">
-											<input name="password" type="password" class="form-control"
-												   id="currentPassword">
-										</div>
-									</div>
-
-									<div class="row mb-3">
-										<label for="newPassword" class="col-md-4 col-lg-3 col-form-label">
-											New
-											Password
-										</label>
-										<div class="col-md-8 col-lg-9">
-											<input name="newpassword" type="password" class="form-control"
-												   id="newPassword">
-										</div>
-									</div>
-
-									<div class="row mb-3">
-										<label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">
-											Re-enter
-											New Password
-										</label>
-										<div class="col-md-8 col-lg-9">
-											<input name="renewpassword" type="password" class="form-control"
-												   id="renewPassword">
-										</div>
-									</div>
-
-									<div class="text-center">
-										<button type="submit" class="btn btn-primary">Change Password</button>
-									</div>
-								</form><!-- End Change Password Form -->
-
-							</div>
-
 						</div><!-- End Bordered Tabs -->
 
 					</div>

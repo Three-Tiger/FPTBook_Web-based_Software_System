@@ -1,6 +1,7 @@
 ﻿using BusinessObjects;
 using BusinessObjects.Constraints;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					listFeedbacks = context.Feedbacks.Where(x => x.IsDeleted == false).ToList();
+					listFeedbacks = context.Feedbacks.Include(b => b.Book).Include(b => b.User).Where(x => x.IsDeleted == false).ToList();
 				}
 			}
 			catch (Exception e)

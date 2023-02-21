@@ -11,6 +11,7 @@ namespace FPTBookAPI.Controllers
 	public class PublishersController : ControllerBase
 	{
 		private IPublisherRepository repository = new PublisherRepository();
+		private IBookRepository bookRepository = new BookRepository();
 
 		// GET: api/<PublishersController>
 		[HttpGet]
@@ -55,6 +56,14 @@ namespace FPTBookAPI.Controllers
 			if (publisher == null)
 			{
 				return NotFound();
+			}
+			var books = bookRepository.GetBooks();
+			foreach (var book in books)
+			{
+				if (book.PublisherId == publisher.PublisherId)
+				{
+					bookRepository.DeleteBook(book);
+				}
 			}
 			repository.DeletePublisher(publisher);
 			return NoContent();

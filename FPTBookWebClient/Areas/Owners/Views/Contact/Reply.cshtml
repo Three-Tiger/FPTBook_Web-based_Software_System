@@ -1,0 +1,42 @@
+﻿@model BusinessObjects.Contact
+@{
+	ViewData["Title"] = "Reply Contact";
+}
+<div class="pt-3 col-lg-10 col-md-9 col-12">
+	<h1 class="text-center pb-4">Reply User's Contact</h1>
+	<form asp-area="Owners" asp-controller="Contact" asp-action="Update" method="post">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="form-group">
+			<label class="form-label font-weight-bold">User Name</label>
+			<input asp-for="ContactName" class="form-control" required />
+			<span asp-validation-for="ContactName" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label class="form-label font-weight-bold">Email</label>
+			<input asp-for="ContactEmail" class="form-control" required />
+			<span asp-validation-for="ContactEmail" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label class="form-label font-weight-bold">Subject</label>
+			<input asp-for="ContactSubject" class="form-control" required />
+			<span asp-validation-for="ContactSubject" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label class="form-label font-weight-bold">Message</label>
+			<textarea asp-for="ContactMessage" class="form-control" required></textarea>
+			<span asp-validation-for="ContactMessage" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label class="form-label font-weight-bold">Reply</label>
+			<textarea asp-for="Reply" class="form-control" required></textarea>
+			<span asp-validation-for="Reply" class="text-danger"></span>
+		</div>
+		<div class="form-group text-center">
+			<input type="submit" class="btn btn-info" asp-area="Owners" asp-controller="Contact" asp-action="Update" value="Reply" />
+			<a class="btn btn-info" asp-action="Index">Cancel</a>
+		</div>
+	</form>
+</div>
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

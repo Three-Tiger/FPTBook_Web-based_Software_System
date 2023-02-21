@@ -1,87 +1,70 @@
-﻿using FPTBookWebClient.Constants;
+﻿using BusinessObjects;
+using FPTBookWebClient.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace FPTBookWebClient.Areas.Owners.Controllers
 {
-    public class ContactController : Controller
-    {
-        [Authorize(Roles = "Owner")]
-        [Area("Owners")]
-        // GET: ContactController
-        public ActionResult Index()
-        {
-            return View();
-        }
+	[Authorize(Roles = "Owner")]
+	[Area("Owners")]
+	public class ContactController : Controller
+	{
+		private readonly HttpClient client = null;
+		private string api;
+		public ContactController()
+		{
+			client = new HttpClient();
+			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+			client.DefaultRequestHeaders.Accept.Add(contentType);
+			this.api = "https://localhost:7076/api/Contacts";
+		}
+		public async Task<IActionResult> Index()
+		{
+			HttpResponseMessage httpResponse = await client.GetAsync(api);
+			string data = await httpResponse.Content.ReadAsStringAsync();
+			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Contact> contacts = JsonSerializer.Deserialize<List<Contact>>(data, options);
+			return View(contacts);
+		}
 
-        // GET: ContactController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+		public async Task<IActionResult> Update(int id)
+		{
+			HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
+			if (reponse.IsSuccessStatusCode)
+			{
+				var data = reponse.Content.ReadAsStringAsync().Result;
+				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				var obj = JsonSerializer.Deserialize<Contact>(data, options);
+				return View("Reply", obj);
+			}
+			return NotFound();
+		}
 
-        // GET: ContactController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+		[HttpPost]
+		public async Task<IActionResult> Update(int id, Contact contact)
+		{
+			contact.ContactId = id;
+			string data = JsonSerializer.Serialize<Contact>(contact);
+			var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
+			HttpResponseMessage response = await client.PutAsync(api + "/" + id, content);
+			if (response.IsSuccessStatusCode)
+			{
+				return RedirectToAction("Index");
+			}
+			return View(contact);
+		}
 
-        // POST: ContactController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ContactController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ContactController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ContactController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ContactController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-    }
+		public async Task<IActionResult> Delete(int id)
+		{
+			HttpResponseMessage reponse = await client.DeleteAsync(api + "/" + id);
+			if (reponse.IsSuccessStatusCode)
+			{
+				return RedirectToAction("Index");
+			}
+			return NotFound();
+		}
+	}
 }

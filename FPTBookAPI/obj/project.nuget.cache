@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZxOza2xFtM6QXHMGBrn3u+CMfMAoTDJZNHyMomLKF0UUy9cUOjcnWC8D4p24MJ62exCQGp9vT9FzSZCz4xaSXQ==",
+  "dgSpecHash": "+3PcN78ESorsZqGU8rUDsZwQs3Qfk5HTrLAUfsdEh4J70Rx+iWHipPtrTcR3gP2xcONsSWqKlJHk5JzAzFijpg==",
   "success": true,
   "projectFilePath": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookAPI\\FPTBookAPI.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,7 @@
     "C:\\Users\\THAI DUONG\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.8.0\\microsoft.identitymodel.protocols.6.8.0.nupkg.sha512",
     "C:\\Users\\THAI DUONG\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
     "C:\\Users\\THAI DUONG\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\THAI DUONG\\.nuget\\packages\\microsoft.net.sdk.razor\\3.1.32\\microsoft.net.sdk.razor.3.1.32.nupkg.sha512",
     "C:\\Users\\THAI DUONG\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\THAI DUONG\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\THAI DUONG\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

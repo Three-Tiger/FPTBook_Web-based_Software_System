@@ -1,7 +1,11 @@
-﻿using FPTBookWebClient.Constants;
+﻿using BusinessObjects;
+using BusinessObjects.Constraints;
+using FPTBookWebClient.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace FPTBookWebClient.Areas.Owners.Controllers
 {
@@ -9,79 +13,61 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
     [Area("Owners")]
     public class FeedbackController : Controller
     {
-        // GET: FeedbackController
-        public ActionResult Index()
-        {
-            return View();
-        }
+		private readonly HttpClient client = null;
+		private string api;
+		public FeedbackController()
+		{
+			client = new HttpClient();
+			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+			client.DefaultRequestHeaders.Accept.Add(contentType);
+			this.api = "https://localhost:7076/api/Feedbacks";
+		}
 
-        // GET: FeedbackController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+		public async Task<IActionResult> Index()
+		{
+			HttpResponseMessage httpResponse = await client.GetAsync(api);
+			string data = await httpResponse.Content.ReadAsStringAsync();
+			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Feedback> feedbacks = JsonSerializer.Deserialize<List<Feedback>>(data, options);
 
-        // GET: FeedbackController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+			return View(feedbacks);
+		}
 
-        // POST: FeedbackController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+		public async Task<IActionResult> Accept(int id)
+		{
+			HttpResponseMessage reponseGetFeedback = await client.GetAsync(api + "/" + id);
+			var dataGetFeedback = reponseGetFeedback.Content.ReadAsStringAsync().Result;
+			var optionsGetFeedback = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			var feedback = JsonSerializer.Deserialize<Feedback>(dataGetFeedback, optionsGetFeedback);
 
-        // GET: FeedbackController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: FeedbackController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: FeedbackController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: FeedbackController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-    }
+			string data = JsonSerializer.Serialize<Feedback>(feedback);
+			var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
+			if (feedback.FeedStatus == FeedStatus.Unchecked)
+			{
+				HttpResponseMessage response = await client.PutAsync(api + "/" + id + "/Checked", content);
+				if (response.IsSuccessStatusCode)
+				{
+					return RedirectToAction("Index");
+				}
+			}
+			else
+			{
+				HttpResponseMessage response = await client.PutAsync(api + "/" + id + "/UnChecked", content);
+				if (response.IsSuccessStatusCode)
+				{
+					return RedirectToAction("Index");
+				}
+			}
+			return NotFound();
+		}
+		public async Task<IActionResult> Delete(int id)
+		{
+			HttpResponseMessage reponse = await client.DeleteAsync(api + "/" + id);
+			if (reponse.IsSuccessStatusCode)
+			{
+				return RedirectToAction("Index");
+			}
+			return NotFound();
+		}
+	}
 }

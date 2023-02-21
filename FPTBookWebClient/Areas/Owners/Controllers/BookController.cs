@@ -61,7 +61,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			{
 				string data = JsonSerializer.Serialize(book);
 				var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
-				HttpResponseMessage response = await client.PostAsync(this.api, content);
+				HttpResponseMessage response = await client.PostAsync(api, content);
 				if (response.IsSuccessStatusCode)
 				{
 					return RedirectToAction("Index");
