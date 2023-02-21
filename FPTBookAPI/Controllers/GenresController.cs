@@ -11,6 +11,7 @@ namespace FPTBookAPI.Controllers
 	public class GenresController : ControllerBase
 	{
 		private IGenreRepository repository = new GenreRepository();
+		private IBookRepository bookRepository = new BookRepository();
 
 		// GET: api/<GenresController>
 		[HttpGet]
@@ -89,6 +90,14 @@ namespace FPTBookAPI.Controllers
 			if (genre == null)
 			{
 				return NotFound();
+			}
+			var books = bookRepository.GetBooks();
+			foreach (var book in books)
+			{
+				if (book.GenreId == genre.GenreId)
+				{
+					bookRepository.DeleteBook(book);
+				}
 			}
 			repository.DeleteGenre(genre);
 			return NoContent();

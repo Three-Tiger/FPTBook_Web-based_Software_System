@@ -11,6 +11,7 @@ namespace FPTBookAPI.Controllers
 	public class AuthorsController : ControllerBase
 	{
 		private IAuthorRepository repository = new AuthorRepository();
+		private IBookRepository bookRepository = new BookRepository();
 
 		// GET: api/<AuthorsController>
 		[HttpGet]
@@ -55,6 +56,14 @@ namespace FPTBookAPI.Controllers
 			if (author == null)
 			{
 				return NotFound();
+			}
+			var books = bookRepository.GetBooks();
+			foreach (var book in books)
+			{
+				if (book.AuthorId == author.AuthorId)
+				{
+					bookRepository.DeleteBook(book);
+				}
 			}
 			repository.DeleteAuthor(author);
 			return NoContent();

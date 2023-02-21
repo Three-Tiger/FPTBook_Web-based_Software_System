@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,8 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					listBooks = context.Books.Where(x => x.IsDeleted == false).ToList();
+					//listBooks = context.Books.Where(x => x.IsDeleted == false).ToList();
+					listBooks = context.Books.Include(b => b.Genre).Include(b => b.Author).Include(b => b.Publisher).Where(b => b.IsDeleted == false).ToList();
 				}
 			}
 			catch (Exception e)

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tJyQKPm6s1fjMDtFOeVt3O83I3/JayxRGZGg04DrbCI=",
+  "Hash": "CUvtEp7/89jQdhJqW3NfiBNWI9iNn7h05zz1TRmVr0w=",
   "Source": "FPTBookWebClient",
   "BasePath": "_content/FPTBookWebClient",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FPTBookWebClient.bundle.scp.css"
     },
     {
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\about.css",
+      "SourceId": "FPTBookWebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\",
+      "BasePath": "_content/FPTBookWebClient",
+      "RelativePath": "css/about.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\about.css"
+    },
+    {
       "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\css\\cart.css",
       "SourceId": "FPTBookWebClient",
       "SourceType": "Discovered",
@@ -1936,6 +1953,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\icon-3.png"
+    },
+    {
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\introduction.jpg",
+      "SourceId": "FPTBookWebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\",
+      "BasePath": "_content/FPTBookWebClient",
+      "RelativePath": "img/introduction.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\introduction.jpg"
     },
     {
       "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\img\\testimonials\\testimonials-1.jpg",
@@ -3043,12 +3077,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\ProfilePicture\\4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg",
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\ProfilePicture\\d7e692c7-f040-474b-a638-02bd96f599d9.jpg",
       "SourceId": "FPTBookWebClient",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\",
       "BasePath": "_content/FPTBookWebClient",
-      "RelativePath": "ProfilePicture/4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg",
+      "RelativePath": "ProfilePicture/d7e692c7-f040-474b-a638-02bd96f599d9.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3057,7 +3091,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ProfilePicture\\4d0855bc-5902-434d-a8c7-6aae59bf5e9a.jpg"
+      "OriginalItemSpec": "wwwroot\\ProfilePicture\\d7e692c7-f040-474b-a638-02bd96f599d9.jpg"
     },
     {
       "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\vendor\\aos\\aos.css",
@@ -4231,6 +4265,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\vendor\\swiper\\swiper-bundle.min.js.map"
+    },
+    {
+      "Identity": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\video\\introduction.mp4",
+      "SourceId": "FPTBookWebClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\wwwroot\\",
+      "BasePath": "_content/FPTBookWebClient",
+      "RelativePath": "video/introduction.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\video\\introduction.mp4"
     }
   ]
 }
