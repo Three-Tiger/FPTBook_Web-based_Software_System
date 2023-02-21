@@ -21,6 +21,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			client.DefaultRequestHeaders.Accept.Add(contentType);
 			this.api = "https://localhost:7076/api/Books";
 		}
+
 		public async Task<IActionResult> Index()
 		{
 			HttpResponseMessage httpResponse = await client.GetAsync(api);
@@ -29,6 +30,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			List<Book> books = JsonSerializer.Deserialize<List<Book>>(data, options);
 			return View(books);
 		}
+
 		public async Task<IActionResult> Create()
 		{
 			HttpResponseMessage httpResponse = await client.GetAsync("https://localhost:7076/api/Genres/Approvel");
@@ -38,13 +40,13 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			ViewData["GenreId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(genres, "GenreId", "GenreName");
 
 			HttpResponseMessage httpResponse1 = await client.GetAsync("https://localhost:7076/api/Authors");
-			string data1 = await httpResponse.Content.ReadAsStringAsync();
+			string data1 = await httpResponse1.Content.ReadAsStringAsync();
 			var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
 			ViewData["AuthorId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(authors, "AuthorId", "AuthorName");
 
 			HttpResponseMessage httpResponse2 = await client.GetAsync("https://localhost:7076/api/Publishers");
-			string data2 = await httpResponse.Content.ReadAsStringAsync();
+			string data2 = await httpResponse2.Content.ReadAsStringAsync();
 			var options2 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Publisher> publishers = JsonSerializer.Deserialize<List<Publisher>>(data2, options2);
 			ViewData["PublisherId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(publishers, "PublisherId", "PublisherName");
@@ -59,13 +61,13 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			{
 				string data = JsonSerializer.Serialize(book);
 				var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
-				HttpResponseMessage response = await client.PostAsync(api, content);
+				HttpResponseMessage response = await client.PostAsync(this.api, content);
 				if (response.IsSuccessStatusCode)
 				{
 					return RedirectToAction("Index");
 				}
 			}
-			return View(book);
+			return View(book);	
 		}
 		public async Task<IActionResult> Update(int id)
 		{

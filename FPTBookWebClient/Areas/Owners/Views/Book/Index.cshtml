@@ -76,10 +76,14 @@
 					<td class="text-center align-middle">@item.BookTitle</td>
 					<td class="text-center align-middle">@item.BookDescription</td>
 					<td class="text-center align-middle">@item.BookDetail</td>
+					<td class="text-center align-middle">@item.Genre.GenreName</td>
+					<td class="text-center align-middle">@item.Author.AuthorName</td>
+					<td class="text-center align-middle">@item.Publisher.PublisherName</td>
 					<td class="text-center align-middle">@item.BookPrice</td>
 					<td class="text-center align-middle">@item.BookOriginalPrice</td>
 					<td class="text-center align-middle">@item.SalePercent</td>
 					<td class="text-center align-middle">@item.BookStock</td>
+					<td class="text-center align-middle"><img src="@item.BookImage" height="50%" width="50%"/></td>
 					<td class="text-center align-middle">
 						<a asp-area="Owners" asp-controller="Book" asp-action="Update" asp-route-id="@item.BookId"><i class="bi bi-pen-fill" style="color: black;"></i></a>
 					</td>

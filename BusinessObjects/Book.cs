@@ -14,21 +14,43 @@ namespace BusinessObjects
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int BookId { get; set; }
+		[Required]
+		[Display(Name ="Title")]
 		public string BookTitle { get; set; }
+		[Required]
+		[Display(Name = "Description")]
 		public string BookDescription { get; set; }
+		[Required]
+		[Display(Name = "Book Detail")]
 		public string BookDetail { get; set; }
+		[Required]
+		[Display(Name = "Price")]
 		public decimal BookPrice { get; set; }
+		[Required]
+		[Display(Name = "Original Price")]
 		public decimal BookOriginalPrice { get; set; }
+		[Required]
+		[Display(Name = "Sale Percent")]
 		public int SalePercent { get; set; }
+		[Required]
+		[Display(Name = "Stock")]
 		public int BookStock { get; set; }
 		public DateTime BookCreated { get; set; } = DateTime.Now;
 		public DateTime BookLastUpdated { get; set; } = DateTime.Now;
+		[Required]
+		[Display(Name = "Image")]
 		public string? BookImage { get; set; }
 		[NotMapped]
 		public IFormFile? ImageFile { get; set; }
 		public bool IsDeleted { get; set; } = false;
+		[Required]
+		[Display(Name = "Genre")]
 		public int GenreId { get; set; }
+		[Required]
+		[Display(Name = "Author")]
 		public int AuthorId { get; set; }
+		[Required]
+		[Display(Name = "Publisher")]
 		public int PublisherId { get; set; }
 		public virtual ICollection<Feedback>? Feedbacks { get; set; }
 
