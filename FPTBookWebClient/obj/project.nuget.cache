@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uho8aLR6vmn8XSLQGAoZdQSx3GlqMOzxEviiPmRHwbSpaLsR4Bx7ghN3YpWZbTRkqnol+CQOZdpEDJHO/VxRrA==",
+  "dgSpecHash": "gZyFlU1I0u3MB4pmndfHPEV0KSaXLuDRA6DmRgoBWpmjz9TEJGpQWCdVbJYzjN6mW0N1JY+ZgmgWVDaQEhhX1Q==",
   "success": true,
   "projectFilePath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\FPTBookWebClient.csproj",
   "expectedPackageFiles": [
@@ -69,6 +69,7 @@
     "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.8.0\\microsoft.identitymodel.protocols.6.8.0.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.net.sdk.razor\\3.1.32\\microsoft.net.sdk.razor.3.1.32.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.net.stringtools\\17.3.2\\microsoft.net.stringtools.17.3.2.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",

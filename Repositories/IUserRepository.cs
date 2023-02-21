@@ -9,7 +9,6 @@ namespace Repositories
 {
 	public interface IUserRepository
 	{
-		List<Book> DisplayBooksInShop();
-		List<Genre> DisplayGenresInShop();
+		
 	}
 }

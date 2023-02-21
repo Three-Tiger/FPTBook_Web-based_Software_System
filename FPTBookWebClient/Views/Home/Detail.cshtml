@@ -1,0 +1,188 @@
+﻿@model BusinessObjects.Book
+@{
+	ViewData["Title"] = "Detail";
+}
+@section stylesheets {
+	<link rel="stylesheet" href="~/css/detail.css">
+}
+
+<div class="pd-wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div id="slider" class="">
+					<div class="item text-center">
+						<img src="@Model.BookImage" height="50%" width="50%" />
+					</div>
+				</div>
+			</div>
+			@{
+				decimal PriceSale = Model.BookPrice - (Model.BookPrice * (Model.SalePercent / 100));
+			}
+			<div class="col-md-6">
+				<div class="product-dtl">
+					<div class="product-info">
+						<div class="product-name">@Model.BookTitle</div>
+						<div class="product-price-discount">
+							<span>$@PriceSale</span>
+							@if (@Model.BookPrice != PriceSale)
+							{
+								<span class="line-through">$@Model.BookPrice</span>
+							}
+						</div>
+					</div>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+						labore et dolore magna aliqua.
+					</p>
+					<div class="product-count">
+						<label for="size" class="mb-2">Quantity</label>
+						<form action="#" class="display-flex">
+							<div class="qtyminus">-</div>
+							<input type="text" name="quantity" value="1" class="qty">
+							<div class="qtyplus">+</div>
+						</form>
+						<a href="#" class="round-black-btn">Add to Cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="product-info-tabs">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab"
+					   aria-controls="description" aria-selected="true">Description</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab"
+					   aria-controls="review" aria-selected="false">Reviews (0)</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="description" role="tabpanel"
+					 aria-labelledby="description-tab">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<h3 class="box-title mt-5">General Info</h3>
+						<div class="table-responsive">
+							<table class="table table-striped table-product">
+								<tbody>
+									<tr>
+										<td width="40%" class="fw-bold">Genre</td>
+										<td>Genre Name</td>
+									</tr>
+									<tr>
+										<td width="40%" class="fw-bold">Publisher</td>
+										<td>Publisher Name</td>
+									</tr>
+									<tr>
+										<td width="40%" class="fw-bold">Author</td>
+										<td>Author Name</td>
+									</tr>
+									<tr>
+										<td width="40%" class="fw-bold">Detail Description</td>
+										<td>
+											<p style="text-align: justify;">
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+												eiusmod
+												tempor incididunt
+												ut
+												labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+												exercitation ullamco
+												laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+												dolor
+												in reprehenderit in
+												voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+												Excepteur
+												sint occaecat
+												cupidatat
+												non proident, sunt in culpa qui officia deserunt mollit anim id est
+												laborum. Sed ut
+												perspiciatis
+												unde omnis iste natus error sit voluptatem accusantium doloremque
+												laudantium, totam rem
+												aperiam.
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td width="40%" class="fw-bold">Delivery Condition</td>
+										<td>Knock Down</td>
+									</tr>
+									<tr>
+										<td width="40%" class="fw-bold">Type</td>
+										<td>Book</td>
+									</tr>
+									<tr>
+										<td width="40%" class="fw-bold">Upholstery Included</td>
+										<td>Yes</td>
+									</tr>
+									<tr>
+										<td width="40%" class="fw-bold">Upholstery Type</td>
+										<td>Cushion</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+					<div class="tab-content" id="myTabContent">
+						<h3 class="box-title mt-5 mb-3">Feedback from customer</h3>
+
+						<table class="table table-striped table-product">
+							<thead class="fw-bold">
+								<tr>
+									<td>Full Name</td>
+									<td>Content</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td width="190">Nguyen Duy Quang</td>
+									<td>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut
+										labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+										exercitation ullamco
+										laboris nisi ut aliquip ex ea commodo consequat.
+									</td>
+								</tr>
+							</tbody>
+
+						</table>
+						<!-- if does not have any feedback -->
+						<div class="fw-bold">No feedback</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@section scripts {
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function () {
+			$(".qtyminus").on("click", function () {
+				var now = $(".qty").val();
+				if ($.isNumeric(now)) {
+					if (parseInt(now) - 1 > 0) { now--; }
+					$(".qty").val(now);
+				}
+			})
+			$(".qtyplus").on("click", function () {
+				var now = $(".qty").val();
+				if ($.isNumeric(now)) {
+					$(".qty").val(parseInt(now) + 1);
+				}
+			});
+		});
+	</script>
+}

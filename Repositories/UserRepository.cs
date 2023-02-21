@@ -10,7 +10,6 @@ namespace Repositories
 {
 	public class UserRepository : IUserRepository
 	{
-		public List<Book> DisplayBooksInShop() => UserDAO.DisplayBooksInShop();
-		public List<Genre> DisplayGenresInShop() => UserDAO.DisplayGenresInShop();
+		
 	}
 }
