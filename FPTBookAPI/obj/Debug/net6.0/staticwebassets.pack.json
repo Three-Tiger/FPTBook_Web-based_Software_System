@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\wwwroot\\BookImages\\4e7b0e08-9292-4cc0-b81c-5a3f694467ee.jpg",
+      "PackagePath": "staticwebassets\\BookImages\\4e7b0e08-9292-4cc0-b81c-5a3f694467ee.jpg"
+    },
+    {
       "Id": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\wwwroot\\BookImages\\6271ee91-3567-40bf-b3d9-fdddfe20b29d.jpg",
       "PackagePath": "staticwebassets\\BookImages\\6271ee91-3567-40bf-b3d9-fdddfe20b29d.jpg"
     },
