@@ -1,14 +1,13 @@
-﻿using FPTBookWebClient.Constants;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FPTBookWebClient.Areas.Owners.Controllers
 {
-    public class ContactController : Controller
+	[Authorize(Roles = "Owner")]
+	[Area("Owners")]
+	public class ContactController : Controller
     {
-        [Authorize(Roles = "Owner")]
-        [Area("Owners")]
         // GET: ContactController
         public ActionResult Index()
         {

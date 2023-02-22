@@ -19,7 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using FPTBookWebClient.Constants;
+using BusinessObjects.Constraints;
 
 namespace FPTBookWebClient.Areas.Identity.Pages.Account
 {
