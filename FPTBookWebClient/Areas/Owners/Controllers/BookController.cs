@@ -133,6 +133,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			}
 			return View(book);
 		}
+
 		public async Task<IActionResult> Delete(int id)
 		{
 			HttpResponseMessage reponse = await client.DeleteAsync(api + "/" + id);

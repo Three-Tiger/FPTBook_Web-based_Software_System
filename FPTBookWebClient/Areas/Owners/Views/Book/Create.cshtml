@@ -3,7 +3,7 @@
 	ViewData["Title"] = "Adding Book";
 }
 <h1 class="text-center pb-4">Adding Book</h1>
-<form enctype="multipart/form-data" onsubmit="CreateBook(this)">
+<form id="frmCreateBook" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<label asp-for="BookTitle" class="form-label font-weight-bold"></label>
 		<input asp-for="BookTitle" class="form-control" required />
@@ -71,25 +71,22 @@
 </form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-	try {
-		function CreateBook(form) {
-			$.ajax({
-				url: "https://localhost:7076/api/Books",
-				type: "post",
-				data: new FormData(form),
-				processData: false,
-				contentType: false,
-				success: function (result, status, xhr) {
-					window.location.href = '/Owners/Book';
-				},
-				error: function (xhr, status, error) {
-					console.log(xhr);
-				}
-			});
-		}
-	} catch (e) {
-		console.log(e)
-	}
+	$('#frmCreateBook').submit(function (e) {
+		e.preventDefault();
+		$.ajax({
+			url: "https://localhost:7076/api/Books",
+			type: "post",
+			data: new FormData(this),
+			processData: false,
+			contentType: false,
+			success: function (result, status, xhr) {
+				window.location.href = 'https://localhost:7258/Owners/Book';
+			},
+			error: function (xhr, status, error) {
+				console.log(xhr);
+			}
+		});
+	});
 </script>
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
