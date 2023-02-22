@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FPTBookWebClient.Areas.Owners.Controllers
 {
@@ -37,19 +38,19 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
-			ViewData["GenreId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(genres, "GenreId", "GenreName");
+			ViewData["GenreId"] = new SelectList(genres, "GenreId", "GenreName");
 
 			HttpResponseMessage httpResponse1 = await client.GetAsync("https://localhost:7076/api/Authors");
 			string data1 = await httpResponse1.Content.ReadAsStringAsync();
 			var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
-			ViewData["AuthorId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(authors, "AuthorId", "AuthorName");
+			ViewData["AuthorId"] = new SelectList(authors, "AuthorId", "AuthorName");
 
 			HttpResponseMessage httpResponse2 = await client.GetAsync("https://localhost:7076/api/Publishers");
 			string data2 = await httpResponse2.Content.ReadAsStringAsync();
 			var options2 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Publisher> publishers = JsonSerializer.Deserialize<List<Publisher>>(data2, options2);
-			ViewData["PublisherId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(publishers, "PublisherId", "PublisherName");
+			ViewData["PublisherId"] = new SelectList(publishers, "PublisherId", "PublisherName");
 
 			return View();
 		}
@@ -74,9 +75,28 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
 			if (reponse.IsSuccessStatusCode)
 			{
-				var data = reponse.Content.ReadAsStringAsync().Result;
+				var data3 = reponse.Content.ReadAsStringAsync().Result;
+				var options3 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				var obj = JsonSerializer.Deserialize<Book>(data3, options3);
+
+				HttpResponseMessage httpResponse = await client.GetAsync("https://localhost:7076/api/Genres/Approvel");
+				string data = await httpResponse.Content.ReadAsStringAsync();
 				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				var obj = JsonSerializer.Deserialize<Book>(data, options);
+				List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
+				ViewData["GenreId"] = new SelectList(genres, "GenreId", "GenreName");
+
+				HttpResponseMessage httpResponse1 = await client.GetAsync("https://localhost:7076/api/Authors");
+				string data1 = await httpResponse1.Content.ReadAsStringAsync();
+				var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
+				ViewData["AuthorId"] = new SelectList(authors, "AuthorId", "AuthorName");
+
+				HttpResponseMessage httpResponse2 = await client.GetAsync("https://localhost:7076/api/Publishers");
+				string data2 = await httpResponse2.Content.ReadAsStringAsync();
+				var options2 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				List<Publisher> publishers = JsonSerializer.Deserialize<List<Publisher>>(data2, options2);
+				ViewData["PublisherId"] = new SelectList(publishers, "PublisherId", "PublisherName");
+
 				return View(obj);
 			}
 			return NotFound();

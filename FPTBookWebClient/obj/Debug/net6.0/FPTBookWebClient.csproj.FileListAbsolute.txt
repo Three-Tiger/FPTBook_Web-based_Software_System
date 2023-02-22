@@ -709,3 +709,4 @@ D:\GW\1670 - Application Development\Source_Code\FPTBookWebClient\obj\Debug\net6
 D:\GW\1670 - Application Development\Source_Code\FPTBookWebClient\obj\Debug\net6.0\staticwebassets\FPTBookWebClient.StaticWebAssets.Manifest.cache
 D:\GW\1670 - Application Development\Source_Code\FPTBookWebClient\obj\Debug\net6.0\staticwebassets\FPTBookWebClient.StaticWebAssets.xml
 D:\GW\1670 - Application Development\Source_Code\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Owners\Views\Contact\Reply.cshtml.g.cs
+D:\GW\1670 - Application Development\Source_Code\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Owners\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
