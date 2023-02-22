@@ -9,7 +9,8 @@ namespace Repositories
 {
 	public interface IUserRepository
 	{
-		List<Book> DisplayBooksInShop();
-		List<Genre> DisplayGenresInShop();
+		List<AppUser> GetMembers();
+		AppUser FindAccountById(string memberId);
+		List<AppUser> GetOwners();
 	}
 }

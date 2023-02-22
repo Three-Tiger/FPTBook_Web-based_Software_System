@@ -54,6 +54,7 @@ namespace FPTBookAPI.Controllers
 			{
 				return NotFound();
 			}
+			obj.BookId = book.BookId;
 			obj.BookCreated = book.BookCreated;
 			if (obj.ImageFile != null)
 			{

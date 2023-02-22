@@ -41,6 +41,7 @@ namespace BusinessObjects
 		[Display(Name = "Image")]
 		public string? BookImage { get; set; }
 		[NotMapped]
+		[Display(Name = "Upload Image")]
 		public IFormFile? ImageFile { get; set; }
 		public bool IsDeleted { get; set; } = false;
 		[Required]

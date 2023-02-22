@@ -1,5 +1,4 @@
 ﻿using BusinessObjects;
-using FPTBookWebClient.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -60,14 +59,33 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				string data = JsonSerializer.Serialize(book);
-				var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
-				HttpResponseMessage response = await client.PostAsync(api, content);
+				string data3 = JsonSerializer.Serialize(book);
+				var content = new StringContent(data3, System.Text.Encoding.UTF8, "application/json");
+				HttpResponseMessage response = await client.PostAsync(this.api, content);
 				if (response.IsSuccessStatusCode)
 				{
 					return RedirectToAction("Index");
 				}
 			}
+
+			HttpResponseMessage httpResponse = await client.GetAsync("https://localhost:7076/api/Genres/Approvel");
+			string data = await httpResponse.Content.ReadAsStringAsync();
+			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
+			ViewData["GenreId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(genres, "GenreId", "GenreName");
+
+			HttpResponseMessage httpResponse1 = await client.GetAsync("https://localhost:7076/api/Authors");
+			string data1 = await httpResponse1.Content.ReadAsStringAsync();
+			var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
+			ViewData["AuthorId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(authors, "AuthorId", "AuthorName");
+
+			HttpResponseMessage httpResponse2 = await client.GetAsync("https://localhost:7076/api/Publishers");
+			string data2 = await httpResponse2.Content.ReadAsStringAsync();
+			var options2 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Publisher> publishers = JsonSerializer.Deserialize<List<Publisher>>(data2, options2);
+			ViewData["PublisherId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(publishers, "PublisherId", "PublisherName");
+
 			return View(book);	
 		}
 		public async Task<IActionResult> Update(int id)
@@ -83,19 +101,19 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 				string data = await httpResponse.Content.ReadAsStringAsync();
 				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 				List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
-				ViewData["GenreId"] = new SelectList(genres, "GenreId", "GenreName");
+				ViewData["GenreId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(genres, "GenreId", "GenreName");
 
 				HttpResponseMessage httpResponse1 = await client.GetAsync("https://localhost:7076/api/Authors");
 				string data1 = await httpResponse1.Content.ReadAsStringAsync();
 				var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 				List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
-				ViewData["AuthorId"] = new SelectList(authors, "AuthorId", "AuthorName");
+				ViewData["AuthorId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(authors, "AuthorId", "AuthorName");
 
 				HttpResponseMessage httpResponse2 = await client.GetAsync("https://localhost:7076/api/Publishers");
 				string data2 = await httpResponse2.Content.ReadAsStringAsync();
 				var options2 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 				List<Publisher> publishers = JsonSerializer.Deserialize<List<Publisher>>(data2, options2);
-				ViewData["PublisherId"] = new SelectList(publishers, "PublisherId", "PublisherName");
+				ViewData["PublisherId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(publishers, "PublisherId", "PublisherName");
 
 				return View(obj);
 			}
@@ -115,6 +133,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			}
 			return View(book);
 		}
+
 		public async Task<IActionResult> Delete(int id)
 		{
 			HttpResponseMessage reponse = await client.DeleteAsync(api + "/" + id);

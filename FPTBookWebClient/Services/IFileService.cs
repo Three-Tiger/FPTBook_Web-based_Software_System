@@ -3,6 +3,6 @@
     public interface IFileService
     {
         Tuple<int, string> SaveImage(IFormFile imageFile);
-        public bool DeleteImage(string imageFileName);
+        bool DeleteImage(string imageFileName);
     }
 }

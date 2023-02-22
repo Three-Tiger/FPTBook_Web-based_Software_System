@@ -34,19 +34,19 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
+app.UseAuthentication(); ;
 
 app.UseAuthorization();
 
 app.MapAreaControllerRoute(
-    name: "areas",
-    areaName: "Owners",
-    pattern: "Owners/{controller=Order}/{action=Index}/{id?}");
+	name: "areas",
+	areaName: "Owners",
+	pattern: "Owners/{controller=Order}/{action=Index}/{id?}");
 
 app.MapAreaControllerRoute(
-    name: "areas",
-    areaName: "Admins",
-    pattern: "Admins/{controller=Owner}/{action=Index}/{id?}");
+	name: "areas",
+	areaName: "Admins",
+	pattern: "Admins/{controller=Owner}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
 	name: "default",

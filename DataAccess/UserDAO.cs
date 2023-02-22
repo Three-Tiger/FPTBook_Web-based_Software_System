@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using BusinessObjects.Constraints;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,56 +12,62 @@ namespace DataAccess
 {
 	public class UserDAO
 	{
-		public static List<Book> DisplayBooksInShop()
+		public static List<AppUser> GetMembers()
 		{
-			var listBooks = new List<Book>();
+			var lstMembers = new List<AppUser>();
 			try
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					//listBooks = context.Books.Where(x => x.IsDeleted == false).Include(t => t.GenreId).ToList();
-					listBooks = context.Books.Include(g => g.Genre).Where(x => x.IsDeleted == false).ToList();
+					lstMembers = (from user in context.Users
+								 join userRole in context.UserRoles on user.Id equals userRole.UserId
+								 join role in context.Roles on userRole.RoleId equals role.Id
+								 where role.Name == Roles.User.ToString() select user).ToList();
 				}
 			}
 			catch (Exception e)
 			{
 				throw new Exception(e.Message);
 			}
-			return listBooks;
+			return lstMembers;
 		}
 
-		public static Book DisplayBooksDetail(int bookID)
+		public static AppUser FindAccountById(string memberId)
 		{
-			Book book = new Book();
+			AppUser appUser = new AppUser();
 			try
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					book = context.Books.Where(x => x.IsDeleted == false).SingleOrDefault(c => c.BookId == bookID);
+					appUser = context.Users.Where(u => u.Id == memberId).FirstOrDefault();
 				}
 			}
 			catch (Exception e)
 			{
 				throw new Exception(e.Message);
 			}
-			return book;
+			return appUser;
 		}
 
-		public static List<Genre> DisplayGenresInShop()
+		public static List<AppUser> GetOwners()
 		{
-			var listGenres = new List<Genre>();
+			var lstMembers = new List<AppUser>();
 			try
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					listGenres = context.Genres.Where(x => x.IsDeleted == false && x.Status == GenreApproval.Approved).OrderBy(b => b.GenreName).ToList();
+					lstMembers = (from user in context.Users
+								  join userRole in context.UserRoles on user.Id equals userRole.UserId
+								  join role in context.Roles on userRole.RoleId equals role.Id
+								  where role.Name == Roles.Owner.ToString()
+								  select user).ToList();
 				}
 			}
 			catch (Exception e)
 			{
 				throw new Exception(e.Message);
 			}
-			return listGenres;
+			return lstMembers;
 		}
 	}
 }

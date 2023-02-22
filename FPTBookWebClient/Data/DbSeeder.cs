@@ -1,5 +1,5 @@
 ﻿using BusinessObjects;
-using FPTBookWebClient.Constants;
+using BusinessObjects.Constraints;
 using Microsoft.AspNetCore.Identity;
 
 namespace FPTBookWebClient.Data
