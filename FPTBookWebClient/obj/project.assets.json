@@ -10803,19 +10803,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\THAI DUONG\\.nuget\\packages\\": {}
+    "C:\\Users\\Duy Quang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\FPTBookWebClient.csproj",
+      "projectUniqueName": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\FPTBookWebClient.csproj",
       "projectName": "FPTBookWebClient",
-      "projectPath": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\FPTBookWebClient.csproj",
-      "packagesPath": "C:\\Users\\THAI DUONG\\.nuget\\packages\\",
-      "outputPath": "D:\\GW\\1670 - Application Development\\Source_Code\\FPTBookWebClient\\obj\\",
+      "projectPath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\FPTBookWebClient.csproj",
+      "packagesPath": "C:\\Users\\Duy Quang\\.nuget\\packages\\",
+      "outputPath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\THAI DUONG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Duy Quang\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10829,8 +10829,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\GW\\1670 - Application Development\\Source_Code\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "D:\\GW\\1670 - Application Development\\Source_Code\\BusinessObjects\\BusinessObjects.csproj"
+            "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\BusinessObjects\\BusinessObjects.csproj"
             }
           }
         }
@@ -10890,19 +10890,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
+            "version": "[6.0.14, 6.0.14]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.13, 6.0.13]"
+            "version": "[6.0.14, 6.0.14]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
+            "version": "[6.0.14, 6.0.14]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
+            "version": "[6.0.14, 6.0.14]"
           }
         ],
         "frameworkReferences": {
@@ -10913,7 +10913,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   },
