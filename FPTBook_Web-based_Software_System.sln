@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositorie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FPTBookAPI", "FPTBookAPI\FPTBookAPI.csproj", "{8D549786-971F-4CEF-A705-E1BF473EE4CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPTBookWebClient", "FPTBookWebClient\FPTBookWebClient.csproj", "{17103073-FC25-44E2-8A35-88053A602F14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FPTBookWebClient", "FPTBookWebClient\FPTBookWebClient.csproj", "{17103073-FC25-44E2-8A35-88053A602F14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7196EF80-FBC4-40FC-BDE7-FAFD7C38FDFB}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
