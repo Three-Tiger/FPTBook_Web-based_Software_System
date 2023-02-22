@@ -2,36 +2,34 @@
 @{
 	ViewData["Title"] = "Adding Publisher";
 }
-<div class="pt-3 col-lg-10 col-md-9 col-12">
-	<h1 class="text-center pb-4">Adding Publisher</h1>
-	<form asp-area="Owners" asp-controller="Publisher" asp-action="Create" method="post">
-		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-		<div class="form-group">
-			<label class="form-label font-weight-bold">Publisher Name</label>
-			<input asp-for="PublisherName" class="form-control" required />
-			<span asp-validation-for="PublisherName" class="text-danger"></span>
-		</div>
-		<div class="form-group">
-			<label class="form-label font-weight-bold">Publisher Phone</label>
-			<input asp-for="PublisherPhone" class="form-control" required />
-			<span asp-validation-for="PublisherPhone" class="text-danger"></span>
-		</div>
-		<div class="form-group">
-			<label class="form-label font-weight-bold">Publisher Mail</label>
-			<input asp-for="PublisherMail" class="form-control" required />
-			<span asp-validation-for="PublisherMail" class="text-danger"></span>
-		</div>
-		<div class="form-group">
-			<label class="form-label font-weight-bold">Publisher Address</label>
-			<input asp-for="PublisherAddress" class="form-control" required />
-			<span asp-validation-for="PublisherAddress" class="text-danger"></span>
-		</div>
-		<div class="form-group text-center">
-			<input type="submit" class="btn btn-info" asp-area="Owners" asp-controller="Publisher" asp-action="Create" value="Add new" />
-			<a class="btn btn-info" asp-action="Index">Cancel</a>
-		</div>
-	</form>
-</div>
+<h1 class="text-center pb-4">Adding Publisher</h1>
+<form asp-area="Owners" asp-controller="Publisher" asp-action="Create" method="post">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<div class="form-group">
+		<label class="form-label font-weight-bold">Publisher Name</label>
+		<input asp-for="PublisherName" class="form-control" required />
+		<span asp-validation-for="PublisherName" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label class="form-label font-weight-bold">Publisher Phone</label>
+		<input asp-for="PublisherPhone" class="form-control" required />
+		<span asp-validation-for="PublisherPhone" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label class="form-label font-weight-bold">Publisher Mail</label>
+		<input asp-for="PublisherMail" class="form-control" required />
+		<span asp-validation-for="PublisherMail" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label class="form-label font-weight-bold">Publisher Address</label>
+		<input asp-for="PublisherAddress" class="form-control" required />
+		<span asp-validation-for="PublisherAddress" class="text-danger"></span>
+	</div>
+	<div class="form-group text-center">
+		<input type="submit" class="btn btn-info" asp-area="Owners" asp-controller="Publisher" asp-action="Create" value="Add new" />
+		<a class="btn btn-info" asp-action="Index">Cancel</a>
+	</div>
+</form>
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
 }
