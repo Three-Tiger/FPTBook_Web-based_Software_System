@@ -10,7 +10,7 @@ namespace Repositories
 	public interface IUserRepository
 	{
 		List<AppUser> GetMembers();
-		AppUser FindMemberById(string memberId);
+		AppUser FindAccountById(string memberId);
 		List<AppUser> GetOwners();
 	}
 }
