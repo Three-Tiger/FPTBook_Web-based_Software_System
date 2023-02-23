@@ -17,7 +17,7 @@ namespace FPTBookAPI.Controllers
 			return repository.DisplayBooksInShop();
 		}
 
-		// GET: api/<AuthorsController>/Shop
+		// GET: api/<AuthorsController>/Detail/5
 		[HttpGet("Detail/{id}")]
 		public ActionResult<Book> DisplayBooksDetail(int id)
 		{
@@ -25,21 +25,21 @@ namespace FPTBookAPI.Controllers
 		}
 
 		// GET: api/<AuthorsController>/Shop/Genre
-		[HttpGet("Shop/Genre")]
+		[HttpGet("Shop/Genres")]
 		public ActionResult<IEnumerable<Genre>> DisplayGenresInShop()
 		{
 			return repository.DisplayGenresInShop();
 		}
 
 		// GET: api/<AuthorsController>/Shop/Author
-		[HttpGet("Shop/Author")]
+		[HttpGet("Shop/Authors")]
 		public ActionResult<IEnumerable<Author>> DisplayAuthorsInShop()
 		{
 			return repository.DisplayAuthorsInShop();
 		}
 
 		// GET: api/<AuthorsController>/Shop/Publisher
-		[HttpGet("Shop/Publisher")]
+		[HttpGet("Shop/Publishers")]
 		public ActionResult<IEnumerable<Publisher>> DisplayPublishersInShop()
 		{
 			return repository.DisplayPublishersInShop();

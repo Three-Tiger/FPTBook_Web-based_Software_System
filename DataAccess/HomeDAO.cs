@@ -41,6 +41,7 @@ namespace DataAccess
 						.Include(g => g.Genre)
 						.Include(a => a.Author)
 						.Include(p => p.Publisher)
+						.Include(f => f.Feedbacks).ThenInclude(u => u.User)
 						.Where(x => x.IsDeleted == false)
 						.SingleOrDefault(c => c.BookId == bookID);
 				}

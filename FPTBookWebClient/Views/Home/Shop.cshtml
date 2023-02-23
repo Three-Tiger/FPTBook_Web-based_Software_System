@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<BusinessObjects.Book>
+@{
 	ViewData["Title"] = "Shop";
 }
 @section stylesheets {
@@ -22,25 +23,25 @@
 		<nav id="sidebarMenu" class="collapse d-md-block bg-white">
 			<input type="radio" name="accordion" id="cb1" />
 			<section class="box">
-				<label class="all-book"><a href="#" class="nav-link">All Book</a></label>
+				<label class="all-book"><a asp-controller="Home" asp-action="Shop" class="nav-link">All Book</a></label>
 			</section>
 			<input type="radio" name="accordion" id="cb2" />
 			<section class="box">
 				<label class="box-title" for="cb2">Genre</label>
 				<label class="box-close" for="acc-close"></label>
-				<div class="box-content"><a href="#" class="nav-link">Genre 1</a></div>
-				<div class="box-content"><a href="#" class="nav-link">Genre 2</a></div>
-				<div class="box-content"><a href="#" class="nav-link">Genre 3</a></div>
-				<div class="box-content"><a href="#" class="nav-link">Genre 4</a></div>
+				@foreach (var genre in ViewBag.Genre)
+				{
+				<div class="box-content"><a href="#" class="nav-link">@genre.GenreName</a></div>
+				}
 			</section>
 			<input type="radio" name="accordion" id="cb3" />
 			<section class="box">
 				<label class="box-title" for="cb3">Author</label>
 				<label class="box-close" for="acc-close"></label>
-				<div class="box-content"><a href="#" class="nav-link">Autor 1</a></div>
-				<div class="box-content"><a href="#" class="nav-link">Autor 2</a></div>
-				<div class="box-content"><a href="#" class="nav-link">Autor 3</a></div>
-				<div class="box-content"><a href="#" class="nav-link">Autor 4</a></div>
+				@foreach (var author in ViewBag.Author)
+				{
+					<div class="box-content"><a href="#" class="nav-link">@author.AuthorName</a></div>
+				}
 			</section>
 			<input type="radio" name="accordion" id="acc-close" />
 		</nav>
@@ -48,192 +49,55 @@
 	<div class="col-lg-10 col-md-9 col-12">
 		<div class="text-center">
 			<div class="row">
-				<div class="col-lg-4 col-md-12 mb-4">
-					<div class="card">
-						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-							 data-mdb-ripple-color="light">
-							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp"
+				@foreach (var book in Model)
+				{
+					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+						<div class="card">
+							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+								<img src="@book.BookImage"
 								 class="w-100" />
-							<a href="#!">
-								<div class="mask">
-									<div class="d-flex justify-content-start align-items-end h-100">
-										<h5><span class="badge bg-primary ms-2">New</span></h5>
+								<a href="#!">
+									<div class="mask">
+										<div class="d-flex justify-content-start align-items-end h-100">
+											<h5>
+												@if (DateTime.Compare(book.BookLastUpdated.AddDays(7), DateTime.Now) > 0)
+												{
+													<span class="badge bg-primary ms-2">New</span>
+												}
+												@if (book.SalePercent != 0)
+												{
+													<span class="badge bg-danger ms-2">-@book.SalePercent%</span>
+												}
+											</h5>
+										</div>
 									</div>
-								</div>
-								<div class="hover-overlay">
-									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+									<div class="hover-overlay">
+										<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+										</div>
 									</div>
-								</div>
-							</a>
-						</div>
-						<div class="card-body">
-							<a href="" class="text-reset">
-								<h5 class="card-title mb-3">Product name</h5>
-							</a>
-							<a href="" class="text-reset">
-								<p>Category</p>
-							</a>
-							<h6 class="mb-3">$61.99</h6>
+								</a>
+							</div>
+							<div class="card-body">
+								<a href="" class="text-reset">
+									<h5 class="card-title mb-3">@book.BookTitle</h5>
+								</a>
+								<a href="" class="text-reset">
+									<p>@book.Genre.GenreName</p>
+								</a>
+								<h6 class="mb-3">
+									@{
+										decimal PriceSale = book.BookPrice - (book.BookPrice * ((decimal)book.SalePercent / 100m));
+									}
+									@if (book.BookPrice != PriceSale)
+									{
+										<s>$@book.BookPrice.ToString("N2")</s>
+									}
+									<strong class="ms-2 text-danger">$@PriceSale.ToString("N2")</strong>
+								</h6>
+							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card">
-						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-							 data-mdb-ripple-color="light">
-							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
-								 class="w-100" />
-							<a href="#!">
-								<div class="mask">
-									<div class="d-flex justify-content-start align-items-end h-100">
-										<h5><span class="badge bg-success ms-2">Eco</span></h5>
-									</div>
-								</div>
-								<div class="hover-overlay">
-									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="card-body">
-							<a href="" class="text-reset">
-								<h5 class="card-title mb-3">Product name</h5>
-							</a>
-							<a href="" class="text-reset">
-								<p>Category</p>
-							</a>
-							<h6 class="mb-3">$61.99</h6>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card">
-						<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/shoes%20(3).webp"
-								 class="w-100" />
-							<a href="#!">
-								<div class="mask">
-									<div class="d-flex justify-content-start align-items-end h-100">
-										<h5><span class="badge bg-danger ms-2">-10%</span></h5>
-									</div>
-								</div>
-								<div class="hover-overlay">
-									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="card-body">
-							<a href="" class="text-reset">
-								<h5 class="card-title mb-3">Product name</h5>
-							</a>
-							<a href="" class="text-reset">
-								<p>Category</p>
-							</a>
-							<h6 class="mb-3">
-								<s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
-							</h6>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4 col-md-12 mb-4">
-					<div class="card">
-						<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(23).webp"
-								 class="w-100" />
-							<a href="#!">
-								<div class="mask">
-									<div class="d-flex justify-content-start align-items-end h-100">
-										<h5>
-											<span class="badge bg-success ms-2">Eco</span><span class="badge bg-danger ms-2">-10%</span>
-										</h5>
-									</div>
-								</div>
-								<div class="hover-overlay">
-									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="card-body">
-							<a href="" class="text-reset">
-								<h5 class="card-title mb-3">Product name</h5>
-							</a>
-							<a href="" class="text-reset">
-								<p>Category</p>
-							</a>
-							<h6 class="mb-3">
-								<s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
-							</h6>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card">
-						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-							 data-mdb-ripple-color="light">
-							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(17).webp"
-								 class="w-100" />
-							<a href="#!">
-								<div class="mask">
-									<div class="d-flex justify-content-start align-items-end h-100"></div>
-								</div>
-								<div class="hover-overlay">
-									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="card-body">
-							<a href="" class="text-reset">
-								<h5 class="card-title mb-3">Product name</h5>
-							</a>
-							<a href="" class="text-reset">
-								<p>Category</p>
-							</a>
-							<h6 class="mb-3">$61.99</h6>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card">
-						<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-							<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(30).webp"
-								 class="w-100" />
-							<a href="#!">
-								<div class="mask">
-									<div class="d-flex justify-content-start align-items-end h-100">
-										<h5>
-											<span class="badge bg-primary ms-2">New</span><span class="badge bg-success ms-2">Eco</span><span class="badge bg-danger ms-2">-10%</span>
-										</h5>
-									</div>
-								</div>
-								<div class="hover-overlay">
-									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="card-body">
-							<a href="" class="text-reset">
-								<h5 class="card-title mb-3">Product name</h5>
-							</a>
-							<a href="" class="text-reset">
-								<p>Category</p>
-							</a>
-							<h6 class="mb-3">
-								<s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
-							</h6>
-						</div>
-					</div>
-				</div>
+				}
 			</div>
 		</div>
 	</div>
