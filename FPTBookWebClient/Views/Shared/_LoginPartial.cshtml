@@ -8,12 +8,12 @@
 	@if (SignInManager.IsSignedIn(User))
 	{
 		<div class="nav navbar navbar-expand-md d-flex justify-content-center ms-lg-5 ms-xl-5">
-			<a class="text-dark" asp-controller="Cart" asp-action="Index">
+			<a class="text-dark p-0" asp-controller="Cart" asp-action="Index">
 				<i class="bi bi-cart-fill"></i>
 			</a>
-			<a class="text-dark mx-5" href="/notification"><i class="bi bi-bell-fill"></i></a>
-			<div class="dropdown">
-				<a class="dropdown-toggle d-flex align-items-center text-dark" href="#" id="navbarDropdownMenuAvatar" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<a class="text-dark mx-5 p-0" href="/notification"><i class="bi bi-bell-fill"></i></a>
+			<div class="dropdown p-0">
+				<a class="dropdown-toggle d-flex align-items-center text-dark p-0" href="#" id="navbarDropdownMenuAvatar" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="bi bi-person-circle" style="color: black;" loading="lazy"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">

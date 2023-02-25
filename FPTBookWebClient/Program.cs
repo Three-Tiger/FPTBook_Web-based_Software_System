@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using BusinessObjects;
 using FPTBookWebClient.Data;
 using FPTBookWebClient.Services;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
@@ -19,6 +20,16 @@ builder.Services.AddScoped<IFileService, FileService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+	options.IdleTimeout = TimeSpan.FromSeconds(300);
+	options.Cookie.HttpOnly = true;
+	options.Cookie.IsEssential = true;
+});
+
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
 
@@ -37,6 +48,8 @@ app.UseRouting();
 app.UseAuthentication(); ;
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapAreaControllerRoute(
 	name: "areas",

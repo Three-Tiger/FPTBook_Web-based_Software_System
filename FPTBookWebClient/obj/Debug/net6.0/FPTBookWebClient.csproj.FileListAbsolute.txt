@@ -357,3 +357,8 @@ D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_co
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\FPTBookWebClient.genruntimeconfig.cache
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\ref\FPTBookWebClient.dll
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Views\Cart\Index.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

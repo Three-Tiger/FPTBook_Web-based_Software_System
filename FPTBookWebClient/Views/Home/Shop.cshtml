@@ -5,7 +5,7 @@
 @section stylesheets {
 	<link href="~/css/shop.css" rel="stylesheet">
 }
-<section class="container-fluid row">
+<section class="container-fluid row my-3">
 	<nav class="accordion arrows col-lg-2 col-md-3 custom-dropdown">
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-md navbar-light bg-info rounded">
@@ -54,9 +54,8 @@
 					<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
 						<div class="card">
 							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-								<img src="@book.BookImage"
-								 class="w-100" />
-								<a href="#!">
+								<img src="@book.BookImage" class="w-100" />
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@book.BookId">
 									<div class="mask">
 										<div class="d-flex justify-content-start align-items-end h-100">
 											<h5>
@@ -78,10 +77,10 @@
 								</a>
 							</div>
 							<div class="card-body">
-								<a href="" class="text-reset">
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@book.BookId" class="text-reset">
 									<h5 class="card-title mb-3">@book.BookTitle</h5>
 								</a>
-								<a href="" class="text-reset">
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@book.BookId" class="text-reset">
 									<p>@book.Genre.GenreName</p>
 								</a>
 								<h6 class="mb-3">

@@ -17,7 +17,7 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					listGenres = context.Genres.Where(x => x.IsDeleted == false).ToList();
+					listGenres = context.Genres.Where(x => x.IsDeleted == false && x.Status == GenreApproval.Pending).ToList();
 				}
 			}
 			catch (Exception e)

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<BusinessObjects.CartItem>
+@{
 	ViewData["Title"] = "Cart";
 }
 @section stylesheets {
@@ -6,89 +7,195 @@
 }
 
 <div class="card my-5">
-	<div class="row">
-		<div class="col-md-8 cart">
-			<div class="title">
-				<div class="row">
-					<div class="col">
-						<h4><b>Shopping Cart</b></h4>
-					</div>
-					<div class="col align-self-center text-end text-muted">3 items</div>
-				</div>
-			</div>
-			<div class="row border-top border-bottom">
-				<div class="row main align-items-center">
-					<div class="col-2"><img class="img-fluid img-cart" src="~/img/book/2.jpg"></div>
-					<div class="col">
-						<div class="row text-muted">Shirt</div>
-						<div class="row">Cotton T-shirt</div>
-					</div>
-					<div class="col">
-						<a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-					</div>
-					<div class="col d-flex align-items-center">
-						<div>&euro; 44.00 </div>
-						<span class="close"><a href="#">&#10005;</a></span>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="row main align-items-center">
-					<div class="col-2"><img class="img-fluid img-cart" src="~/img/book/3.jpg"></div>
-					<div class="col">
-						<div class="row text-muted">Shirt</div>
-						<div class="row">Cotton T-shirt</div>
-					</div>
-					<div class="col">
-						<a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-					</div>
-					<div class="col d-flex align-items-center">
-						<div>&euro; 44.00 </div>
-						<span class="close"><a href="#">&#10005;</a></span>
-					</div>
-				</div>
-			</div>
-			<div class="row border-top border-bottom">
-				<div class="row main align-items-center">
-					<div class="col-2"><img class="img-fluid img-cart" src="~/img/book/2.jpg"></div>
-					<div class="col">
-						<div class="row text-muted">Shirt</div>
-						<div class="row">Cotton T-shirt</div>
-					</div>
-					<div class="col">
-						<a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-					</div>
-					<div class="col d-flex align-items-center">
-						<div>&euro; 44.00 </div>
-						<span class="close"><a href="#">&#10005;</a></span>
-					</div>
-				</div>
-			</div>
-			<div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+	@if (Model.Count == 0)
+	{
+		<div class="text-center">
+			<img src="~/img/empty-cart.gif" alt="" width="40%">
+			<div class="back-to-shop mb-5"><a asp-controller="Home" asp-action="Shop">&leftarrow; <span class="text-muted">Back to shop</span></a></div>
 		</div>
-		<div class="col-md-4 summary">
-			<div>
-				<h5><b>Summary</b></h5>
-			</div>
-			<hr>
-			<div class="row">
-				<div class="col" style="padding-left:0;">ITEMS 3</div>
-				<div class="col text-end">&euro; 132.00</div>
-			</div>
-			<form class="formCart">
-				<p>SHIPPING</p>
-				<select>
-					<option class="text-muted">Standard-Delivery- &euro;5.00</option>
-				</select>
-				<p>GIVE CODE</p>
-				<input id="code" class="input-cart" placeholder="Enter your code">
-			</form>
-			<div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-				<div class="col">TOTAL PRICE</div>
-				<div class="col text-end">&euro; 137.00</div>
-			</div>
-			<button class="btn-cart">CHECKOUT</button>
-		</div>
-	</div>
+	}
+	else
+	{
+		decimal total = 0;
+		int count = 0;
 
+		<div class="row">
+			<div class="col-md-8 cart">
+				<div class="title">
+					<div class="row">
+						<div class="col">
+							<h4><b>Shopping Cart</b></h4>
+						</div>
+						@*<div class="col align-self-center text-end text-muted">@count items</div>*@
+					</div>
+				</div>
+				<div class="border-top"></div>
+				@foreach (var cartItem in Model)
+				{
+					decimal PriceSale = cartItem.Book.BookPrice - (cartItem.Book.BookPrice * ((decimal)cartItem.Book.SalePercent / 100m));
+					var amount = cartItem.Quantity * PriceSale;
+					total += amount;
+					count++;
+
+					<div class="row border-bottom" id="cart_@cartItem.Book.BookId">
+						<div class="row main align-items-center">
+							<div class="col-2">
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@cartItem.Book.BookId">
+									<img class="img-fluid img-cart" src="@cartItem.Book.BookImage">
+								</a>
+							</div>
+							<div class="col-4">
+								<div class="row text-muted">@cartItem.Book.BookTitle</div>
+								<div class="row">@cartItem.Book.BookDescription</div>
+							</div>
+							<div class="col-4">
+								<div class="d-flex" style="cursor: pointer;">
+									<div class="qtyminus" data-updateId="@cartItem.Book.BookId"><i class="bi bi-dash-lg"></i></div>
+									<input class="border mx-3 text-center qty_@cartItem.Book.BookId" readonly style="width: 25%;" value="@cartItem.Quantity" />
+									<div class="qtyplus" data-stock="@cartItem.Book.BookStock" data-updateId="@cartItem.Book.BookId"><i class="bi bi-plus-lg"></i></div>
+								</div>
+							</div>
+							<div class="col-2 d-flex align-items-center">
+								<div>$@amount.ToString("N2")</div>
+								<span class="close">
+									<a style="cursor: pointer" class="removecartitem" data-bookId="@cartItem.Book.BookId">&#10005;</a>
+									@*<a href="/Cart/RemoveCart/@cartItem.Book.BookId">&#10005;</a>*@
+								</span>
+							</div>
+						</div>
+					</div>
+				}
+				<div class="back-to-shop"><a asp-controller="Home" asp-action="Shop">&leftarrow; <span class="text-muted">Back to shop</span></a></div>
+			</div>
+			<div class="col-md-4 summary">
+				<div>
+					<h5><b>Summary</b></h5>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col" style="padding-left:0;">ITEMS @count</div>
+					<input type="hidden" id="before-shipping" value="@total.ToString("N2")" />
+					<div class="col text-end">$@total.ToString("N2")</div>
+				</div>
+				<div class="formCart">
+					<p>SHIPPING</p>
+					<select name="shipping" id='shipping' onchange="Shipping(this)">
+						<option value="0.00" class="text-muted">Choose delivery method</option>
+						<option value="5.00" class="text-muted">Standard-Delivery-$5.00</option>
+						<option value="10.00" class="text-muted">Fast-Delivery-$10.00</option>
+					</select>
+					<p>GIVE CODE</p>
+					<input id="code" class="input-cart" placeholder="Enter your code">
+				</div>
+				<div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+					<div class="col">TOTAL PRICE</div>
+					<div class="col text-end" id="total"></div>
+				</div>
+				<button class="btn-cart">CHECKOUT</button>
+			</div>
+		</div>
+	}
 </div>
+@section Scripts {
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(".removecartitem").click(function (event) {
+				event.preventDefault();
+				var el = this;
+				var bookId = $(this).attr("data-bookId");
+				Swal.fire({
+					title: 'Are you sure you want to remove this product from your cart?',
+					text: "You won't be able to revert this!",
+					icon: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Yes, remove it!'
+				}).then((result) => {
+					if (result.isConfirmed) {
+						$.ajax({
+							type: "DELETE",
+							url: "/Cart/RemoveCart",
+							data: {
+								id: bookId
+							},
+							success: function (result) {
+								/*$(el).closest('#cart_' + bookId).css('background', '#D3D3D3')
+								$(el)
+									.closest('#cart_' + bookId)
+									.fadeOut(800, function () {
+										$('#cart_' + bookId).remove()
+									})*/
+								Swal.fire(
+									'Removed!',
+									'Your product has been removed.',
+									'success'
+								).then((result) => {
+									window.location.href = '/Cart';
+								})
+							}
+						});
+					}
+				})
+			})
+
+			$(".qtyminus").on("click", function () {
+				var updateId = $(this).attr("data-updateId");
+				var now = $(".qty_" + updateId).val();
+				if ($.isNumeric(now)) {
+					if (parseInt(now) - 1 > 0) { now--; }
+
+					$.ajax({
+						type: "PUT",
+						url: "/Cart/UpdateQuantity",
+						data: {
+							bookId: updateId,
+							quantity: now
+						},
+						success: function (result) {
+							window.location.href = '/Cart';
+						}
+					});
+				}
+			})
+
+			$(".qtyplus").on("click", function () {
+				var updateId = $(this).attr("data-updateId");
+				var now = $(".qty_" + updateId).val();
+				var stock = $(this).attr("data-stock");
+				if ($.isNumeric(now)) {
+					if (parseInt(now) + 1 <= parseInt(stock)) { now++; }
+
+					$.ajax({
+						type: "PUT",
+						url: "/Cart/UpdateQuantity",
+						data: {
+							bookId: updateId,
+							quantity: now
+						},
+						success: function (result) {
+							window.location.href = '/Cart';
+						}
+					});
+				}
+			});
+
+			$("#shipping").on("click", function () {
+				var total = document.getElementById("total")
+				var price = parseFloat(document.getElementById("before-shipping").value)
+				var value = parseFloat(this.value)
+				var sum = (price + value).toFixed(2);
+
+				if (value === 0.00) {
+					total.innerHTML = "Choose shipping method"
+				} else if (value === 5.00) {
+					total.innerHTML = "$" + sum
+				} else if (value === 10.00) {
+					total.innerHTML = "$" + sum
+				}
+			})
+		});
+	</script>
+}
