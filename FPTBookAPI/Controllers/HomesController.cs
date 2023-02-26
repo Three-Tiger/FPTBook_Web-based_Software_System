@@ -24,25 +24,39 @@ namespace FPTBookAPI.Controllers
 			return repository.DisplayBooksDetail(id);
 		}
 
-		// GET: api/<AuthorsController>/Shop/Genre
+		// GET: api/<AuthorsController>/Shop/Genres
 		[HttpGet("Shop/Genres")]
 		public ActionResult<IEnumerable<Genre>> DisplayGenresInShop()
 		{
 			return repository.DisplayGenresInShop();
 		}
 
-		// GET: api/<AuthorsController>/Shop/Author
+		// GET: api/<AuthorsController>/Shop/Authors
 		[HttpGet("Shop/Authors")]
 		public ActionResult<IEnumerable<Author>> DisplayAuthorsInShop()
 		{
 			return repository.DisplayAuthorsInShop();
 		}
 
-		// GET: api/<AuthorsController>/Shop/Publisher
+		// GET: api/<AuthorsController>/Shop/Publishers
 		[HttpGet("Shop/Publishers")]
 		public ActionResult<IEnumerable<Publisher>> DisplayPublishersInShop()
 		{
 			return repository.DisplayPublishersInShop();
+		}
+
+		// GET: api/<AuthorsController>/Shop/5
+		[HttpGet("Shop/Genre/{genreId}")]
+		public ActionResult<IEnumerable<Book>> DisplayBooksInShopByGenre(int genreId)
+		{
+			return repository.DisplayBooksInShopByGenre(genreId);
+		}
+
+		// GET: api/<AuthorsController>/Shop/5
+		[HttpGet("Shop/Author/{authorId}")]
+		public ActionResult<IEnumerable<Book>> DisplayBooksInShopByAuthor(int authorId)
+		{
+			return repository.DisplayBooksInShopByAuthor(authorId);
 		}
 	}
 }

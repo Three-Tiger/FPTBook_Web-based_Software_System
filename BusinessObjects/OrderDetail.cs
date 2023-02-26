@@ -20,8 +20,8 @@ namespace BusinessObjects
 		public decimal TotalPrice { get; set; }
 
 		[ForeignKey("OrderId")]
-		public virtual Order Order { get; set; }
+		public virtual Order? Order { get; set; }
 		[ForeignKey("BookId")]
-		public virtual Book Book { get; set; }
+		public virtual Book? Book { get; set; }
 	}
 }

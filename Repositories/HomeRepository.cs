@@ -15,5 +15,7 @@ namespace Repositories
 		public List<Genre> DisplayGenresInShop() => HomeDAO.DisplayGenresInShop();
 		public List<Author> DisplayAuthorsInShop() => HomeDAO.DisplayAuthorsInShop();
 		public List<Publisher> DisplayPublishersInShop() => HomeDAO.DisplayPublishersInShop();
+		public List<Book> DisplayBooksInShopByGenre(int genreId) => HomeDAO.DisplayBooksInShopByGenre(genreId);
+		public List<Book> DisplayBooksInShopByAuthor(int authorId) => HomeDAO.DisplayBooksInShopByAuthor(authorId);
 	}
 }

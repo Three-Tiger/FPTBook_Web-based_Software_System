@@ -14,5 +14,7 @@ namespace Repositories
 		List<Genre> DisplayGenresInShop();
 		List<Author> DisplayAuthorsInShop();
 		List<Publisher> DisplayPublishersInShop();
+		List<Book> DisplayBooksInShopByGenre(int genreId);
+		List<Book> DisplayBooksInShopByAuthor(int authorId);
 	}
 }

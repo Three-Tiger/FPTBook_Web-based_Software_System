@@ -66,5 +66,51 @@ namespace FPTBookWebClient.Controllers
 		{
 			return View();
 		}
+
+		[Route("/Home/Shop/Genre/{genreId:int}", Name = "displaybookbygenre")]
+		public async Task<IActionResult> Genre(int genreId)
+		{
+			HttpResponseMessage httpResponse = await client.GetAsync(api + "/Shop/Genres");
+			string data = await httpResponse.Content.ReadAsStringAsync();
+			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
+			ViewData["Genre"] = genres;
+
+			HttpResponseMessage httpResponse1 = await client.GetAsync(api + "/Shop/Authors");
+			string data1 = await httpResponse1.Content.ReadAsStringAsync();
+			var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
+			ViewData["Author"] = authors;
+
+			HttpResponseMessage httpResponse3 = await client.GetAsync(api + "/Shop/Genre/" + genreId);
+			string data3 = await httpResponse3.Content.ReadAsStringAsync();
+			var options3 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Book> books = JsonSerializer.Deserialize<List<Book>>(data3, options3);
+
+			return View("Shop", books);
+		}
+
+		[Route("/Home/Shop/Author/{authorId:int}", Name = "displaybookbyauthor")]
+		public async Task<IActionResult> Author(int authorId)
+		{
+			HttpResponseMessage httpResponse = await client.GetAsync(api + "/Shop/Genres");
+			string data = await httpResponse.Content.ReadAsStringAsync();
+			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
+			ViewData["Genre"] = genres;
+
+			HttpResponseMessage httpResponse1 = await client.GetAsync(api + "/Shop/Authors");
+			string data1 = await httpResponse1.Content.ReadAsStringAsync();
+			var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
+			ViewData["Author"] = authors;
+
+			HttpResponseMessage httpResponse3 = await client.GetAsync(api + "/Shop/Author/" + authorId);
+			string data3 = await httpResponse3.Content.ReadAsStringAsync();
+			var options3 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Book> books = JsonSerializer.Deserialize<List<Book>>(data3, options3);
+
+			return View("Shop", books);
+		}
 	}
 }

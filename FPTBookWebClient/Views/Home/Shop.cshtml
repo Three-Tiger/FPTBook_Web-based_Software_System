@@ -31,7 +31,9 @@
 				<label class="box-close" for="acc-close"></label>
 				@foreach (var genre in ViewBag.Genre)
 				{
-				<div class="box-content"><a href="#" class="nav-link">@genre.GenreName</a></div>
+					<div class="box-content">
+						<a asp-route="displaybookbygenre" asp-route-genreId="@genre.GenreId" class="nav-link">@genre.GenreName</a>
+					</div>
 				}
 			</section>
 			<input type="radio" name="accordion" id="cb3" />
@@ -40,7 +42,9 @@
 				<label class="box-close" for="acc-close"></label>
 				@foreach (var author in ViewBag.Author)
 				{
-					<div class="box-content"><a href="#" class="nav-link">@author.AuthorName</a></div>
+					<div class="box-content">
+						<a asp-route="displaybookbyauthor" asp-route-authorId="@author.AuthorId" class="nav-link">@author.AuthorName</a>
+					</div>
 				}
 			</section>
 			<input type="radio" name="accordion" id="acc-close" />

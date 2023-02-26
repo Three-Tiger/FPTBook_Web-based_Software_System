@@ -1,0 +1,95 @@
+﻿@model CheckOut
+@{
+	ViewData["Title"] = "Payment";
+}
+@section stylesheets {
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="~/css/payment.css">
+}
+
+<div class="card border-0">
+	<div class="card-body">
+		<div class="d-flex justify-content-around my-3">
+			<span><i class="fa fa-check-circle-o"></i> Shopping cart</span>
+			<span><i class="fa fa-check-circle-o"></i> Order details</span>
+			<span id="payment"><span id="three">3</span>Payment</span>
+		</div>
+		<form asp-controller="Cart" asp-action="Payment" class="row" method="post">
+			<div class="col-md-7">
+				<div class="left border" style="border-radius: 10px;">
+					<div class="row">
+						<span class="header px-0">Payment</span>
+					</div>
+					<div class="cus-infor">
+						<span>First name:</span>
+						<input class="input-payment" asp-for="@Model.User.FirstName">
+						<span>Last name:</span>
+						<input class="input-payment" asp-for="@Model.User.LastName">
+						<span>Telephone:</span>
+						<input class="input-payment" asp-for="@Model.User.PhoneNumber">
+						<span>Address:</span>
+						<input class="input-payment" asp-for="@Model.User.Address">
+					</div>
+				</div>
+				<div class="mt-5">
+					<a><i class="fa fa-arrow-left"></i> Back to cart</a>
+				</div>
+			</div>
+			@{
+				decimal total = 0;
+				int count = 0;
+			}
+			<div class="col-md-5">
+				<div class="right border" style="border-radius: 10px;">
+					<div class="header mb-4">Order Summary</div>
+					@foreach (var cartItem in Model.CartItem)
+					{
+						decimal PriceSale = cartItem.Book.BookPrice - (cartItem.Book.BookPrice * ((decimal)cartItem.Book.SalePercent / 100m));
+						var amount = cartItem.Quantity * PriceSale;
+						total += amount;
+						count++;
+
+						<div class="row item">
+							<div class="col-4 align-self-center text-center">
+								<img class="img-fluid" src="@cartItem.Book.BookImage" width="100">
+							</div>
+							<div class="col-8">
+								<div class="fw-bold">
+									$@PriceSale.ToString("N2")
+									@if (PriceSale != cartItem.Book.BookPrice)
+									{
+										<small class="text-muted ms-3"><del class="text-danger">$@cartItem.Book.BookPrice</del></small>
+									}
+								</div>
+								<div class="row text-muted">Be Legandary Lipstick-Nude rose</div>
+								<div class="row">Quantity: @cartItem.Quantity</div>
+								<div class="row fw-bold mt-2">$@amount.ToString("N2")</div>
+							</div>
+						</div>
+					}
+					<hr>
+					<div class="row lower">
+						<div class="col text-left">Item</div>
+						<div class="col text-right">@count</div>
+					</div>
+					<div class="row lower">
+						<div class="col text-left">Subtotal</div>
+						<div class="col text-right">$@total.ToString("N2")</div>
+					</div>
+					<div class="row lower">
+						<div class="col text-left">Delivery</div>
+						<div class="col text-right">$@Model.Shipping</div>
+					</div>
+					<div class="row lower">
+						<div class="col text-left"><b>Total to pay</b></div>
+						@{
+							decimal all = total + Model.Shipping;
+						}
+						<div class="col text-right"><b>$@all.ToString("N2")</b></div>
+					</div>
+					<button class="btn-payment" type="submit">Place order</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

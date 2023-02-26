@@ -1,23 +1,28 @@
 ﻿using BusinessObjects;
+using FPTBookWebClient.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Globalization;
 using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace FPTBookWebClient.Controllers
 {
 	[Authorize]
 	public class CartController : Controller
 	{
-		private readonly HttpClient client = null;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly HttpClient client = null;
 		private string api;
 
 		// Cart's json string key
 		public const string CARTKEY = "cart";
 
-		public CartController()
+		public CartController(UserManager<AppUser> userManager)
 		{
+			_userManager = userManager;
 			client = new HttpClient();
 			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
 			client.DefaultRequestHeaders.Accept.Add(contentType);
@@ -117,6 +122,32 @@ namespace FPTBookWebClient.Controllers
 			SaveCartSession(cart);
 			//return Ok();
 			return RedirectToAction("Index");
+		}
+
+		[HttpPost]
+        public async Task<IActionResult> CheckOut(decimal shipping)
+        {
+            var userId = _userManager.GetUserId(User);
+			string apiGetUser = "https://localhost:7076/api/Users/Account/" + userId;
+            HttpResponseMessage reponse = await client.GetAsync(apiGetUser);
+            if (reponse.IsSuccessStatusCode)
+            {
+				CheckOut checkOut = new CheckOut();
+				var data = reponse.Content.ReadAsStringAsync().Result;
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var obj = System.Text.Json.JsonSerializer.Deserialize<AppUser>(data, options);
+				checkOut.Shipping = shipping;
+				checkOut.User = obj;
+				checkOut.CartItem = GetCartItems();
+				return View(checkOut);
+            }
+            return NotFound();
+        }
+
+		[HttpPost]
+		public IActionResult Payment(CheckOut checkOut)
+		{
+			return Ok();
 		}
 	}
 }

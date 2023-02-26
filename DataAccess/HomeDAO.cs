@@ -103,5 +103,41 @@ namespace DataAccess
 			}
 			return listPublishers;
 		}
+
+		public static List<Book> DisplayBooksInShopByGenre(int genreId)
+		{
+			var listBooksByGenre = new List<Book>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					//listBooks = context.Books.Where(x => x.IsDeleted == false).Include(t => t.GenreId).ToList();
+					listBooksByGenre = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false && x.GenreId == genreId).ToList();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return listBooksByGenre;
+		}
+
+		public static List<Book> DisplayBooksInShopByAuthor(int authorId)
+		{
+			var listBooksByAuthor = new List<Book>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					//listBooks = context.Books.Where(x => x.IsDeleted == false).Include(t => t.GenreId).ToList();
+					listBooksByAuthor = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false && x.AuthorId == authorId).ToList();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return listBooksByAuthor;
+		}
 	}
 }
