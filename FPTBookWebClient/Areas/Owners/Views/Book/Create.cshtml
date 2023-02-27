@@ -3,7 +3,7 @@
 	ViewData["Title"] = "Adding Book";
 }
 <h1 class="text-center pb-4">Adding Book</h1>
-<form id="frmCreateBook" method="post" enctype="multipart/form-data">
+<form id="frmCreateBook" name="frmAddproduct" method="post" enctype="multipart/form-data">
 	<div class="form-group">
 		<label asp-for="BookTitle" class="form-label font-weight-bold"></label>
 		<input asp-for="BookTitle" class="form-control" required />
@@ -60,7 +60,7 @@
 	<input type="hidden" asp-for="BookImage" value="BookImage" />
 	<div class="form-group">
 		<label asp-for="ImageFile" class="form-label font-weight-bold"></label>
-		<input asp-for="ImageFile" class="form-control" required />
+		<input asp-for="ImageFile" id="file" class="form-control" required />
 		<span asp-validation-for="ImageFile" class="text-danger"></span>
 	</div>
 	<div class="form-group text-center">
@@ -73,19 +73,22 @@
 <script>
 	$('#frmCreateBook').submit(function (e) {
 		e.preventDefault();
-		$.ajax({
-			url: "https://localhost:7076/api/Books",
-			type: "post",
-			data: new FormData(this),
-			processData: false,
-			contentType: false,
-			success: function (result, status, xhr) {
-				window.location.href = '/Owners/Book';
-			},
-			error: function (xhr, status, error) {
-				console.log(xhr);
-			}
-		});
+		var files = $('#file')[0].files;
+		if (files.length > 0) {
+			$.ajax({
+				url: "https://localhost:7076/api/Books",
+				type: "post",
+				data: new FormData(this),
+				processData: false,
+				contentType: false,
+				success: function (result, status, xhr) {
+					window.location.href = '/Owners/Book';
+				},
+				error: function (xhr, status, error) {
+					console.log(xhr);
+				}
+			});
+		}
 	});
 </script>
 @section Scripts {
