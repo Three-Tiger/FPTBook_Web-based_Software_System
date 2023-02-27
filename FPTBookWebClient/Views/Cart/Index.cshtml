@@ -72,30 +72,33 @@
 					<h5><b>Summary</b></h5>
 				</div>
 				<hr>
-				<div class="row">
-					<div class="col" style="padding-left:0;">ITEMS @count</div>
-					<input type="hidden" id="before-shipping" value="@total.ToString("N2")" />
-					<div class="col text-end">$@total.ToString("N2")</div>
-				</div>
-				<div class="formCart">
-					<p>SHIPPING</p>
-					<select name="shipping" id='shipping' onchange="Shipping(this)">
-						<option value="0.00" class="text-muted">Choose delivery method</option>
-						<option value="5.00" class="text-muted">Standard-Delivery-$5.00</option>
-						<option value="10.00" class="text-muted">Fast-Delivery-$10.00</option>
-					</select>
-					<p>GIVE CODE</p>
-					<input id="code" class="input-cart" placeholder="Enter your code">
-				</div>
-				<div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-					<div class="col">TOTAL PRICE</div>
-					<div class="col text-end" id="total"></div>
-				</div>
-				<button class="btn-cart">CHECKOUT</button>
+				<form asp-controller="Cart" asp-action="CheckOut" method="post" name="frmCheckOut" onsubmit="return CheckShipping()">
+					<div class="row">
+						<div class="col" style="padding-left:0;">ITEMS @count</div>
+						<input type="hidden" id="before-shipping" value="@total.ToString("N2")" />
+						<div class="col text-end">$@total.ToString("N2")</div>
+					</div>
+					<div class="formCart">
+						<p>SHIPPING</p>
+						<select name="shipping" id='shipping'>
+							<option value="0.00" class="text-muted">Choose delivery method</option>
+							<option value="5.00" class="text-muted">Standard-Delivery-$5.00</option>
+							<option value="10.00" class="text-muted">Fast-Delivery-$10.00</option>
+						</select>
+						<p>GIVE CODE</p>
+						<input id="code" name="code" class="input-cart" placeholder="Enter your code">
+					</div>
+					<div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+						<div class="col">TOTAL PRICE</div>
+						<div class="col text-end" id="total"></div>
+					</div>
+					<button type="submit" class="btn-cart">CHECKOUT</button>
+				</form>
 			</div>
 		</div>
 	}
 </div>
+
 @section Scripts {
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
@@ -122,12 +125,6 @@
 								id: bookId
 							},
 							success: function (result) {
-								/*$(el).closest('#cart_' + bookId).css('background', '#D3D3D3')
-								$(el)
-									.closest('#cart_' + bookId)
-									.fadeOut(800, function () {
-										$('#cart_' + bookId).remove()
-									})*/
 								Swal.fire(
 									'Removed!',
 									'Your product has been removed.',
@@ -197,5 +194,18 @@
 				}
 			})
 		});
+
+		function CheckShipping() {
+			f = document.frmCheckOut;
+			if (f.shipping.value == 0.00) {
+				Swal.fire(
+					'Shipping Fee',
+					'Please choose shipping fee',
+					'warning'
+				)
+				return false;
+			}
+			return true;
+		}
 	</script>
 }

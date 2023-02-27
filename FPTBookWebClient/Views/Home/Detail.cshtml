@@ -25,7 +25,7 @@
 						<div class="product-name">@Model.BookTitle</div>
 						<div class="product-price-discount">
 							<span>$@PriceSale.ToString("N2")</span>
-							@if (@Model.BookPrice != PriceSale)
+							@if (Model.BookPrice != PriceSale)
 							{
 								<span class="line-through">$@Model.BookPrice.ToString("N2")</span>
 							}
@@ -34,12 +34,21 @@
 					<p>
 						@Model.BookDescription
 					</p>
-					<div>
-						Stock: <span id="stock">@Model.BookStock</span>
-					</div>
+					@if (Model.BookStock == 0)
+					{
+						<div>
+							Out of Stock
+						</div>
+					}
+					else
+					{
+						<div>
+							Stock: <span id="stock">@Model.BookStock</span>
+						</div>
+					}
 					<div class="product-count">
 						<label for="size" class="mb-2">Quantity</label>
-						<form asp-controller="Cart" asp-action="AddToCart" asp-route-bookId="@Model.BookId" method="post">
+						<form asp-controller="Cart" asp-action="AddToCart" asp-route-bookId="@Model.BookId" method="post" onsubmit="return CheckStock(@Model.BookStock)">
 							<div class="d-flex">
 								<div class="qtyminus">-</div>
 								<input type="text" readonly name="quantity" value="1" class="qty" />
@@ -157,7 +166,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
 		$(document).ready(function () {
 			$(".qtyminus").on("click", function () {
@@ -167,6 +176,7 @@
 					$(".qty").val(now);
 				}
 			})
+
 			$(".qtyplus").on("click", function () {
 				var now = $(".qty").val();
 				var stock = document.getElementById('stock').innerHTML;
@@ -176,5 +186,17 @@
 				}
 			});
 		});
+
+		function CheckStock(stock) {
+			if (parseInt(stock) === 0) {
+				Swal.fire(
+					'Out of Stock',
+					'Out of stock, please choose another product',
+					'warning'
+				)
+				return false;
+			}
+			return true;
+		}
 	</script>
 }

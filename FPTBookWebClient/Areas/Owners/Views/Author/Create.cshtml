@@ -5,22 +5,22 @@
 <h1 class="text-center pb-4">Adding Author</h1>
 <form asp-area="Owners" asp-controller="Author" asp-action="Create" method="post">
 	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-	<div class="form-group">
-		<label class="form-label font-weight-bold">Author Name</label>
+	<div class="form-outline mb-4">
+		<label class="form-label fw-bold">Author Name</label>
 		<input asp-for="AuthorName" class="form-control" />
 		<span asp-validation-for="AuthorName" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label class="form-label font-weight-bold">Author Phone</label>
+	<div class="form-outline mb-4">
+		<label class="form-label fw-bold">Author Phone</label>
 		<input asp-for="AuthorPhone" class="form-control" />
 		<span asp-validation-for="AuthorPhone" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label class="form-label font-weight-bold">Author Mail</label>
+	<div class="form-outline mb-4">
+		<label class="form-label fw-bold">Author Mail</label>
 		<input asp-for="AuthorMail" class="form-control" />
 		<span asp-validation-for="AuthorMail" class="text-danger"></span>
 	</div>
-	<div class="form-group text-center">
+	<div class="form-outline text-center">
 		<input type="submit" class="btn btn-info" value="Add new" />
 		<a class="btn btn-info" asp-action="Index">Cancel</a>
 	</div>

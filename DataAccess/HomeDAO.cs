@@ -12,6 +12,58 @@ namespace DataAccess
 {
 	public class HomeDAO
 	{
+		public static List<Book> BestSelling()
+		{
+			var listBooks = new List<Book>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					/*var query = (from od in context.OrderDetails
+								 group od.Quantity by od.Book.BookId into b
+								 orderby b.Sum() descending
+								 select b.Key).Take(4);
+
+					listBooks = query.ToList();*/
+					var lstBookId = context.OrderDetails.Where(od => od.Book.IsDeleted == false).GroupBy(od => od.BookId)
+						.OrderByDescending(d => d.Sum(f => f.Quantity))
+						.Select(b => b.Key)
+						.Take(4).ToList();
+
+					foreach (var item in lstBookId)
+					{
+						Book obj = context.Books.Find(item);
+						listBooks.Add(obj);
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return listBooks;
+		}
+		public static List<Book> Gallery()
+		{
+			var listBooks = new List<Book>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					listBooks = context.Books.Where(b => b.IsDeleted == false).OrderByDescending(b => b.BookCreated).Select(b => new Book
+					{
+						BookTitle = b.BookTitle,
+						BookImage = b.BookImage
+					}).Take(12).ToList();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return listBooks;
+		}
+
 		public static List<Book> DisplayBooksInShop()
 		{
 			var listBooks = new List<Book>();
@@ -20,7 +72,16 @@ namespace DataAccess
 				using (var context = new ApplicationDbContext())
 				{
 					//listBooks = context.Books.Where(x => x.IsDeleted == false).Include(t => t.GenreId).ToList();
-					listBooks = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false).ToList();
+					listBooks = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false).Select(b => new Book
+					{
+						BookId = b.BookId,
+						BookTitle = b.BookTitle,
+						BookPrice = b.BookPrice,
+						BookOriginalPrice = b.BookOriginalPrice,
+						SalePercent = b.SalePercent,
+						BookImage = b.BookImage,
+						Genre = b.Genre,
+					}).ToList();
 				}
 			}
 			catch (Exception e)
@@ -102,6 +163,42 @@ namespace DataAccess
 				throw new Exception(e.Message);
 			}
 			return listPublishers;
+		}
+
+		public static List<Book> DisplayBooksInShopByGenre(int genreId)
+		{
+			var listBooksByGenre = new List<Book>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					//listBooks = context.Books.Where(x => x.IsDeleted == false).Include(t => t.GenreId).ToList();
+					listBooksByGenre = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false && x.GenreId == genreId).ToList();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return listBooksByGenre;
+		}
+
+		public static List<Book> DisplayBooksInShopByAuthor(int authorId)
+		{
+			var listBooksByAuthor = new List<Book>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					//listBooks = context.Books.Where(x => x.IsDeleted == false).Include(t => t.GenreId).ToList();
+					listBooksByAuthor = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false && x.AuthorId == authorId).ToList();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return listBooksByAuthor;
 		}
 	}
 }
