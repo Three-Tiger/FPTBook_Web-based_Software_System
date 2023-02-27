@@ -18,7 +18,19 @@ namespace DataAccess
 				using (var context = new ApplicationDbContext())
 				{
 					//listBooks = context.Books.Where(x => x.IsDeleted == false).ToList();
-					listBooks = context.Books.Include(b => b.Genre).Include(b => b.Author).Include(b => b.Publisher).Where(b => b.IsDeleted == false).ToList();
+					listBooks = context.Books.Include(b => b.Genre).Include(b => b.Author).Include(b => b.Publisher).Where(b => b.IsDeleted == false).Select(b => new Book
+					{
+						BookId= b.BookId,
+						BookTitle = b.BookTitle,
+						BookPrice = b.BookPrice,
+						BookOriginalPrice = b.BookOriginalPrice,
+						SalePercent = b.SalePercent,
+						BookStock = b.BookStock,
+						BookImage = b.BookImage,
+						Genre = b.Genre,
+						Author = b.Author,
+						Publisher = b.Publisher,
+					}).ToList();
 				}
 			}
 			catch (Exception e)

@@ -38,9 +38,10 @@
 				</th>
 			</tr>
 		</thead>
-		@foreach (var item in Model)
-		{
-			<tbody>
+		<tbody>
+			@foreach (var item in Model)
+			{
+
 				<tr>
 					<td>@item.PublisherId</td>
 					<td>@item.PublisherName</td>
@@ -48,13 +49,14 @@
 					<td>@item.PublisherMail</td>
 					<td>@item.PublisherAddress</td>
 					<td>
-                        <a asp-area="Owners" asp-controller="Publisher" asp-action="Update" asp-route-id="@item.PublisherId"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                    </td>
-                    <td>
-                        <a asp-action="Delete" asp-route-id="@item.PublisherId" onclick="return confirm('Are you sure you want to delete this?')"><i class="bi bi-trash-fill" style="color: red;"></i></a>
-                    </td>
+						<a asp-area="Owners" asp-controller="Publisher" asp-action="Update" asp-route-id="@item.PublisherId"><i class="bi bi-pen-fill" style="color: black;"></i></a>
+					</td>
+					<td>
+						<a asp-action="Delete" asp-route-id="@item.PublisherId" onclick="return confirm('Are you sure you want to delete this?')"><i class="bi bi-trash-fill" style="color: red;"></i></a>
+					</td>
 				</tr>
-			</tbody>
-		}
+
+			}
+		</tbody>
 	</table>
 </div>

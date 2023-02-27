@@ -1,56 +1,58 @@
 ﻿@model IEnumerable<BusinessObjects.Author>
 @{
-    ViewData["Title"] = "Authors List";
+	ViewData["Title"] = "Authors List";
 }
 <div class="pt-2 mb-2">
-    <h1 class="text-center">Authors List</h1>
-    <div class="text-center mb-2 row">
-        <div class="col-12 d-flex justify-content-center align-items-center">
-            <a asp-area="Owners" asp-controller="Author" asp-action="Create" class="btn btn-outline-info">
+	<h1 class="text-center">Authors List</h1>
+	<div class="text-center mb-2 row">
+		<div class="col-12 d-flex justify-content-center align-items-center">
+			<a asp-area="Owners" asp-controller="Author" asp-action="Create" class="btn btn-outline-info">
 				<i class="bi bi-plus-circle"></i>
 				Add
 			</a>
-        </div>
-    </div>
-    <table id="example" class="table table-striped" style="width:100%">
-        <thead>
-            <tr class="text-center">
-                <th>
-                    <strong>ID</strong>
-                </th>
-                <th>
-                    <strong>Author Name</strong>
-                </th>
-                <th>
-                    <strong>Author Phone</strong>
-                </th>
-                <th>
-                    <strong>Author Mail</strong>
-                </th>
-                <th>
-                    <strong>Edit</strong>
-                </th>
-                <th>
-                    <strong>Delete</strong>
-                </th>
-            </tr>
-        </thead>
-        @foreach (var item in Model)
-        {
-            <tbody>
+		</div>
+	</div>
+	<table id="example" class="table table-striped" style="width:100%">
+		<thead>
+			<tr class="text-center">
+				<th>
+					<strong>ID</strong>
+				</th>
+				<th>
+					<strong>Author Name</strong>
+				</th>
+				<th>
+					<strong>Author Phone</strong>
+				</th>
+				<th>
+					<strong>Author Mail</strong>
+				</th>
+				<th>
+					<strong>Edit</strong>
+				</th>
+				<th>
+					<strong>Delete</strong>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+
 				<tr>
 					<td>@item.AuthorId</td>
 					<td>@item.AuthorName</td>
 					<td>@item.AuthorPhone</td>
 					<td>@item.AuthorMail</td>
 					<td>
-                        <a asp-area="Owners" asp-controller="Author" asp-action="Update" asp-route-id="@item.AuthorId"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                    </td>
-                    <td>
-                        <a asp-action="Delete" asp-route-id="@item.AuthorId" onclick="return confirm('Are you sure you want to delete this?')"><i class="bi bi-trash-fill" style="color: red;"></i></a>
-                    </td>
+						<a asp-area="Owners" asp-controller="Author" asp-action="Update" asp-route-id="@item.AuthorId"><i class="bi bi-pen-fill" style="color: black;"></i></a>
+					</td>
+					<td>
+						<a asp-action="Delete" asp-route-id="@item.AuthorId" onclick="return confirm('Are you sure you want to delete this?')"><i class="bi bi-trash-fill" style="color: red;"></i></a>
+					</td>
 				</tr>
-			</tbody>
-        }
-    </table>
+
+			}
+		</tbody>
+	</table>
 </div>

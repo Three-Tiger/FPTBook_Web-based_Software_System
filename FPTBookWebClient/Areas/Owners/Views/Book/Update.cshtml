@@ -4,68 +4,71 @@
 }
 <h1 class="text-center pb-4">Updating Book</h1>
 <form id="frmUpdateBook" method="post" enctype="multipart/form-data">
-	<div class="form-group">
-		<label asp-for="BookTitle" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="BookTitle" class="form-label fw-bold"></label>
 		<input asp-for="BookTitle" class="form-control" required />
 		<span asp-validation-for="BookTitle" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="BookDescription" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="BookDescription" class="form-label fw-bold"></label>
 		<input asp-for="BookDescription" class="form-control" required />
 		<span asp-validation-for="BookDescription" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="BookDetail" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="BookDetail" class="form-label fw-bold"></label>
 		<textarea asp-for="BookDetail" class="form-control" required></textarea>
 		<span asp-validation-for="BookDetail" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="GenreId" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="GenreId" class="form-label fw-bold"></label>
 		<select asp-for="GenreId" class="form-control" asp-items="ViewBag.GenreId" required>
 			<option value="">Select Genre</option>
 		</select>
+		<span asp-validation-for="GenreId" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="AuthorId" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="AuthorId" class="form-label fw-bold"></label>
 		<select asp-for="AuthorId" class="form-control" asp-items="ViewBag.AuthorId" required>
 			<option value="">Select Author</option>
 		</select>
+		<span asp-validation-for="AuthorId" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="PublisherId" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="PublisherId" class="form-label fw-bold"></label>
 		<select asp-for="PublisherId" class="form-control" asp-items="ViewBag.PublisherId" required>
 			<option value="">Select Publisher</option>
 		</select>
+		<span asp-validation-for="PublisherId" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="BookPrice" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="BookPrice" class="form-label fw-bold"></label>
 		<input asp-for="BookPrice" class="form-control" required />
 		<span asp-validation-for="BookPrice" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="BookOriginalPrice" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="BookOriginalPrice" class="form-label fw-bold"></label>
 		<input asp-for="BookOriginalPrice" class="form-control" required />
 		<span asp-validation-for="BookOriginalPrice" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="SalePercent" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="SalePercent" class="form-label fw-bold"></label>
 		<input asp-for="SalePercent" class="form-control" required />
 		<span asp-validation-for="SalePercent" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label asp-for="BookStock" class="form-label font-weight-bold"></label>
+	<div class="form-outline mb-4">
+		<label asp-for="BookStock" class="form-label fw-bold"></label>
 		<input asp-for="BookStock" class="form-control" required />
 		<span asp-validation-for="BookStock" class="text-danger"></span>
 	</div>
 	<input type="hidden" asp-for="BookImage" value="BookImage" />
-	<div class="form-group">
-		<label asp-for="ImageFile" class="form-label font-weight-bold"></label>
-		<input asp-for="ImageFile" class="form-control" />
+	<div class="form-outline mb-4">
+		<label asp-for="ImageFile" class="form-label fw-bold"></label>
+		<input asp-for="ImageFile" class="form-control" required />
 		<span asp-validation-for="ImageFile" class="text-danger"></span>
 	</div>
-	<div class="form-group text-center">
+	<div class="form-outline text-center">
 		@*<input type="submit" class="btn btn-info" value="Add new" />*@
-		<input type="submit" class="btn btn-info" value="Update" />
+		<input type="submit" class="btn btn-info" value="Add new" />
 		<a class="btn btn-info" asp-action="Index">Cancel</a>
 	</div>
 </form>
