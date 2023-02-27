@@ -25,17 +25,18 @@
 					</button>
 
 					<!-- Brand -->
-					<a class="nav-link px-0 text-info" href="/manage">
-						<h3 class="fw-bold">Owner</h3>
+					
+					<a class="nav-link px-0 text-info" asp-area="Admins" asp-controller="Approve" asp-action="Index">
+						<h3 class="fw-bold">Admin</h3>
 					</a>
 				</nav>
 				<!-- Navbar -->
 				<nav id="sidebarMenu" class="collapse d-md-block bg-white">
 					<div class="position-sticky">
 						<div class="list-group list-group-flush">
+							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Admins" asp-controller="Approve" asp-action="Index">Approve management</a>
 							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Admins" asp-controller="Owner" asp-action="Index">Store owner management</a>
 							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Admins" asp-controller="Member" asp-action="Index">Member management</a>
-							<a class="list-group-item list-group-item-action py-4 bg-info text-light" asp-area="Admins" asp-controller="Approve" asp-action="Index">Approve management</a>
 							<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" onsubmit="return confirm('Are you sure to log out?')">
 								<button type="submit" class="list-group-item list-group-item-action py-4 bg-info text-light">Logout</button>
 							</form>

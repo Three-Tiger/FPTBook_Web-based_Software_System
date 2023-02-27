@@ -126,7 +126,7 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
                     }
                     if (role[0] == "Admin")
                     {
-                        returnUrl = Url.Content("~/Admins/Owner/Index");
+                        returnUrl = Url.Content("~/Admins/Approve/Index");
                     }
                     return LocalRedirect(returnUrl);
                 }

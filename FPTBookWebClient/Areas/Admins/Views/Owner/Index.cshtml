@@ -1,9 +1,12 @@
-﻿<div class="pt-2 mb-2">
-    <h1 class="text-center mb-4">Order List</h1>
-
+﻿@model IEnumerable<BusinessObjects.AppUser>
+@{
+    ViewData["Title"] = "Owners Management";
+}
+<div class="pt-2 mb-2">
+    <h1 class="text-center">Owners Management</h1>
     <div class="text-center mb-2 row">
         <div class="col-6 d-flex justify-content-start align-items-center">
-            <a href="add.html" class="btn btn-outline-info">
+            <a asp-area="Admins" asp-controller="Owner" asp-action="Create" class="btn btn-outline-info">
                 <i class="bi bi-plus-circle"></i>
                 Add
             </a>
@@ -18,64 +21,40 @@
             </form>
         </div>
     </div>
-
-    <table id="tableorder" class="table table-striped table-bordered m-0" cellspacing="0" width="100%">
+    <table id="tablecategory" class="table table-striped table-bordered m-0" cellspacing="0"
+           width="100%">
         <thead class="justify-content-md-between justify-content-sm-center align-content-center border-bottom border-2 my-2 bg-dark text-light p-3 rounded-3">
-            <tr class="text-center">
+            <tr>
                 <th>
-                    <strong>No.</strong>
+                    <strong>Owner Name</strong>
                 </th>
                 <th>
-                    <strong>First Name</strong>
+                    <strong>Owner Phone</strong>
                 </th>
                 <th>
-                    <strong>Last Name</strong>
+                    <strong>Owner Mail</strong>
                 </th>
                 <th>
-                    <strong>Gender</strong>
-                </th>
-                <th>
-                    <strong>Birthday</strong>
-                </th>
-                <th>
-                    <strong>Telephone</strong>
-                </th>
-                <th>
-                    <strong>Address</strong>
-                </th>
-                <th>
-                    <strong>Avater</strong>
+                    <strong>Owner Address</strong>
                 </th>
                 <th>
                     <strong>Edit</strong>
                 </th>
-                <th>
-                    <strong>Delete</strong>
-                </th>
             </tr>
         </thead>
-
-        <tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
-            <tr>
-                <td class="text-center">
-                    <a style="text-decoration: none;">1</a>
-                </td>
-
-                <td class="text-center">Quang</td>
-                <td class="text-center">Nguyen Duy</td>
-
-                <td class="text-center">Male</td>
-                <td class="text-center">2022-10-24, 08:56:39</td>
-                <td class="text-center">0916843367</td>
-                <td>Ninh Kieu District, Can Tho City</td>
-
-                <td class="text-center align-middle">
-                    <a><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                </td>
-                <td class="text-center align-middle">
-                    <a><i class="bi bi-trash-fill" style="color: red;"></i></a>
-                </td>
-            </tr>
-        </tbody>
+        @foreach (var item in Model)
+        {
+            <tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
+                <tr>
+                    <td class="text-center align-middle">@item.FirstName @item.LastName</td>
+                    <td class="text-center align-middle">@item.PhoneNumber</td>
+                    <td class="text-center align-middle">@item.Email</td>
+                    <td class="text-center align-middle">@item.Address</td>
+                    <td class="text-center align-middle">
+                        <a asp-area="Admins" asp-controller="Member" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pen-fill" style="color: black;"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        }
     </table>
 </div>
