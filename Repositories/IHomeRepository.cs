@@ -9,6 +9,8 @@ namespace Repositories
 {
 	public interface IHomeRepository
 	{
+		List<Book> Gallery();
+		List<Book> BestSelling();
 		List<Book> DisplayBooksInShop();
 		Book DisplayBooksDetail(int bookID);
 		List<Genre> DisplayGenresInShop();

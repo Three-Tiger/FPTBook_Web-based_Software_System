@@ -22,9 +22,25 @@ namespace FPTBookWebClient.Controllers
 			this.api = "https://localhost:7076/api/Homes";
 		}
 
-		public IActionResult Index()
+		public async Task<IActionResult> Index()
 		{
-			return View();
+			HttpResponseMessage httpResponseGallary = await client.GetAsync(api + "/Galleries");
+			string dataGallary = await httpResponseGallary.Content.ReadAsStringAsync();
+			var optionsGallary = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Book> gallaries = JsonSerializer.Deserialize<List<Book>>(dataGallary, optionsGallary);
+
+			HttpResponseMessage httpResponseBest = await client.GetAsync(api + "/BestSellings");
+			string dataBest = await httpResponseBest.Content.ReadAsStringAsync();
+			var optionsBest = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Book> bestSellings = JsonSerializer.Deserialize<List<Book>>(dataBest, optionsBest);
+
+			ShowIndex showIndex = new ShowIndex()
+			{
+				Galleries = gallaries,
+				BestSellings = bestSellings
+			};
+
+			return View(showIndex);
 		}
 
 		public async Task<IActionResult> Shop()

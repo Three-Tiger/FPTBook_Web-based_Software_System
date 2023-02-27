@@ -10,6 +10,8 @@ namespace Repositories
 {
 	public class HomeRepository : IHomeRepository
 	{
+		public List<Book> Gallery() => HomeDAO.Gallery();
+		public List<Book> BestSelling() => HomeDAO.BestSelling();
 		public List<Book> DisplayBooksInShop() => HomeDAO.DisplayBooksInShop();
 		public Book DisplayBooksDetail(int bookID) => HomeDAO.DisplayBooksDetail(bookID);
 		public List<Genre> DisplayGenresInShop() => HomeDAO.DisplayGenresInShop();

@@ -25,7 +25,7 @@
 						<div class="product-name">@Model.BookTitle</div>
 						<div class="product-price-discount">
 							<span>$@PriceSale.ToString("N2")</span>
-							@if (@Model.BookPrice != PriceSale)
+							@if (Model.BookPrice != PriceSale)
 							{
 								<span class="line-through">$@Model.BookPrice.ToString("N2")</span>
 							}
