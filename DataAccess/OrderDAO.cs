@@ -16,7 +16,7 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					listOrders = context.Orders.Where(x => x.IsDeleted == false).ToList();
+					listOrders = context.Orders.Where(x => x.IsDeleted == false).OrderByDescending(x => x.OrderDate).ToList();
 				}
 			}
 			catch (Exception e)
