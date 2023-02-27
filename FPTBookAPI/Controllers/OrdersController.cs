@@ -20,10 +20,9 @@ namespace FPTBookAPI.Controllers
 
 		// POST api/<OrdersController>
 		[HttpPost]
-		public IActionResult Post([FromBody] Order obj)
+		public int Post([FromBody] Order obj)
 		{
-			repository.SaveOrder(obj);
-			return NoContent();
+			return repository.SaveOrder(obj);
 		}
 	}
 }

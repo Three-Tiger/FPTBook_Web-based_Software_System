@@ -20,6 +20,7 @@ namespace BusinessObjects
 		public string OrderName { get; set; }
 		public string OrderPhone { get; set; }
 		public OrderStatus OrderStatus { get; set; } = OrderStatus.Wait;
+		public decimal ShippingFee { get; set; }
 		public bool IsDeleted { get; set; } = false;
 		public string UserId { get; set; }
 

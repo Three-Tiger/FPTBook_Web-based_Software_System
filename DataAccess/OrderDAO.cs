@@ -43,7 +43,7 @@ namespace DataAccess
 			return order;
 		}
 
-		public static void SaveOrder(Order order)
+		public static int SaveOrder(Order order)
 		{
 			try
 			{
@@ -57,6 +57,7 @@ namespace DataAccess
 			{
 				throw new Exception(e.Message);
 			}
+			return order.OrderId;
 		}
 
 		public static void ChangeStatus(Order order)

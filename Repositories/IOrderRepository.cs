@@ -11,7 +11,7 @@ namespace Repositories
 	{
 		List<Order> GetOrders();
 		Order FindOrderById(int orderId);
-		void SaveOrder(Order order);
+		int SaveOrder(Order order);
 		void ChangeStatus(Order order);
 		void DeleteOrder(Order order);
 	}

@@ -16,7 +16,7 @@
 	</div>
 	<div class="form-group">
 		<label asp-for="BookDetail" class="form-label font-weight-bold"></label>
-		<input asp-for="BookDetail" class="form-control" required />
+		<textarea asp-for="BookDetail" class="form-control" required></textarea>
 		<span asp-validation-for="BookDetail" class="text-danger"></span>
 	</div>
 	<div class="form-group">
@@ -60,7 +60,7 @@
 	<input type="hidden" asp-for="BookImage" value="BookImage" />
 	<div class="form-group">
 		<label asp-for="ImageFile" class="form-label font-weight-bold"></label>
-		<input asp-for="ImageFile" class="form-control" required />
+		<input asp-for="ImageFile" class="form-control" />
 		<span asp-validation-for="ImageFile" class="text-danger"></span>
 	</div>
 	<div class="form-group text-center">

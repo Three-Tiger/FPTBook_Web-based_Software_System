@@ -8,13 +8,14 @@
 }
 
 <div class="card border-0">
+	@ViewBag.OrderId
 	<div class="card-body">
 		<div class="d-flex justify-content-around my-3">
 			<span><i class="fa fa-check-circle-o"></i> Shopping cart</span>
 			<span><i class="fa fa-check-circle-o"></i> Order details</span>
 			<span id="payment"><span id="three">3</span>Payment</span>
 		</div>
-		<form asp-controller="Cart" asp-action="Payment" class="row" method="post">
+		<form asp-controller="Cart" asp-action="Payment" id="frmPayment" class="row" method="post">
 			<div class="col-md-7">
 				<div class="left border" style="border-radius: 10px;">
 					<div class="row">
@@ -78,6 +79,7 @@
 					</div>
 					<div class="row lower">
 						<div class="col text-left">Delivery</div>
+						<input type="hidden" asp-for="@Model.Shipping"></input>
 						<div class="col text-right">$@Model.Shipping</div>
 					</div>
 					<div class="row lower">
@@ -93,3 +95,32 @@
 		</form>
 	</div>
 </div>
+
+@section Scripts {
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+	<script>
+		$('#frmPayment').submit(function (e) {
+			e.preventDefault();
+			$.ajax({
+				url: "/Cart/Payment",
+				type: "post",
+				data: new FormData(this),
+				processData: false,
+				contentType: false,
+				success: function (result, status, xhr) {
+					Swal.fire(
+						'Payment!',
+						'You have successfully paid!',
+						'success'
+					).then((result) => {
+						window.location.href = '/Cart';
+					})
+				},
+				error: function (xhr, status, error) {
+					console.log(xhr);
+				}
+			});
+		});
+	</script>
+}

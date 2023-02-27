@@ -72,7 +72,7 @@
 					<h5><b>Summary</b></h5>
 				</div>
 				<hr>
-				<form asp-controller="Cart" asp-action="CheckOut" method="post">
+				<form asp-controller="Cart" asp-action="CheckOut" method="post" name="frmCheckOut" onsubmit="return CheckShipping()">
 					<div class="row">
 						<div class="col" style="padding-left:0;">ITEMS @count</div>
 						<input type="hidden" id="before-shipping" value="@total.ToString("N2")" />
@@ -98,6 +98,7 @@
 		</div>
 	}
 </div>
+
 @section Scripts {
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
@@ -124,12 +125,6 @@
 								id: bookId
 							},
 							success: function (result) {
-								/*$(el).closest('#cart_' + bookId).css('background', '#D3D3D3')
-								$(el)
-									.closest('#cart_' + bookId)
-									.fadeOut(800, function () {
-										$('#cart_' + bookId).remove()
-									})*/
 								Swal.fire(
 									'Removed!',
 									'Your product has been removed.',
@@ -199,5 +194,18 @@
 				}
 			})
 		});
+
+		function CheckShipping() {
+			f = document.frmCheckOut;
+			if (f.shipping.value == 0.00) {
+				Swal.fire(
+					'Shipping Fee',
+					'Please choose shipping fee',
+					'warning'
+				)
+				return false;
+			}
+			return true;
+		}
 	</script>
 }

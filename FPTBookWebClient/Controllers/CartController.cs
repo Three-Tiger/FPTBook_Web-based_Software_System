@@ -13,16 +13,18 @@ namespace FPTBookWebClient.Controllers
 	[Authorize]
 	public class CartController : Controller
 	{
-        private readonly UserManager<AppUser> _userManager;
-        private readonly HttpClient client = null;
+		private readonly ApplicationDbContext _db;
+		private readonly UserManager<AppUser> _userManager;
+		private readonly HttpClient client = null;
 		private string api;
 
 		// Cart's json string key
 		public const string CARTKEY = "cart";
 
-		public CartController(UserManager<AppUser> userManager)
+		public CartController(UserManager<AppUser> userManager, ApplicationDbContext db)
 		{
 			_userManager = userManager;
+			_db = db;
 			client = new HttpClient();
 			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
 			client.DefaultRequestHeaders.Accept.Add(contentType);
@@ -125,29 +127,75 @@ namespace FPTBookWebClient.Controllers
 		}
 
 		[HttpPost]
-        public async Task<IActionResult> CheckOut(decimal shipping)
-        {
-            var userId = _userManager.GetUserId(User);
+		public async Task<IActionResult> CheckOut(decimal shipping)
+		{
+			var userId = _userManager.GetUserId(User);
 			string apiGetUser = "https://localhost:7076/api/Users/Account/" + userId;
-            HttpResponseMessage reponse = await client.GetAsync(apiGetUser);
-            if (reponse.IsSuccessStatusCode)
-            {
+			HttpResponseMessage reponse = await client.GetAsync(apiGetUser);
+			if (reponse.IsSuccessStatusCode)
+			{
 				CheckOut checkOut = new CheckOut();
 				var data = reponse.Content.ReadAsStringAsync().Result;
-                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                var obj = System.Text.Json.JsonSerializer.Deserialize<AppUser>(data, options);
+				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				var obj = System.Text.Json.JsonSerializer.Deserialize<AppUser>(data, options);
 				checkOut.Shipping = shipping;
 				checkOut.User = obj;
 				checkOut.CartItem = GetCartItems();
 				return View(checkOut);
-            }
-            return NotFound();
-        }
+			}
+			return NotFound();
+		}
 
 		[HttpPost]
-		public IActionResult Payment(CheckOut checkOut)
+		public async Task<IActionResult> Payment(CheckOut checkOut)
 		{
-			return Ok();
+			var userId = _userManager.GetUserId(User);
+			// Add to Order table
+			Order order = new Order()
+			{
+				DeliveryLocal = checkOut.User.Address,
+				OrderName = checkOut.User.FirstName + " " + checkOut.User.LastName,
+				OrderPhone = checkOut.User.PhoneNumber,
+				ShippingFee = checkOut.Shipping,
+				UserId = userId,
+			};
+			string dataOrder = System.Text.Json.JsonSerializer.Serialize(order);
+			var contentOrder = new StringContent(dataOrder, System.Text.Encoding.UTF8, "application/json");
+			HttpResponseMessage responseOrder = await client.PostAsync("https://localhost:7076/api/Orders", contentOrder);
+			if (responseOrder.IsSuccessStatusCode)
+			{
+				// Retrieve order id inserted
+				var data = responseOrder.Content.ReadAsStringAsync().Result;
+				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				var obj = System.Text.Json.JsonSerializer.Deserialize<int>(data, options);
+				int orderId = obj;
+				foreach (var cartItem in GetCartItems())
+				{
+					// Add to order detail table
+					OrderDetail orderDetail = new OrderDetail();
+					orderDetail.OrderId = orderId;
+					orderDetail.BookId = cartItem.Book.BookId;
+					orderDetail.Quantity = cartItem.Quantity;
+					decimal salePrice = cartItem.Book.BookPrice - (cartItem.Book.BookPrice * ((decimal)cartItem.Book.SalePercent / 100m));
+					orderDetail.TotalPrice = cartItem.Quantity * salePrice;
+
+					string dataOrderDetail = System.Text.Json.JsonSerializer.Serialize(orderDetail);
+					var contentOrderDetail = new StringContent(dataOrderDetail, System.Text.Encoding.UTF8, "application/json");
+					HttpResponseMessage responseOrderDetail = await client.PostAsync("https://localhost:7076/api/OrderDetails", contentOrderDetail);
+
+					if (responseOrderDetail.IsSuccessStatusCode)
+					{
+						// Minus stock
+						cartItem.Book.BookStock -= cartItem.Quantity;
+						_db.Books.Update(cartItem.Book);
+						_db.SaveChanges();
+					}
+				}
+				ClearCart();
+				//return RedirectToAction("Index");
+				return Ok();
+			}
+			return NotFound();
 		}
 	}
 }
