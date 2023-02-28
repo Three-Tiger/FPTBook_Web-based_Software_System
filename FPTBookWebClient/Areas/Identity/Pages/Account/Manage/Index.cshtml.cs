@@ -70,27 +70,29 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
 
-            [Required(ErrorMessage = "First name can not empty!")]
-            [Display(Name = "First name")]
-            public string FirstName { get; set; }
-
-            [Required(ErrorMessage = "Last name can not empty!")]
-            [Display(Name = "Last name")]
-            public string LastName { get; set; }
-
-            [Required(ErrorMessage = "Please choose your gender!")]
-            [Display(Name = "Gender")]
-            public bool Gender { get; set; }
-
-            [Required(ErrorMessage = "Please choose your birthday!")]
-            [Display(Name = "Birthday")]
-            public DateTime Birthday { get; set; }
-
-            [Required(ErrorMessage = "Address can not empty!")]
-            [Display(Name = "Address")]
-            public string Address { get; set; }
-            public string ProfilePicture { get; set; }
-            public IFormFile ImageFile { get; set; }
+			[Required(ErrorMessage = "First name can not empty!")]
+			[MinLength(2, ErrorMessage = "First name must be more than 2 character!")]
+			[MaxLength(100, ErrorMessage = "First name must be lesser than 10 character!")]
+			[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The First Name must be alphabets!")]
+			[Display(Name = "First Name")]
+			public string FirstName { get; set; }
+			[Required(ErrorMessage = "Last name can not empty!")]
+			[MinLength(2, ErrorMessage = "Last name must be more than 2 character!")]
+			[MaxLength(100, ErrorMessage = "Last name must be lesser than 10 character!")]
+			[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The Last Name must be alphabets!")]
+			[Display(Name = "Last Name")]
+			public string LastName { get; set; }
+			[Required(ErrorMessage = "Please choose your gender!")]
+			public bool Gender { get; set; }
+			[Required(ErrorMessage = "Please choose your birthday!")]
+			[ValidBirthday(ErrorMessage = "Birthday can not be greater than current date")]
+			public DateTime Birthday { get; set; }
+			[Required(ErrorMessage = "Address can not empty!")]
+			[MinLength(10, ErrorMessage = "Address must be more than 10 character!")]
+			[MaxLength(100, ErrorMessage = "Address must be lesser than 100 character!")]
+			public string Address { get; set; }
+			public string? ProfilePicture { get; set; }
+			public IFormFile ImageFile { get; set; }
         }
 
         private async Task LoadAsync(AppUser user)
