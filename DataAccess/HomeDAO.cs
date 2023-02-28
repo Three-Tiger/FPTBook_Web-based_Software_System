@@ -43,6 +43,7 @@ namespace DataAccess
 			}
 			return listBooks;
 		}
+
 		public static List<Book> Gallery()
 		{
 			var listBooks = new List<Book>();

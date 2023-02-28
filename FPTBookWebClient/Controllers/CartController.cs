@@ -134,7 +134,7 @@ namespace FPTBookWebClient.Controllers
 			HttpResponseMessage reponse = await client.GetAsync(apiGetUser);
 			if (reponse.IsSuccessStatusCode)
 			{
-				CheckOut checkOut = new CheckOut();
+				CheckOutView checkOut = new CheckOutView();
 				var data = reponse.Content.ReadAsStringAsync().Result;
 				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 				var obj = System.Text.Json.JsonSerializer.Deserialize<AppUser>(data, options);
@@ -147,7 +147,7 @@ namespace FPTBookWebClient.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Payment(CheckOut checkOut)
+		public async Task<IActionResult> Payment(CheckOutView checkOut)
 		{
 			var userId = _userManager.GetUserId(User);
 			// Add to Order table

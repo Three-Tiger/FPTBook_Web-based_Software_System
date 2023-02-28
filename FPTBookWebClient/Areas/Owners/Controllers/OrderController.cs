@@ -27,7 +27,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Order> orders = JsonSerializer.Deserialize<List<Order>>(data, options);
-			DisplayOrder displayOrder = new DisplayOrder()
+			DisplayOrderView displayOrder = new DisplayOrderView()
 			{
 				Orders = orders,
 			};

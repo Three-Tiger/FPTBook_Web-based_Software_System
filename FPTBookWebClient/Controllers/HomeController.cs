@@ -34,7 +34,7 @@ namespace FPTBookWebClient.Controllers
 			var optionsBest = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Book> bestSellings = JsonSerializer.Deserialize<List<Book>>(dataBest, optionsBest);
 
-			ShowIndex showIndex = new ShowIndex()
+			ShowIndexView showIndex = new ShowIndexView()
 			{
 				Galleries = gallaries,
 				BestSellings = bestSellings
