@@ -1,24 +1,24 @@
-﻿@model BusinessObjects.AppUser
+﻿@model FPTBookWebClient.Areas.Admins.Models.User
 @{
-	ViewData["Title"] = "Updating Member";
+	ViewData["Title"] = "Reset Password Member";
 }
 
-<form asp-area="Admins" asp-controller="Member" asp-action="Update" method="post">
-	<h1 class="text-center pb-4">Updating Member</h1>
+<form asp-area="Admins" asp-controller="Member" asp-action="Edit" method="post">
+	<h1 class="text-center pb-4">Reset Password Member</h1>
 	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-	<div class="form-group">
-		<label class="form-label font-weight-bold">New Password</label>
-		<input asp-for="FirstName" class="form-control" required />
-		<span asp-validation-for="FirstName" class="text-danger"></span>
+	<div class="form-outline mb-4">
+		<label class="form-label fw-bold">New Password</label>
+		<input asp-for="Password" class="form-control" required />
+		<span asp-validation-for="Password" class="text-danger"></span>
 	</div>
-	<div class="form-group">
-		<label class="form-label font-weight-bold">Comfirm new Password</label>
-		<input asp-for="FirstName" class="form-control" required />
-		<span asp-validation-for="FirstName" class="text-danger"></span>
+	<div class="form-outline mb-4">
+		<label class="form-label fw-bold">Comfirm new Password</label>
+		<input asp-for="ConfirmPassword" class="form-control" required />
+		<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
 	</div>
-	<div class="form-group text-center">
-		<input type="submit" class="btn btn-info" asp-area="Admins" asp-controller="Member" asp-action="Edit" value="Update" />
+	<div class="form-outline text-center">
+		<button type="submit" class="btn btn-info">Reset</button>
 		<a class="btn btn-info" asp-action="Index">Cancel</a>
 	</div>
 </form>

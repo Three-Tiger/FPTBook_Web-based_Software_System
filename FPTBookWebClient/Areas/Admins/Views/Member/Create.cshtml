@@ -1,83 +1,86 @@
-﻿<div class="card-body p-md-5 text-black">
-    <h3 class="mb-5 text-center">Adding New Member</h3>
-    <div class="form-outline mb-4">
-        <label class="form-label" for="form3Example8">Username</label>
-        <input type="text" id="form3Example8" class="form-control" />
-    </div>
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="form-outline">
-                <label class="form-label" for="form3Example8">Password</label>
-                <input type="password" id="form3Example8" class="form-control" />
-            </div>
-        </div>
-        <div class="col-md-6 mb-4">
-            <div class="form-outline">
-                <label class="form-label" for="form3Example8">Confirm Password</label>
-                <input type="password" id="form3Example8" class="form-control" />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="form-outline">
-                <label class="form-label" for="form3Example1m">First name</label>
-                <input type="text" id="form3Example1m" class="form-control" />
+﻿@model FPTBookWebClient.Areas.Admins.Models.User
+@{
+	ViewData["Title"] = "Add Member";
+}
 
-            </div>
-        </div>
-        <div class="col-md-6 mb-4">
-            <div class="form-outline">
-                <label class="form-label" for="form3Example1n">Last name</label>
-                <input type="text" id="form3Example1n" class="form-control" />
-            </div>
-        </div>
-    </div>
+<form id="registerForm" asp-controller="Member" asp-action="Create" method="post">
+	<div class="card-body p-md-5 text-black">
+		<h3 class="mb-5 text-uppercase">Registration form</h3>
 
-    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-        <h6 class="mb-0 me-4">Gender: </h6>
-        <div class="form-check form-check-inline mb-0 me-4">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                   id="femaleGender" value="option1" />
-            <label class="form-check-label" for="femaleGender">Female</label>
-        </div>
+		<div class="form-outline mb-4">
+			<label class="form-label" asp-for="Email"></label>
+			<input class="form-control" asp-for="Email" autocomplete="off" aria-required="true" />
+			<span asp-validation-for="Email" class="text-danger"></span>
+		</div>
 
-        <div class="form-check form-check-inline mb-0 me-4">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                   id="maleGender" value="option2" />
-            <label class="form-check-label" for="maleGender">Male</label>
-        </div>
+		<div class="row">
+			<div class="col-md-6 mb-4">
+				<div class="form-outline">
+					<label asp-for="Password" class="form-label"></label>
+					<input asp-for="Password" class="form-control" autocomplete="off" aria-required="true" />
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-6 mb-4">
+				<div class="form-outline">
+					<label asp-for="ConfirmPassword" class="form-label"></label>
+					<input asp-for="ConfirmPassword" class="form-control" autocomplete="off" aria-required="true" />
+					<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 mb-4">
+				<div class="form-outline">
+					<label asp-for="FirstName" class="form-label"></label>
+					<input asp-for="FirstName" class="form-control" autocomplete="off" aria-required="true" />
+					<span asp-validation-for="FirstName" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-6 mb-4">
+				<div class="form-outline">
+					<label asp-for="LastName" class="form-label"></label>
+					<input asp-for="LastName" class="form-control" autocomplete="off" aria-required="true" />
+					<span asp-validation-for="LastName" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
 
-        <div class="form-check form-check-inline mb-0">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                   id="otherGender" value="option3" />
-            <label class="form-check-label" for="otherGender">Other</label>
-        </div>
-    </div>
+		<div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+			<h6 class="mb-0 me-4">Gender: </h6>
+			<div class="form-check form-check-inline mb-0 me-4">
+				<input class="form-check-input" type="radio" asp-for="Gender" id="maleGender" autocomplete="off" value="true" />
+				<label class="form-check-label" for="maleGender">Male</label>
+			</div>
 
-    <div class="form-outline mb-4">
-        <label class="form-label" for="form3Example9">DOB</label>
-        <input type="date" id="form3Example9" class="form-control" />
-    </div>
+			<div class="form-check form-check-inline mb-0 me-4">
+				<input class="form-check-input" type="radio" asp-for="Gender" id="femaleGender" autocomplete="off" value="false" />
+				<label class="form-check-label" for="femaleGender">Female</label>
+			</div>
+			<span asp-validation-for="Gender" class="text-danger"></span>
+		</div>
 
-    <div class="form-outline mb-4">
-        <label class="form-label" for="form3Example8">Telephone</label>
-        <input type="tel" id="form3Example8" class="form-control"
-               pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
-    </div>
+		<div class="form-outline mb-4">
+			<label asp-for="Birthday" class="form-label"></label>
+			<input type="date" asp-for="Birthday" class="form-control" autocomplete="off" aria-required="true" />
+			<span asp-validation-for="Birthday" class="text-danger"></span>
+		</div>
 
-    <div class="form-outline mb-4">
-        <label class="form-label" for="form3Example97">Email</label>
-        <input type="email" id="form3Example97" class="form-control" />
-    </div>
+		<div class="form-outline mb-4">
+			<label asp-for="PhoneNumber" class="form-label"></label>
+			<input asp-for="PhoneNumber" class="form-control" autocomplete="off" aria-required="true" />
+			<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+		</div>
 
-    <div class="form-outline mb-4">
-        <label class="form-label" for="form3Example8">Address</label>
-        <input type="text" id="form3Example8" class="form-control" />
-    </div>
+		<div class="form-outline mb-4">
+			<label asp-for="Address" class="form-label"></label>
+			<input asp-for="Address" class="form-control" autocomplete="off" aria-required="true" />
+			<span asp-validation-for="Address" class="text-danger"></span>
+		</div>
 
-    <div class="d-flex justify-content-end pt-3">
-        <button type="button" class="btn btn-light px-3">Reset all</button>
-        <button type="submit" class="btn btn-warning ms-2">Register</button>
-    </div>
-</div>
+		<div class="d-flex justify-content-end pt-3">
+			<a class="btn btn-light" asp-area="Identity" asp-page="/Account/Register">Reset all</a>
+			<button type="submit" id="registerSubmit" class="btn btn-warning ms-2">Register</button>
+		</div>
+	</div>
+</form>

@@ -36,7 +36,7 @@ namespace FPTBookAPI.Controllers
 
 		// POST api/<GenresController>
 		[HttpPost]
-		public IActionResult Post([FromBody]Genre obj)
+		public IActionResult Post([FromForm] Genre obj)
 		{
 			repository.SaveGenre(obj);
 			return NoContent();
@@ -44,7 +44,7 @@ namespace FPTBookAPI.Controllers
 
 		// PUT api/<GenresController>/5
 		[HttpPut("{id}")]
-		public IActionResult Put(int id, [FromBody]Genre obj)
+		public IActionResult Put(int id, [FromBody] Genre obj)
 		{
 			var genre = repository.GetGenreById(id);
 			if (genre == null)

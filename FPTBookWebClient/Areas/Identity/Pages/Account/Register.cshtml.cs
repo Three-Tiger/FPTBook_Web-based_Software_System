@@ -73,16 +73,20 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
 		/// </summary>
 		public class InputModel
 		{
-			[Required(ErrorMessage = "First name can not empty!")]
-			[MinLength(2, ErrorMessage = "First name must be more than 2 character!")]
-			[MaxLength(100, ErrorMessage = "First name must be lesser than 10 character!")]
-			[Display(Name = "Last Name")]
+			[Required(ErrorMessage = "The First Name can not empty!")]
+			[MinLength(2, ErrorMessage = "The  First Name must be more than 2 character!")]
+			[MaxLength(100, ErrorMessage = "The  First Name must be lesser than 10 character!")]
+			[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The  First Name must be alphabets!")]
+			[Display(Name = "First Name")]
 			public string? FirstName { get; set; }
-			[Required(ErrorMessage = "Last name can not empty!")]
-			[MinLength(2, ErrorMessage = "Last name must be more than 2 character!")]
-			[MaxLength(100, ErrorMessage = "Last name must be lesser than 10 character!")]
+
+			[Required(ErrorMessage = "The Last Name can not empty!")]
+			[MinLength(2, ErrorMessage = "The  Last Name must be more than 2 character!")]
+			[MaxLength(100, ErrorMessage = "The  Last Name must be lesser than 10 character!")]
+			[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The  Last Name must be alphabets!")]
 			[Display(Name = "Last Name")]
 			public string? LastName { get; set; }
+
 			[Required(ErrorMessage = "Please choose your gender!")]
 			public bool? Gender { get; set; }
 			[Required(ErrorMessage = "Please choose your birthday!")]
@@ -150,7 +154,6 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
 				}
 				else
 				{
-					
 					return Page();
 				}
 				user.Address = Input.Address;
