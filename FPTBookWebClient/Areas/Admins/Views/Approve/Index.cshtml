@@ -26,13 +26,13 @@
 			@foreach (var item in Model)
 			{
 
-				<tr>
+				<tr id="genre_@item.GenreId">
 					<td>@item.GenreId</td>
 					<td>@item.GenreName</td>
 					<td>@item.GenreDescription</td>
 					<td>
-						<a class="btn btn-primary" asp-area="Admins" asp-controller="Approve" asp-action="AppGenre" asp-route-id="@item.GenreId">Approve</a>
-						<a class="btn btn-danger" asp-area="Admins" asp-controller="Approve" asp-action="Reject" asp-route-id="@item.GenreId">Reject</a>
+						<a class="btn btn-primary approvel" id="approvel_@item.GenreId" data-id="@item.GenreId">Approve</a>
+						<a class="btn btn-danger reject" id="reject_@item.GenreId" data-id="@item.GenreId">Reject</a>
 					</td>
 				</tr>
 
@@ -40,3 +40,65 @@
 		</tbody>
 	</table>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+<script>
+	$('.approvel').click(function (e) {
+		e.preventDefault();
+		var id = $(this).attr("data-id");
+		var el = this
+		$.ajax({
+			url: "https://localhost:7076/api/Genres/Approvel/" + id,
+			type: "put",
+			data: {
+				id: id,
+			},
+			success: function (result, status, xhr) {
+				Swal.fire(
+					'Approved',
+					'Accepted book genre',
+					'success'
+				)
+				$(el).closest('tr').css('background', 'tomato')
+				$(el)
+					.closest('tr')
+					.fadeOut(800, function () {
+						$('#genre' + id).remove()
+					})
+			},
+			error: function (xhr, status, error) {
+				console.log(xhr);
+			}
+		});
+	});
+
+	$('.reject').click(function (e) {
+		e.preventDefault();
+		var id = $(this).attr("data-id");
+		var el = this
+		$.ajax({
+			url: "https://localhost:7076/api/Genres/Reject/" + id,
+			type: "put",
+			data: {
+				id: id,
+			},
+			success: function (result, status, xhr) {
+				Swal.fire(
+					'Rejected',
+					'Rejected book genre',
+					'error'
+				)
+				$(el).closest('tr').css('background', 'tomato')
+				$(el)
+					.closest('tr')
+					.fadeOut(800, function () {
+						$('#genre' + id).remove()
+					})
+			},
+			error: function (xhr, status, error) {
+				console.log(xhr);
+			}
+		});
+	});
+</script>

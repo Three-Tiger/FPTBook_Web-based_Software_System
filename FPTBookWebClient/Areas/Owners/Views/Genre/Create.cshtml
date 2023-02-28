@@ -4,7 +4,7 @@
 }
 
 <h1 class="text-center pb-4">Adding Genre</h1>
-<form asp-area="Owners" asp-controller="Genre" asp-action="Create" method="post">
+<form id="frmCreateGenre" method="post">
 	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 	<div class="form-outline mb-4">
 		<label class="form-label fw-bold">Genre Name</label>
@@ -17,11 +17,37 @@
 		<span asp-validation-for="GenreDescription" class="text-danger"></span>
 	</div>
 	<div class="form-outline text-center">
-		<input type="submit" class="btn btn-info" asp-area="Owners" asp-controller="Genre" asp-action="Create" value="Add new" />
+		<input type="submit" class="btn btn-info" value="Add new" />
 		<a class="btn btn-info" asp-action="Index">Cancel</a>
 	</div>
 </form>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+<script>
+	$('#frmCreateGenre').submit(function (e) {
+		e.preventDefault();
+		$.ajax({
+			url: "https://localhost:7076/api/Genres",
+			type: "post",
+			data: new FormData(this),
+			processData: false,
+			contentType: false,
+			success: function (result, status, xhr) {
+				Swal.fire(
+					'Add Genre!',
+					'Your request has been sent to admin',
+					'info'
+				).then((result) => {
+					window.location.href = '/Owners/Genre';
+				})
+			},
+			error: function (xhr, status, error) {
+				console.log(xhr);
+			}
+		});
+	});
+</script>
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
 }

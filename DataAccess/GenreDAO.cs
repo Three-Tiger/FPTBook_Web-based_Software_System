@@ -71,6 +71,7 @@ namespace DataAccess
 					if (obj != null)
 					{
 						obj.IsDeleted = false;
+						obj.Status= GenreApproval.Pending;
 						context.Entry<Genre>(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 					}
 					else

@@ -42,7 +42,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
                 HttpResponseMessage response = await client.PostAsync(api, content);
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index");
+                    return Ok();
                 }
             }
             return View(genre);
