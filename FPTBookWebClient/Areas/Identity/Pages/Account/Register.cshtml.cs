@@ -150,7 +150,6 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
 				}
 				else
 				{
-					
 					return Page();
 				}
 				user.Address = Input.Address;

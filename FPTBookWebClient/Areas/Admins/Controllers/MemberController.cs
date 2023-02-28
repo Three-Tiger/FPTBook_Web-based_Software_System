@@ -1,6 +1,9 @@
 ﻿using BusinessObjects;
+using BusinessObjects.Constraints;
+using FPTBookWebClient.Areas.Admins.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text.Json;
@@ -12,15 +15,27 @@ namespace FPTBookWebClient.Areas.Admins.Controllers
 
     public class MemberController : Controller
     {
-        private readonly HttpClient client = null;
+		private readonly SignInManager<AppUser> _signInManager;
+		private readonly UserManager<AppUser> _userManager;
+		private readonly IUserStore<AppUser> _userStore;
+		private readonly IUserEmailStore<AppUser> _emailStore;
+		private readonly IPasswordHasher<AppUser> _passwordHash;
+
+		private readonly HttpClient client = null;
         private string api;
-        public MemberController()
+        public MemberController(UserManager<AppUser> userManager, IUserStore<AppUser> userStore, SignInManager<AppUser> signInManager, IPasswordHasher<AppUser> passwordHash)
         {
             client = new HttpClient();
             var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
             this.api = "https://localhost:7076/api/Users";
-        }
+
+			_userManager = userManager;
+			_userStore = userStore;
+			_emailStore = GetEmailStore();
+			_signInManager = signInManager;
+            _passwordHash = passwordHash;
+		}
 
 
         public async Task<IActionResult> Index()
@@ -38,20 +53,60 @@ namespace FPTBookWebClient.Areas.Admins.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create(AppUser appuser)
+		private AppUser CreateUser()
+		{
+			try
+			{
+				return Activator.CreateInstance<AppUser>();
+			}
+			catch
+			{
+				throw new InvalidOperationException($"Can't create an instance of '{nameof(AppUser)}'. " +
+					$"Ensure that '{nameof(AppUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+					$"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
+			}
+		}
+
+		private IUserEmailStore<AppUser> GetEmailStore()
+		{
+			if (!_userManager.SupportsUserEmail)
+			{
+				throw new NotSupportedException("The default UI requires a user store with email support.");
+			}
+			return (IUserEmailStore<AppUser>)_userStore;
+		}
+
+		[HttpPost]
+        public async Task<IActionResult> Create(User addUser)
         {
             if (ModelState.IsValid)
             {
-                string data = JsonSerializer.Serialize(appuser);
-                var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
-                HttpResponseMessage response = await client.PostAsync(api, content);
-                if (response.IsSuccessStatusCode)
+                var user = CreateUser();
+                user.FirstName = addUser.FirstName;
+                user.LastName = addUser.LastName;
+                user.Gender = addUser.Gender;
+                if (addUser.Birthday < DateTime.Now)
                 {
-                    return RedirectToAction("Index");
+                    user.Birthday = addUser.Birthday;
                 }
-            }
-            return View(appuser);
+                else
+                {
+                    return View(addUser);
+                }
+                user.Address = addUser.Address;
+				user.PhoneNumber = addUser.PhoneNumber;
+				await _userStore.SetUserNameAsync(user, addUser.Email, CancellationToken.None);
+				await _emailStore.SetEmailAsync(user, addUser.Email, CancellationToken.None);
+				var result = await _userManager.CreateAsync(user, addUser.Password);
+
+                if (result.Succeeded)
+                {
+					await _userManager.AddToRoleAsync(user, Roles.User.ToString());
+                    return RedirectToAction("Index" );
+				}
+
+			}
+            return View(addUser);
         }
 
 
@@ -62,24 +117,48 @@ namespace FPTBookWebClient.Areas.Admins.Controllers
             {
                 var data = reponse.Content.ReadAsStringAsync().Result;
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                var obj = JsonSerializer.Deserialize<AppUser>(data, options);
+                var obj = JsonSerializer.Deserialize<User>(data, options);
                 return View(obj);
             }
             return NotFound();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(string id, AppUser appUser)
+        public async Task<IActionResult> Edit(string id, User user)
         {
-            appUser.Id = id;
-            string data = JsonSerializer.Serialize<AppUser>(appUser);
-            var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PutAsync(api + "/Account/" + id, content);
-            if (response.IsSuccessStatusCode)
-            {
-                return RedirectToAction("Index");
-            }
-            return View(appUser);
-        }
-    }
+            AppUser appUser = await _userManager.FindByIdAsync(id);
+			if (appUser != null)
+			{
+
+				if (!string.IsNullOrEmpty(user.Password))
+                {
+					appUser.PasswordHash = _passwordHash.HashPassword(appUser, user.Password);
+				}
+				else
+                {
+					ModelState.AddModelError("", "Password cannot be empty");
+				}
+
+				if (!string.IsNullOrEmpty(user.Password))
+				{
+					IdentityResult result = await _userManager.UpdateAsync(appUser);
+					if (result.Succeeded)
+                    {
+						return RedirectToAction("Index");
+					}
+					else
+                    {
+						Errors(result);
+					}
+				}
+			}
+			return RedirectToAction("Index");
+		}
+
+		private void Errors(IdentityResult result)
+		{
+			foreach (IdentityError error in result.Errors)
+				ModelState.AddModelError("", error.Description);
+		}
+	}
 }
