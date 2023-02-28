@@ -1,0 +1,27 @@
+﻿@model BusinessObjects.AppUser
+@{
+	ViewData["Title"] = "Updating Owner";
+}
+
+<form asp-area="Admins" asp-controller="Owner" asp-action="Update" method="post">
+	<h1 class="text-center pb-4">Updating Owner</h1>
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+	<div class="form-group">
+		<label class="form-label font-weight-bold">New Password</label>
+		<input asp-for="FirstName" class="form-control" required />
+		<span asp-validation-for="FirstName" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label class="form-label font-weight-bold">Comfirm new Password</label>
+		<input asp-for="FirstName" class="form-control" required />
+		<span asp-validation-for="FirstName" class="text-danger"></span>
+	</div>
+	<div class="form-group text-center">
+		<input type="submit" class="btn btn-info" asp-area="Admins" asp-controller="Member" asp-action="Edit" value="Update" />
+		<a class="btn btn-info" asp-action="Index">Cancel</a>
+	</div>
+</form>
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
