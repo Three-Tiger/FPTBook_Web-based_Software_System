@@ -40,9 +40,9 @@
 				<tr>
 					<td>@count</td>
 					<td>@orderDetail.Book.BookTitle</td>
-					<td>@orderDetail.Book.BookPrice.ToString("N2")</td>
+					<td>$@orderDetail.Book.BookPrice.ToString("N2")</td>
 					<td>@orderDetail.Quantity</td>
-					<td>@amount.ToString("N2")</td>
+					<td>$@amount.ToString("N2")</td>
 					<td><img src="@orderDetail.Book.BookImage" height="80" width="50" /></td>
 				</tr>
 			}

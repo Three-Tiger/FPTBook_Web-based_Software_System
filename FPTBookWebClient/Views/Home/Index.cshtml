@@ -20,7 +20,7 @@
 				<div>
 					<h1>FPT Book</h1>
 					<h2>
-						Behind every successful man there is a woman. 
+						Behind every successful man there is a woman.
 						There is also at least one book—or maybe a bookshelf—behind everyone's achievement.
 					</h2>
 					<a href="#" class="download-btn"><i class="bx bxl-play-store"></i> Google Play</a>
@@ -182,30 +182,27 @@
 				</div>
 
 				<div class="col-lg-6">
-					<form action="forms/contact.php" method="post" role="form" class="php-email-form"
-						  data-aos="fade-up">
+					<form asp-controller="Contact" asp-action="Send" method="post" class="php-email-form" data-aos="fade-up">
 						<div class="form-group">
-							<input placeholder="Your Name" type="text" name="name" class="form-control" id="name"
-								   required>
+							<input asp-for="@Model.Contact.ContactName" placeholder="Your Name" class="form-control" required />
 						</div>
 						<div class="form-group mt-3">
-							<input placeholder="Your Email" type="email" class="form-control" name="email"
-								   id="email" required>
+							<input asp-for="@Model.Contact.ContactEmail" placeholder="Your Email" class="form-control" required>
 						</div>
 						<div class="form-group mt-3">
-							<input placeholder="Subject" type="text" class="form-control" name="subject"
-								   id="subject" required>
+							<input asp-for="@Model.Contact.ContactSubject" placeholder="Subject" class="form-control" required>
 						</div>
 						<div class="form-group mt-3">
-							<textarea placeholder="Message" class="form-control" name="message" rows="5"
-									  required></textarea>
+							<textarea asp-for="@Model.Contact.ContactMessage" placeholder="Message" class="form-control" rows="5" required></textarea>
 						</div>
-						<div class="my-3">
-							<div class="loading">Loading</div>
-							<div class="error-message"></div>
-							<div class="sent-message">Your message has been sent. Thank you!</div>
+						@*<div class="my-3">
+						<div class="loading">Loading</div>
+						<div class="error-message"></div>
+						<div class="sent-message">Your message has been sent. Thank you!</div>
+						</div>*@
+						<div class="text-center">
+							<button type="submit">Send Message</button>
 						</div>
-						<div class="text-center"><button type="submit">Send Message</button></div>
 					</form>
 				</div>
 
@@ -220,7 +217,6 @@
 	<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="~/vendor/glightbox/js/glightbox.min.js"></script>
 	<script src="~/vendor/swiper/swiper-bundle.min.js"></script>
-	<script src="~/vendor/php-email-form/validate.js"></script>
 
 	<!-- Template Main JS File -->
 	<script src="~/js/main.js"></script>
