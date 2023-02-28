@@ -17,12 +17,11 @@ namespace BusinessObjects
 		[Required(ErrorMessage = "The name can not empty!")]
 		[MinLength(2, ErrorMessage = "The name must be more than 2 character!")]
 		[MaxLength(100, ErrorMessage = "The name must be lesser than 10 character!")]
-		[RegularExpression(@"([a-zA-Z0-9\s])$", ErrorMessage = "The name must be alphabets!")]
 		[Display(Name ="Title")]
 		public string BookTitle { get; set; }
 		[Required(ErrorMessage = "The Book Title can not empty!")]
 		[MinLength(5, ErrorMessage = "The Book Title must be more than 5 character!")]
-		[MaxLength(20, ErrorMessage = "The Book Title must be lesser than 20 character!")]
+		[MaxLength(50, ErrorMessage = "The Book Title must be lesser than 50 character!")]
 		[Display(Name = "Description")]
 		public string BookDescription { get; set; }
 		[Required(ErrorMessage = "The Book Description can not empty!")]

@@ -2891,19 +2891,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\": {}
+    "C:\\Users\\Tuan Anh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\FPTBookAPI.csproj",
+      "projectUniqueName": "D:\\1. Greenwich\\1670 Application Development\\Source_Code\\FPTBookAPI\\FPTBookAPI.csproj",
       "projectName": "FPTBookAPI",
-      "projectPath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\FPTBookAPI.csproj",
-      "packagesPath": "C:\\Users\\Duy Quang\\.nuget\\packages\\",
-      "outputPath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\obj\\",
+      "projectPath": "D:\\1. Greenwich\\1670 Application Development\\Source_Code\\FPTBookAPI\\FPTBookAPI.csproj",
+      "packagesPath": "C:\\Users\\Tuan Anh\\.nuget\\packages\\",
+      "outputPath": "D:\\1. Greenwich\\1670 Application Development\\Source_Code\\FPTBookAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Duy Quang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tuan Anh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2917,8 +2917,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\Repositories\\Repositories.csproj": {
-              "projectPath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\Repositories\\Repositories.csproj"
+            "D:\\1. Greenwich\\1670 Application Development\\Source_Code\\Repositories\\Repositories.csproj": {
+              "projectPath": "D:\\1. Greenwich\\1670 Application Development\\Source_Code\\Repositories\\Repositories.csproj"
             }
           }
         }
@@ -2953,24 +2953,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.14, 6.0.14]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2979,7 +2961,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

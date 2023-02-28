@@ -10,21 +10,10 @@ namespace BusinessObjects
 {
 	public class AppUser : IdentityUser
 	{
-		[Required(ErrorMessage = "The First Name can not empty!")]
-		[MinLength(2, ErrorMessage = "The  First Name must be more than 2 character!")]
-		[MaxLength(100, ErrorMessage = "The  First Name must be lesser than 10 character!")]
-		[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The  First Name must be alphabets!")]
 		public string? FirstName { get; set; }
-		[Required(ErrorMessage = "The Last Name can not empty!")]
-		[MinLength(2, ErrorMessage = "The  Last Name must be more than 2 character!")]
-		[MaxLength(100, ErrorMessage = "The  Last Name must be lesser than 10 character!")]
-		[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The  Last Name must be alphabets!")]
 		public string? LastName { get; set; }
 		public bool? Gender { get; set; }
 		public DateTime? Birthday { get; set; }
-		[Required(ErrorMessage = "The address can not empty!")]
-		[MinLength(5, ErrorMessage = "The address must be more than 5 character!")]
-		[MaxLength(100, ErrorMessage = "The address must be lesser than 100 character!")]
 		public string? Address { get; set; }
 		public string? ProfilePicture { get; set; }
 		public bool? IsDeleted { get; set; }
