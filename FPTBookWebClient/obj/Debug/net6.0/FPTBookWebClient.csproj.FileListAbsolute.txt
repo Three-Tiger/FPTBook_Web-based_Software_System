@@ -736,3 +736,9 @@ D:\1. Greenwich\1670 Application Development\Source_Code\FPTBookWebClient\obj\De
 D:\1. Greenwich\1670 Application Development\Source_Code\FPTBookWebClient\obj\Debug\net6.0\ref\FPTBookWebClient.dll
 D:\1. Greenwich\1670 Application Development\Source_Code\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Admins\Views\Member\Edit.cshtml.g.cs
 D:\1. Greenwich\1670 Application Development\Source_Code\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Admins\Views\Owner\Edit.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Admins\Views\Approve\Index.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Admins\Views\Member\Create.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Admins\Views\Member\Edit.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Admins\Views\Member\Index.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Admins\Views\Owner\Create.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Areas\Admins\Views\Owner\Edit.cshtml.g.cs
