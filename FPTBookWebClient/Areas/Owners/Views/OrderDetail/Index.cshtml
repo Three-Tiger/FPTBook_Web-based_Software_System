@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BusinessObjects.OrderDetail>
+@{
+	ViewData["Title"] = "Orders Detail List";
+}
+<div class="pt-2 mb-2">
+	<h1 class="text-center mb-4">Orders Detail List</h1>
+	@{
+		int count = 0;
+	}
+	<table id="example" class="table table-striped" style="width:100%">
+		<thead>
+			<tr>
+				<th>
+					<strong>ID</strong>
+				</th>
+				<th>
+					<strong>Book Name</strong>
+				</th>
+				<th>
+					<strong>Price</strong>
+				</th>
+				<th>
+					<strong>Quantity</strong>
+				</th>
+				<th>
+					<strong>Amount</strong>
+				</th>
+				<th>
+					<strong>Image</strong>
+				</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@foreach (var orderDetail in Model)
+			{
+				decimal PriceSale = orderDetail.Book.BookPrice - (orderDetail.Book.BookPrice * ((decimal)orderDetail.Book.SalePercent / 100m));
+				var amount = orderDetail.Quantity * PriceSale;
+				count++;
+				<tr>
+					<td>@count</td>
+					<td>@orderDetail.Book.BookTitle</td>
+					<td>@orderDetail.Book.BookPrice.ToString("N2")</td>
+					<td>@orderDetail.Quantity</td>
+					<td>@amount.ToString("N2")</td>
+					<td><img src="@orderDetail.Book.BookImage" height="80" width="50" /></td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

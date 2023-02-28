@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using BusinessObjects.Constraints;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repositories;
@@ -18,11 +19,32 @@ namespace FPTBookAPI.Controllers
 			return repository.GetOrders();
 		}
 
+		// GET api/<OrdersController>/5
+		[HttpGet("{id}")]
+		public ActionResult<Order> Get(int id)
+		{
+			return repository.FindOrderById(id);
+		}
+
 		// POST api/<OrdersController>
 		[HttpPost]
 		public int Post([FromBody] Order obj)
 		{
 			return repository.SaveOrder(obj);
+		}
+
+		// PUT api/<OrdersController>/5
+		[HttpPut("{id}")]
+		public IActionResult Put(int id, [FromForm] Order obj)
+		{
+			var order = repository.FindOrderById(id);
+			if (order == null)
+			{
+				return NotFound();
+			}
+			obj.DeliveryDate = DateTime.Now;
+			repository.ChangeStatus(obj);
+			return NoContent();
 		}
 	}
 }
