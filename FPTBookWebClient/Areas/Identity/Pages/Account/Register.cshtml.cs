@@ -73,29 +73,32 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
 		/// </summary>
 		public class InputModel
 		{
-			[Required(ErrorMessage = "The First Name can not empty!")]
-			[MinLength(2, ErrorMessage = "The  First Name must be more than 2 character!")]
-			[MaxLength(100, ErrorMessage = "The  First Name must be lesser than 10 character!")]
-			[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The  First Name must be alphabets!")]
+			[Required(ErrorMessage = "First name can not empty!")]
+			[MinLength(2, ErrorMessage = "First name must be more than 2 character!")]
+			[MaxLength(100, ErrorMessage = "First name must be lesser than 10 character!")]
+			[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The First Name must be alphabets!")]
 			[Display(Name = "First Name")]
 			public string? FirstName { get; set; }
 
-			[Required(ErrorMessage = "The Last Name can not empty!")]
-			[MinLength(2, ErrorMessage = "The  Last Name must be more than 2 character!")]
-			[MaxLength(100, ErrorMessage = "The  Last Name must be lesser than 10 character!")]
-			[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The  Last Name must be alphabets!")]
+			[Required(ErrorMessage = "Last name can not empty!")]
+			[MinLength(2, ErrorMessage = "Last name must be more than 2 character!")]
+			[MaxLength(100, ErrorMessage = "Last name must be lesser than 10 character!")]
+			[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The Last Name must be alphabets!")]
 			[Display(Name = "Last Name")]
 			public string? LastName { get; set; }
 
 			[Required(ErrorMessage = "Please choose your gender!")]
 			public bool? Gender { get; set; }
+
 			[Required(ErrorMessage = "Please choose your birthday!")]
 			[ValidBirthday(ErrorMessage = "Birthday can not be greater than current date")]
 			public DateTime? Birthday { get; set; }
+
 			[Required(ErrorMessage = "Address can not empty!")]
 			[MinLength(10, ErrorMessage = "Address must be more than 10 character!")]
 			[MaxLength(100, ErrorMessage = "Address must be lesser than 100 character!")]
 			public string? Address { get; set; }
+
 			public string? ProfilePicture { get; set; }
 			/// <summary>
 			///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used

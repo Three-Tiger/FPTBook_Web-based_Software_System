@@ -15,21 +15,21 @@ namespace BusinessObjects
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int BookId { get; set; }
 		[Required(ErrorMessage = "The name can not empty!")]
-		[MinLength(2, ErrorMessage = "The name must be more than 2 character!")]
-		[MaxLength(100, ErrorMessage = "The name must be lesser than 10 character!")]
-		[Display(Name ="Title")]
+		[MinLength(2, ErrorMessage = "The Title must be more than 2 character!")]
+		[MaxLength(100, ErrorMessage = "The Title must be lesser than 10 character!")]
+		[Display(Name = "Title")]
 		public string BookTitle { get; set; }
 		[Required(ErrorMessage = "The Book Title can not empty!")]
-		[MinLength(5, ErrorMessage = "The Book Title must be more than 5 character!")]
-		[MaxLength(50, ErrorMessage = "The Book Title must be lesser than 50 character!")]
+		[MinLength(5, ErrorMessage = "The Book Description must be more than 5 character!")]
+		[MaxLength(100, ErrorMessage = "The Book Description must be lesser than 20 character!")]
 		[Display(Name = "Description")]
 		public string BookDescription { get; set; }
 		[Required(ErrorMessage = "The Book Description can not empty!")]
-		[MinLength(5, ErrorMessage = "The Book Description must be more than 5 character!")]
-		[MaxLength(100, ErrorMessage = "The Book Description must be lesser than 100 character!")]
+		[MinLength(5, ErrorMessage = "The Book Detail must be more than 5 character!")]
+		[MaxLength(100, ErrorMessage = "The Book Detail must be lesser than 100 character!")]
 		[Display(Name = "Book Detail")]
 		public string BookDetail { get; set; }
-		[RegularExpression(@"^(^(\$)?\d+(\.\d+)?$|^(-)?\d+(\.\d+)?$)$|^(^(\$)?((\d\d\d\,){1,4}|(\d\d\,){1,4}|(\d\,){1,4}){1,4}\d\d\d(\.\d+)?$|^(-)?\d+(\.\d+)?$)$", 
+		[RegularExpression(@"^(^(\$)?\d+(\.\d+)?$|^(-)?\d+(\.\d+)?$)$|^(^(\$)?((\d\d\d\,){1,4}|(\d\d\,){1,4}|(\d\,){1,4}){1,4}\d\d\d(\.\d+)?$|^(-)?\d+(\.\d+)?$)$",
 		ErrorMessage = "The price must be a number!")]
 		[Required(ErrorMessage = "The Book Price can not empty!")]
 		[Display(Name = "Price")]
@@ -42,6 +42,7 @@ namespace BusinessObjects
 		[RegularExpression(@"^(^(\$)?\d+(\.\d+)?$|^(-)?\d+(\.\d+)?$)$|^(^(\$)?((\d\d\d\,){1,4}|(\d\d\,){1,4}|(\d\,){1,4}){1,4}\d\d\d(\.\d+)?$|^(-)?\d+(\.\d+)?$)$",
 		ErrorMessage = "The Sale Percent must be a number!")]
 		[Required(ErrorMessage = "The Sale Percent can not empty!")]
+		[Range(1, 99, ErrorMessage = "The Sale Percent is invalid!")]
 		[Display(Name = "Sale Percent")]
 		public int SalePercent { get; set; }
 		[Display(Name = "Stock")]

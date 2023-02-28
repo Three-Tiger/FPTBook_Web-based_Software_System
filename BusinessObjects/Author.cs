@@ -15,8 +15,7 @@ namespace BusinessObjects
 		public int AuthorId { get; set; }
 		[Required(ErrorMessage = "The name can not empty!")]
 		[MinLength(2, ErrorMessage = "The name must be more than 2 character!")]
-		[MaxLength(100, ErrorMessage = "The name must be lesser than 10 character!")]
-		[RegularExpression(@"^[a-zA-Z''-'\s]*$", ErrorMessage = "The name must be alphabets!")]
+		[MaxLength(50, ErrorMessage = "The name must be lesser than 10 character!")]
 		public string AuthorName { get; set; }
 		[Required(ErrorMessage = "The phone can not empty!")]
 		[RegularExpression(@"^(\d+)?$", ErrorMessage = "The phone must be a number!")]
