@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using FPTBookWebClient.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
@@ -26,7 +27,11 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Order> orders = JsonSerializer.Deserialize<List<Order>>(data, options);
-			return View(orders);
+			DisplayOrder displayOrder = new DisplayOrder()
+			{
+				Orders = orders,
+			};
+			return View(displayOrder);
         }
     }
 }

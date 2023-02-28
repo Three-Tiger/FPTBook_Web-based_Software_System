@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BusinessObjects.Order>
+﻿@model DisplayOrder
 @{
 	ViewData["Title"] = "Orders List";
 }
@@ -39,7 +39,7 @@
 		</thead>
 
 		<tbody>
-			@foreach (var order in Model)
+			@foreach (var order in Model.Orders)
 			{
 				<tr>
 					<td>
@@ -54,12 +54,18 @@
 					<td>@order.DeliveryLocal</td>
 					<td><b>$@order.ShippingFee.ToString("N2")</b></td>
 					<td>
-						<select class="form-control">
-							<option>Wait</option>
-							<option>Confirm</option>
-							<option>Sent</option>
-							<option>Received</option>
-							<option>Canceled</option>
+						<select id="orderStatus_@order.OrderId" name="orderStatus" class="form-control orderStatus" data-id="@order.OrderId">
+							@foreach (var status in Model.OrderStatus)
+							{
+								if (order.OrderStatus.CompareTo(status) == 0)
+								{
+									<option value="@((int)status)" selected>@status</option>
+								}
+								else
+								{
+									<option value="@((int)status)">@status</option>
+								}
+							}
 						</select>
 					</td>
 					<td>
@@ -75,3 +81,45 @@
 		</tbody>
 	</table>
 </div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".orderStatus").change(function (event) {
+			event.preventDefault();
+			var id = $(this).attr("data-id");
+			
+			$.ajax({
+				url: "https://localhost:7076/api/Orders/" + id,
+				type: "get",
+				data: {
+					id: id
+				},
+				processData: false,
+				contentType: false,
+				success: function (result, status, xhr) {
+					var orderStatus = document.getElementById("orderStatus_" + id).value;
+					result['orderStatus'] = orderStatus;
+
+					$.ajax({
+						url: "https://localhost:7076/api/Orders/" + id,
+						type: "put",
+						data: {
+							id: result['orderId'],
+							obj: result
+						},
+						success: function (result, status, xhr) {
+							window.location.href = '/Owners';
+						},
+						error: function (xhr, status, error) {
+							console.log(xhr);
+						}
+					});
+				},
+				error: function (xhr, status, error) {
+					console.log(xhr);
+				}
+			});
+		})
+	})
+</script>
