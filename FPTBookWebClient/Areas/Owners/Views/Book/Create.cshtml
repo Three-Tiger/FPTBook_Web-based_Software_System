@@ -76,19 +76,22 @@
 <script>
 	$('#frmCreateBook').submit(function (e) {
 		e.preventDefault();
-		$.ajax({
-			url: "https://localhost:7076/api/Books",
-			type: "post",
-			data: new FormData(this),
-			processData: false,
-			contentType: false,
-			success: function (result, status, xhr) {
-				window.location.href = '/Owners/Book';
-			},
-			error: function (xhr, status, error) {
-				console.log(xhr);
-			}
-		});
+		var files = $('#file')[0].files;
+		if (files.length > 0) {
+			$.ajax({
+				url: "https://localhost:7076/api/Books",
+				type: "post",
+				data: new FormData(this),
+				processData: false,
+				contentType: false,
+				success: function (result, status, xhr) {
+					window.location.href = '/Owners/Book';
+				},
+				error: function (xhr, status, error) {
+					console.log(xhr);
+				}
+			});
+		}
 	});
 </script>
 @section Scripts {
