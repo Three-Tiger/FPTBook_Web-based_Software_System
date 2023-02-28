@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BusinessObjects;
+using FPTBookWebClient.Areas.Owners.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace FPTBookWebClient.Areas.Owners.Controllers
 {
@@ -8,79 +12,42 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
     [Area("Owners")]
     public class StatisticController : Controller
     {
-        // GET: DataStatisticController
-        public ActionResult Index()
-        {
-            return View();
-        }
+		private readonly HttpClient client = null;
+		private string api;
+		public StatisticController()
+		{
+			client = new HttpClient();
+			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+			client.DefaultRequestHeaders.Accept.Add(contentType);
+			this.api = "https://localhost:7076/api/Statistics";
+		}
 
-        // GET: DataStatisticController/Details/5
-        public ActionResult Details(int id)
+		// GET: DataStatisticController
+		public async Task<IActionResult> Index()
         {
-            return View();
-        }
+			HttpResponseMessage httpResponseUser = await client.GetAsync(api + "/Users");
+			string dataUser = await httpResponseUser.Content.ReadAsStringAsync();
+			var optionsUser = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<AppUser> users = JsonSerializer.Deserialize<List<AppUser>>(dataUser, optionsUser);
 
-        // GET: DataStatisticController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+			HttpResponseMessage httpResponseBook = await client.GetAsync(api + "/Books");
+			string dataBook = await httpResponseBook.Content.ReadAsStringAsync();
+			var optionsBook = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Book> books = JsonSerializer.Deserialize<List<Book>>(dataBook, optionsBook);
 
-        // POST: DataStatisticController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+			HttpResponseMessage httpResponseTotal = await client.GetAsync(api + "/Total");
+			string dataTotal = await httpResponseTotal.Content.ReadAsStringAsync();
+			var optionsTotal = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Order> orders = JsonSerializer.Deserialize<List<Order>>(dataTotal, optionsTotal);
 
-        // GET: DataStatisticController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+			StatisticsView statisticsView = new StatisticsView()
+			{
+				UsersBuyMost = users,
+				BooksBuyMost = books,
+				OrdersTotalInMonth = orders
+			};
 
-        // POST: DataStatisticController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: DataStatisticController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: DataStatisticController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+			return View(statisticsView);
         }
     }
 }

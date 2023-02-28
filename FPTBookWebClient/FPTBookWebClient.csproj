@@ -30,7 +30,6 @@
 	<ItemGroup>
 		<Folder Include="Areas\Admins\Data\" />
 		<Folder Include="Areas\Owners\Data\" />
-		<Folder Include="Areas\Owners\Models\" />
 		<Folder Include="wwwroot\ProfilePicture\" />
 	</ItemGroup>
 

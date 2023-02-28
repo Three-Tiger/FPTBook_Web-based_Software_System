@@ -1,4 +1,4 @@
-﻿@model DisplayOrder
+﻿@model DisplayOrderView
 @{
 	ViewData["Title"] = "Orders List";
 }
@@ -48,7 +48,6 @@
 
 					<td>@order.OrderDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
 					<td>@order.DeliveryDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
-
 					<td>@order.OrderName</td>
 					<td>@order.OrderPhone</td>
 					<td>@order.DeliveryLocal</td>

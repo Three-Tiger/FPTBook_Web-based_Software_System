@@ -1,155 +1,176 @@
-﻿@{
-    ViewData["Title"] = "Data Statistics";
+﻿@model FPTBookWebClient.Areas.Owners.Models.StatisticsView
+@{
+	ViewData["Title"] = "Data Statistics";
 }
 <div class="pt-2 mb-2">
-    <h1 class="text-center">Data Statistics</h1>
-    <table id="tablecategory" class="table table-striped table-bordered mb-5"cellspacing="0"
-           width="100%">
-        <thead class="justify-content-md-between justify-content-sm-center align-content-center border-bottom border-2 my-2 bg-dark text-light p-3 rounded-3">
-            <tr class="text-center">
-                <th colspan="5">
-                    <strong>Who purchase the most</strong>
-                </th>
-            </tr>
-        </thead>
+	<h1 class="text-center">Data Statistics</h1>
+	<h3 class="mt-5">Who purchase the most</h3>
+	<table class="table table-striped table-bordered m-0" width="100%">
+		<thead class="justify-content-md-between justify-content-sm-center align-content-center border-bottom border-2 my-2 bg-dark text-light p-3 rounded-3">
+			<tr>
+				<th>
+					<strong>ID</strong>
+				</th>
+				<th>
+					<strong>Name</strong>
+				</th>
+				<th>
+					<strong>Phone Number</strong>
+				</th>
+				<th>
+					<strong>Email</strong>
+				</th>
+				<th>
+					<strong>Address</strong>
+				</th>
+			</tr>
+		</thead>
 
-        <tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
-            <tr>
-                <td class="text-center align-middle" id="category31">
-                    <a href="/shop?cid=31&page=1" style="text-decoration: none;">1</a>
-                </td>
-                <td class="text-center align-middle">Harry Potter</td>
-                <td class="align-middle">Harry Potter Product</td>
-                <td class="text-center align-middle">
-                    <a href="category/show/31"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                </td>
-                <td class="text-center align-middle">
-                    <form method="POST" action="category/delete/31?_method=DELETE"
-                          onsubmit="return deleteConfirm()">
-                        <button type="submit" style="border: none; cursor: pointer;">
-                            <i class="bi bi-trash-fill" style="color: red;"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-center align-middle" id="category30">
-                    <a href="/shop?cid=30&page=1" style="text-decoration: none;">2</a>
-                </td>
-                <td class="text-center align-middle">Winx 2</td>
-                <td class="align-middle">Winx 2 Product</td>
-                <td class="text-center align-middle">
-                    <a href="category/show/30"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                </td>
-                <td class="text-center align-middle">
-                    <form method="POST" action="category/delete/30?_method=DELETE"
-                          onsubmit="return deleteConfirm()">
-                        <button type="submit" style="border: none; cursor: pointer;">
-                            <i class="bi bi-trash-fill" style="color: red;"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+		<tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
+			@{
+				int countUser = 0;
+			}
+			@foreach (var user in Model.UsersBuyMost)
+			{
+				countUser++;
+				<tr>
+					<td>@countUser</td>
+					<td>@user.FirstName @user.LastName</td>
+					<td>@user.PhoneNumber</td>
+					<td>@user.Email</td>
+					<td>@user.Address</td>
+				</tr>
+			}
+		</tbody>
+	</table>
 
-    <table id="tablecategory" class="table table-striped table-bordered mb-5" cellspacing="0"
-           width="100%">
-        <thead class="justify-content-md-between justify-content-sm-center align-content-center border-bottom border-2 my-2 bg-dark text-light p-3 rounded-3">
-            <tr class="text-center">
-                <th colspan="5">
-                    <strong>Total income for the month</strong>
-                </th>    
-            </tr>
-        </thead>
+	<h3 class="mt-5">Which books are purchased the most</h3>
+	<table class="table table-striped table-bordered m-0" width="100%">
+		<thead class="justify-content-md-between justify-content-sm-center align-content-center border-bottom border-2 my-2 bg-dark text-light p-3 rounded-3">
+			<tr>
+				<th>
+					<strong>ID</strong>
+				</th>
+				<th>
+					<strong>Book Title</strong>
+				</th>
+				<th>
+					<strong>Genre</strong>
+				</th>
+				<th>
+					<strong>Author</strong>
+				</th>
+				<th>
+					<strong>Publisher</strong>
+				</th>
+				<th>
+					<strong>Price</strong>
+				</th>
+				<th>
+					<strong>Original Price</strong>
+				</th>
+				<th>
+					<strong>Sale Percent</strong>
+				</th>
+				<th>
+					<strong>Stock</strong>
+				</th>
+				<th>
+					<strong>Image</strong>
+				</th>
+			</tr>
+		</thead>
 
-        <tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
-            <tr>
-                <td class="text-center align-middle" id="category31">
-                    <a href="/shop?cid=31&page=1" style="text-decoration: none;">1</a>
-                </td>
-                <td class="text-center align-middle">Harry Potter</td>
-                <td class="align-middle">Harry Potter Product</td>
-                <td class="text-center align-middle">
-                    <a href="category/show/31"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                </td>
-                <td class="text-center align-middle">
-                    <form method="POST" action="category/delete/31?_method=DELETE"
-                          onsubmit="return deleteConfirm()">
-                        <button type="submit" style="border: none; cursor: pointer;">
-                            <i class="bi bi-trash-fill" style="color: red;"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-center align-middle" id="category30">
-                    <a href="/shop?cid=30&page=1" style="text-decoration: none;">2</a>
-                </td>
-                <td class="text-center align-middle">Winx 2</td>
-                <td class="align-middle">Winx 2 Product</td>
-                <td class="text-center align-middle">
-                    <a href="category/show/30"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                </td>
-                <td class="text-center align-middle">
-                    <form method="POST" action="category/delete/30?_method=DELETE"
-                          onsubmit="return deleteConfirm()">
-                        <button type="submit" style="border: none; cursor: pointer;">
-                            <i class="bi bi-trash-fill" style="color: red;"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+		<tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
+			@{
+				int countBook = 0;
+			}
+			@foreach (var book in Model.BooksBuyMost)
+			{
+				countBook++;
+				<tr>
+					<td>@countBook</td>
+					<td>@book.BookTitle</td>
+					<td>@book.Genre.GenreName</td>
+					<td>@book.Author.AuthorName</td>
+					<td>@book.Publisher.PublisherName</td>
+					<td>$@book.BookPrice</td>
+					<td>@book.BookOriginalPrice</td>
+					<td>@book.SalePercent%</td>
+					<td>@book.BookStock</td>
+					<td><img src="@book.BookImage" height="80" width="50" /></td>
+				</tr>
+			}
+		</tbody>
+	</table>
 
-    <table id="tablecategory" class="table table-striped table-bordered mb-5" cellspacing="0"
-           width="100%">
-        <thead class="justify-content-md-between justify-content-sm-center align-content-center border-bottom border-2 my-2 bg-dark text-light p-3 rounded-3">
-            <tr class="text-center">
-                <th colspan="5">
-                    <strong>Which books are purchased the most?</strong>
-                </th>
-            </tr>
-        </thead>
+	<h3 class="mt-5">Total income for the month @DateTime.Now.Month</h3>
+	<table class="table table-striped table-bordered m-0" width="100%">
+		<thead class="justify-content-md-between justify-content-sm-center align-content-center border-bottom border-2 my-2 bg-dark text-light p-3 rounded-3">
+			<tr>
+				<th>
+					<strong>ID</strong>
+				</th>
+				<th>
+					<strong>Order date</strong>
+				</th>
+				<th>
+					<strong>Delivery date</strong>
+				</th>
+				<th>
+					<strong>Customer Name</strong>
+				</th>
+				<th>
+					<strong>Telephone</strong>
+				</th>
+				<th>
+					<strong>Address</strong>
+				</th>
+				<th>
+					<strong>Shipping Fee</strong>
+				</th>
+				<th>
+					<strong>Amount</strong>
+				</th>
+			</tr>
+		</thead>
 
-        <tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
-            <tr>
-                <td class="text-center align-middle" id="category31">
-                    <a href="/shop?cid=31&page=1" style="text-decoration: none;">1</a>
-                </td>
-                <td class="text-center align-middle">Harry Potter</td>
-                <td class="align-middle">Harry Potter Product</td>
-                <td class="text-center align-middle">
-                    <a href="category/show/31"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                </td>
-                <td class="text-center align-middle">
-                    <form method="POST" action="category/delete/31?_method=DELETE"
-                          onsubmit="return deleteConfirm()">
-                        <button type="submit" style="border: none; cursor: pointer;">
-                            <i class="bi bi-trash-fill" style="color: red;"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-center align-middle" id="category30">
-                    <a href="/shop?cid=30&page=1" style="text-decoration: none;">2</a>
-                </td>
-                <td class="text-center align-middle">Winx 2</td>
-                <td class="align-middle">Winx 2 Product</td>
-                <td class="text-center align-middle">
-                    <a href="category/show/30"><i class="bi bi-pen-fill" style="color: black;"></i></a>
-                </td>
-                <td class="text-center align-middle">
-                    <form method="POST" action="category/delete/30?_method=DELETE"
-                          onsubmit="return deleteConfirm()">
-                        <button type="submit" style="border: none; cursor: pointer;">
-                            <i class="bi bi-trash-fill" style="color: red;"></i>
-                        </button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+		<tbody class="justify-content-md-between justify-content-sm-center border-bottom border-2 my-2 bg-light p-2 rounded-3">
+			@{
+				int countTotal = 0;
+				decimal total = 0;
+			}
+			@foreach (var order in Model.OrdersTotalInMonth)
+			{
+				countTotal++;
+				<tr>
+					<td>@countTotal</td>
+					<td>@order.OrderDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
+					<td>@order.DeliveryDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
+					<td>@order.OrderName</td>
+					<td>@order.OrderPhone</td>
+					<td>@order.DeliveryLocal</td>
+					<td><b>$@order.ShippingFee.ToString("N2")</b></td>
+					@{
+						decimal amount = 0;
+					}
+					@foreach (var od in order.OrderDetails)
+					{
+						amount += od.TotalPrice;
+					}
+					<td>@amount.ToString("N2")</td>
+					@{
+						total += amount + order.ShippingFee;
+					}
+				</tr>
+			}
+		</tbody>
+
+		<tfoot>
+			<tr>
+				<td colspan="6" class="text-end"><strong>Total</strong></td>
+				<td colspan="2" class="text-center">$@total.ToString("N2")</td>
+			</tr>
+		</tfoot>
+	</table>
 </div>

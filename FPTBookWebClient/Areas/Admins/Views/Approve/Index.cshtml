@@ -48,57 +48,115 @@
 		e.preventDefault();
 		var id = $(this).attr("data-id");
 		var el = this
-		$.ajax({
-			url: "https://localhost:7076/api/Genres/Approvel/" + id,
-			type: "put",
-			data: {
-				id: id,
+		const swalWithBootstrapButtons = Swal.mixin({
+			customClass: {
+				confirmButton: 'btn btn-success',
+				cancelButton: 'btn btn-danger me-2'
 			},
-			success: function (result, status, xhr) {
-				Swal.fire(
-					'Approved',
-					'Accepted book genre',
-					'success'
+			buttonsStyling: false
+		})
+
+		swalWithBootstrapButtons.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonText: 'Yes, delete it!',
+			cancelButtonText: 'No, cancel!',
+			reverseButtons: true
+		}).then((result) => {
+			if (result.isConfirmed) {
+				$.ajax({
+					url: "https://localhost:7076/api/Genres/Approvel/" + id,
+					type: "put",
+					data: {
+						id: id,
+					},
+					success: function (result, status, xhr) {
+						Swal.fire(
+							'Approved',
+							'Accepted book genre',
+							'success'
+						)
+						$(el).closest('tr').css('background', '#a5dc86')
+						$(el)
+							.closest('tr')
+							.fadeOut(800, function () {
+								$('#genre' + id).remove()
+							})
+					},
+					error: function (xhr, status, error) {
+						console.log(xhr);
+					}
+				});
+			} else if (
+				/* Read more about handling dismissals below */
+				result.dismiss === Swal.DismissReason.cancel
+			) {
+				swalWithBootstrapButtons.fire(
+					'Cancelled',
+					'You have unconfirmed the genre.',
+					'error'
 				)
-				$(el).closest('tr').css('background', 'tomato')
-				$(el)
-					.closest('tr')
-					.fadeOut(800, function () {
-						$('#genre' + id).remove()
-					})
-			},
-			error: function (xhr, status, error) {
-				console.log(xhr);
 			}
-		});
+		})
 	});
 
 	$('.reject').click(function (e) {
 		e.preventDefault();
 		var id = $(this).attr("data-id");
 		var el = this
-		$.ajax({
-			url: "https://localhost:7076/api/Genres/Reject/" + id,
-			type: "put",
-			data: {
-				id: id,
+		const swalWithBootstrapButtons = Swal.mixin({
+			customClass: {
+				confirmButton: 'btn btn-success',
+				cancelButton: 'btn btn-danger me-2'
 			},
-			success: function (result, status, xhr) {
-				Swal.fire(
-					'Rejected',
-					'Rejected book genre',
+			buttonsStyling: false
+		})
+
+		swalWithBootstrapButtons.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonText: 'Yes, delete it!',
+			cancelButtonText: 'No, cancel!',
+			reverseButtons: true
+		}).then((result) => {
+			if (result.isConfirmed) {
+				$.ajax({
+					url: "https://localhost:7076/api/Genres/Reject/" + id,
+					type: "put",
+					data: {
+						id: id,
+					},
+					success: function (result, status, xhr) {
+						Swal.fire(
+							'Rejected',
+							'Rejected book genre',
+							'error'
+						)
+						$(el).closest('tr').css('background', '#f27474')
+						$(el)
+							.closest('tr')
+							.fadeOut(800, function () {
+								$('#genre' + id).remove()
+							})
+					},
+					error: function (xhr, status, error) {
+						console.log(xhr);
+					}
+				});
+			} else if (
+				/* Read more about handling dismissals below */
+				result.dismiss === Swal.DismissReason.cancel
+			) {
+				swalWithBootstrapButtons.fire(
+					'Cancelled',
+					'You have unconfirmed the genre.',
 					'error'
 				)
-				$(el).closest('tr').css('background', 'tomato')
-				$(el)
-					.closest('tr')
-					.fadeOut(800, function () {
-						$('#genre' + id).remove()
-					})
-			},
-			error: function (xhr, status, error) {
-				console.log(xhr);
 			}
-		});
+		})
 	});
 </script>
