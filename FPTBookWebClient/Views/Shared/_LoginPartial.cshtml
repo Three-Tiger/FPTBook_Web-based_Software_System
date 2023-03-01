@@ -32,6 +32,9 @@
 					<li>
 						<a class="dropdown-item" asp-controller="Order" asp-action="Index">Order infomation</a>
 					</li>
+					<li>
+						<a class="dropdown-item" asp-controller="PurchaseHistory" asp-action="Index">Purchase History</a>
+					</li>
 					<div class="dropdown-divider"></div>
 					<li>
 						<form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" onsubmit="return confirm('Are you sure to logout?')">

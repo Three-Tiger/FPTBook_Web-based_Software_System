@@ -29,14 +29,17 @@ namespace DataAccess
 			return listFeedbacks;
 		}
 
-		public static List<Feedback> GetCheckedFeedbacks()
+		public static List<Feedback> GetCheckedFeedbacks(int bookId)
 		{
 			var listFeedbacks = new List<Feedback>();
 			try
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					listFeedbacks = context.Feedbacks.Where(x => x.IsDeleted == false && x.FeedStatus == FeedStatus.Checked).ToList();
+					listFeedbacks = context.Feedbacks
+						.Where(x => x.IsDeleted == false && x.FeedStatus == FeedStatus.Checked && x.BookId == bookId)
+						.Include(u => u.User)
+						.ToList();
 				}
 			}
 			catch (Exception e)
@@ -46,7 +49,7 @@ namespace DataAccess
 			return listFeedbacks;
 		}
 
-		public static Feedback FindAuthorById(int feedID)
+		public static Feedback GetFeedbackById(int feedID)
 		{
 			Feedback feedback = new Feedback();
 			try

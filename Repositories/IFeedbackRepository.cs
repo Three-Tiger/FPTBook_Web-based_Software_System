@@ -10,7 +10,7 @@ namespace Repositories
 	public interface IFeedbackRepository
 	{
 		List<Feedback> GetFeedbacks();
-		List<Feedback> GetCheckedFeedbacks();
+		List<Feedback> GetCheckedFeedbacks(int bookId);
 		Feedback GetFeedbackById(int id);
 		void SaveFeedback(Feedback feedback);
 		void UpdateFeedback(Feedback feedback);

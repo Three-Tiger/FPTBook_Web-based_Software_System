@@ -47,7 +47,7 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					book = context.Books.SingleOrDefault(x => x.BookId == bookID);
+					book = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).SingleOrDefault(x => x.BookId == bookID);
 				}
 			}
 			catch (Exception e)

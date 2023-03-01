@@ -1,4 +1,4 @@
-﻿@model BusinessObjects.Book
+﻿@model BookDetailView
 @{
 	ViewData["Title"] = "Detail";
 }
@@ -12,29 +12,29 @@
 			<div class="col-md-6">
 				<div id="slider" class="">
 					<div class="item text-center">
-						<img src="@Model.BookImage" height="50%" width="50%" />
+						<img src="@Model.Book.BookImage" height="50%" width="50%" />
 					</div>
 				</div>
 			</div>
 			@{
-				decimal PriceSale = Model.BookPrice - (Model.BookPrice * ((decimal)Model.SalePercent / 100m));
+				decimal PriceSale = Model.Book.BookPrice - (Model.Book.BookPrice * ((decimal)Model.Book.SalePercent / 100m));
 			}
 			<div class="col-md-6">
 				<div class="product-dtl">
 					<div class="product-info">
-						<div class="product-name">@Model.BookTitle</div>
+						<div class="product-name">@Model.Book.BookTitle</div>
 						<div class="product-price-discount">
 							<span>$@PriceSale.ToString("N2")</span>
-							@if (Model.BookPrice != PriceSale)
+							@if (Model.Book.BookPrice != PriceSale)
 							{
-								<span class="line-through">$@Model.BookPrice.ToString("N2")</span>
+								<span class="line-through">$@Model.Book.BookPrice.ToString("N2")</span>
 							}
 						</div>
 					</div>
 					<p>
-						@Model.BookDescription
+						@Model.Book.BookDescription
 					</p>
-					@if (Model.BookStock == 0)
+					@if (Model.Book.BookStock == 0)
 					{
 						<div>
 							Out of Stock
@@ -43,12 +43,12 @@
 					else
 					{
 						<div>
-							Stock: <span id="stock">@Model.BookStock</span>
+							Stock: <span id="stock">@Model.Book.BookStock</span>
 						</div>
 					}
 					<div class="product-count">
 						<label for="size" class="mb-2">Quantity</label>
-						<form asp-controller="Cart" asp-action="AddToCart" asp-route-bookId="@Model.BookId" method="post" onsubmit="return CheckStock(@Model.BookStock)">
+						<form asp-controller="Cart" asp-action="AddToCart" asp-route-bookId="@Model.Book.BookId" method="post" onsubmit="return CheckStock(@Model.Book.BookStock)">
 							<div class="d-flex">
 								<div class="qtyminus">-</div>
 								<input type="text" readonly name="quantity" value="1" class="qty" />
@@ -82,21 +82,21 @@
 								<tbody>
 									<tr>
 										<td width="40%" class="fw-bold">Genre</td>
-										<td>@Model.Genre.GenreName</td>
+										<td>@Model.Book.Genre.GenreName</td>
 									</tr>
 									<tr>
 										<td width="40%" class="fw-bold">Publisher</td>
-										<td>@Model.Publisher.PublisherName</td>
+										<td>@Model.Book.Publisher.PublisherName</td>
 									</tr>
 									<tr>
 										<td width="40%" class="fw-bold">Author</td>
-										<td>@Model.Author.AuthorName</td>
+										<td>@Model.Book.Author.AuthorName</td>
 									</tr>
 									<tr>
 										<td width="40%" class="fw-bold">Detail Description</td>
 										<td>
 											<p style="text-align: justify;">
-												@Model.BookDetail
+												@Model.Book.BookDetail
 											</p>
 										</td>
 									</tr>
@@ -137,14 +137,16 @@
 								<tbody>
 									@foreach (var feedback in Model.Feedbacks)
 									{
-										<tr>
-											<td>@feedback.User.FirstName @feedback.User.LastName</td>
-											<td>@feedback.Content</td>
-											<td>@feedback.FeedDate</td>
-										</tr>
+										@if (feedback.FeedStatus == BusinessObjects.Constraints.FeedStatus.Checked)
+										{
+											<tr>
+												<td>@feedback.User.FirstName @feedback.User.LastName</td>
+												<td>@feedback.Content</td>
+												<td>@feedback.FeedDate</td>
+											</tr>
+										}
 									}
 								</tbody>
-
 							</table>
 						}
 						else
@@ -159,7 +161,7 @@
 	</div>
 </div>
 @section scripts {
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
 		$(document).ready(function () {

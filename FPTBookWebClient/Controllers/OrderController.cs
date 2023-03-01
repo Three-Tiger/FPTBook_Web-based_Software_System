@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 
 namespace FPTBookWebClient.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "User")]
     public class OrderController : Controller
     {
 		private readonly UserManager<AppUser> _userManager;
