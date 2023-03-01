@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace FPTBookWebClient.Controllers
@@ -79,6 +80,45 @@ namespace FPTBookWebClient.Controllers
 			this.ViewBag.Pager = paper;
 
 			return View(dataBooks);
+		}
+
+		public async Task<IActionResult> Search(string searchValue, int pg)
+		{
+			HttpResponseMessage httpResponse = await client.GetAsync(api + "/Shop/Genres");
+			string data = await httpResponse.Content.ReadAsStringAsync();
+			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
+			ViewData["Genre"] = genres;
+
+			HttpResponseMessage httpResponse1 = await client.GetAsync(api + "/Shop/Authors");
+			string data1 = await httpResponse1.Content.ReadAsStringAsync();
+			var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+			List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
+			ViewData["Author"] = authors;
+
+			HttpResponseMessage responseBook = await client.GetAsync(api + "/Shop/" + searchValue);
+			if (responseBook.IsSuccessStatusCode)
+			{
+				var dataBook = responseBook.Content.ReadAsStringAsync().Result;
+				var optionsBook = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				List<Book> books = JsonSerializer.Deserialize<List<Book>>(dataBook, optionsBook);
+
+				const int pageSize = 8;
+				if (pg < 1)
+				{
+					pg = 1;
+				}
+				int recsCount = books.Count;
+				var paper = new Pager(recsCount, pg, pageSize);
+				int recSkip = (pg - 1) * pageSize;
+				var dataBooks = books.Skip(recSkip).Take(paper.PageSize).ToList();
+
+				this.ViewBag.Pager = paper;
+				ViewData["GetSearchValue"] = searchValue;
+
+				return View(dataBooks);
+			}
+			return NotFound();
 		}
 
 		public async Task<IActionResult> Detail(int id)

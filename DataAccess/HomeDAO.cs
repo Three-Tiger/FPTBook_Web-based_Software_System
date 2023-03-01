@@ -93,6 +93,30 @@ namespace DataAccess
 			return listBooks;
 		}
 
+		public static List<Book> Search(string value)
+		{
+			var listBooks = new List<Book>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+
+					var bookQuery = from b in context.Books select b;
+					if (!String.IsNullOrEmpty(value))
+					{
+						bookQuery = bookQuery.Where(b => b.BookTitle.Contains(value));
+					}
+
+					listBooks = bookQuery.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false).AsNoTracking().ToList();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return listBooks;
+		}
+
 		public static Book DisplayBooksDetail(int bookID)
 		{
 			var book = new Book();

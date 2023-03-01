@@ -12,6 +12,7 @@ namespace Repositories
 		List<Book> Gallery();
 		List<Book> BestSelling();
 		List<Book> DisplayBooksInShop();
+		List<Book> Search(string value);
 		Book DisplayBooksDetail(int bookID);
 		List<Genre> DisplayGenresInShop();
 		List<Author> DisplayAuthorsInShop();

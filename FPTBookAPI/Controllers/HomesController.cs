@@ -31,6 +31,13 @@ namespace FPTBookAPI.Controllers
 			return repository.DisplayBooksInShop();
 		}
 
+		// GET: api/<HomesController>/Shop
+		[HttpGet("Shop/{searchValue}")]
+		public ActionResult<IEnumerable<Book>> Search(string searchValue)
+		{
+			return repository.Search(searchValue);
+		}
+
 		// GET: api/<HomesController>/Detail/5
 		[HttpGet("Detail/{id}")]
 		public ActionResult<Book> DisplayBooksDetail(int id)

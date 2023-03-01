@@ -1,0 +1,175 @@
+﻿@model IEnumerable<BusinessObjects.Book>
+@{
+	ViewData["Title"] = "Shop";
+
+	Pager pager = new Pager();
+	int pageNo = 0;
+	if (ViewBag.Pager != null)
+	{
+		pager = ViewBag.Pager;
+		pageNo = pager.CurrentPage;
+	}
+}
+@section stylesheets {
+	<link href="~/css/shoppage.css" rel="stylesheet">
+}
+<section class="container-fluid row my-3">
+	<nav class="accordion arrows col-lg-2 col-md-3 custom-dropdown">
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-md navbar-light bg-info rounded">
+			<!-- Toggle button -->
+			<button class="navbar-toggler ms-2" type="button" data-toggle="collapse" data-target="#sidebarMenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Brand -->
+			<a class="text-white" style="text-decoration: none;" href="/">
+				<h3 class="fw-bold mx-3">FPT Book</h3>
+			</a>
+		</nav>
+		<!-- Navbar -->
+		<nav id="sidebarMenu" class="collapse d-md-block bg-white">
+			<input type="radio" name="accordion" id="cb1" />
+			<section class="box">
+				<label class="all-book"><a asp-controller="Home" asp-action="Shop" class="nav-link">All Book</a></label>
+			</section>
+			<input type="radio" name="accordion" id="cb2" />
+			<section class="box">
+				<label class="box-title" for="cb2">Genre</label>
+				<label class="box-close" for="acc-close"></label>
+				@foreach (var genre in ViewBag.Genre)
+				{
+					<div class="box-content">
+						<a asp-route="displaybookbygenre" asp-route-genreId="@genre.GenreId" class="nav-link">@genre.GenreName</a>
+					</div>
+				}
+			</section>
+			<input type="radio" name="accordion" id="cb3" />
+			<section class="box">
+				<label class="box-title" for="cb3">Author</label>
+				<label class="box-close" for="acc-close"></label>
+				@foreach (var author in ViewBag.Author)
+				{
+					<div class="box-content">
+						<a asp-route="displaybookbyauthor" asp-route-authorId="@author.AuthorId" class="nav-link">@author.AuthorName</a>
+					</div>
+				}
+			</section>
+			<input type="radio" name="accordion" id="acc-close" />
+		</nav>
+	</nav>
+	<div class="col-lg-10 col-md-9 col-12">
+		<div class="text-center">
+			<div class="row">
+				@foreach (var book in Model)
+				{
+					<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
+						<div class="card">
+							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+								<img src="@book.BookImage" class="w-100" style="width: auto; height: 35rem;" />
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@book.BookId">
+									<div class="mask">
+										<div class="d-flex justify-content-start align-items-end h-100">
+											<h5>
+												@if (DateTime.Compare(book.BookLastUpdated.AddDays(7), DateTime.Now) > 0)
+												{
+													<span class="badge bg-primary ms-2">New</span>
+												}
+												@if (book.SalePercent != 0)
+												{
+													<span class="badge bg-danger ms-2">-@book.SalePercent%</span>
+												}
+											</h5>
+										</div>
+									</div>
+									<div class="hover-overlay">
+										<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="card-body">
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@book.BookId" class="text-reset">
+									<h5 class="card-title mb-3">@book.BookTitle</h5>
+								</a>
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@book.BookId" class="text-reset">
+									<p>@book.Genre.GenreName</p>
+								</a>
+								<h6 class="mb-3">
+									@{
+										decimal PriceSale = book.BookPrice - (book.BookPrice * ((decimal)book.SalePercent / 100m));
+									}
+									@if (book.BookPrice != PriceSale)
+									{
+										<s>$@book.BookPrice.ToString("N2")</s>
+									}
+									<strong class="ms-2 text-danger">$@PriceSale.ToString("N2")</strong>
+								</h6>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+		<div class="demo">
+			<nav class="pagination-outer" aria-label="Page navigation">
+				@if (pager.TotalPage > 0)
+				{
+					<ul class="pagination">
+						@if (pager.CurrentPage > 1)
+						{
+							<li class="page-item">
+								<a asp-controller="Home" asp-action="Search" asp-route-searchValue="@ViewData["GetSearchValue"]" asp-route-pg="1" class="page-link" aria-label="First">
+									<span aria-hidden="true">First</span>
+								</a>
+							</li>
+							<li class="page-item">
+								<a asp-controller="Home" asp-action="Search" asp-route-searchValue="@ViewData["GetSearchValue"]" asp-route-pg="@(pager.CurrentPage - 1)" class="page-link" aria-label="Previous">
+									<span aria-hidden="true">Previous</span>
+								</a>
+							</li>
+						}
+
+						@for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+						{
+							<li class="page-item @(pge == pager.CurrentPage ? "active" : "")">
+								<a class="page-link" asp-controller="Home" asp-action="Search" asp-route-searchValue="@ViewData["GetSearchValue"]" asp-route-pg="@pge">@pge</a>
+							</li>
+						}
+
+						@if (pager.CurrentPage < pager.TotalPage)
+						{
+							<li class="page-item">
+								<a asp-controller="Home" asp-action="Search" asp-route-searchValue="@ViewData["GetSearchValue"]" asp-route-pg="@(pager.CurrentPage + 1)" class="page-link" aria-label="Next">
+									<span aria-hidden="true">Next</span>
+								</a>
+							</li>
+							<li class="page-item">
+								<a asp-controller="Home" asp-action="Search" asp-route-searchValue="@ViewData["GetSearchValue"]" asp-route-pg="@(pager.TotalPage)" class="page-link" aria-label="Last">
+									<span aria-hidden="true">Last</span>
+								</a>
+							</li>
+						}
+					</ul>
+				}
+			</nav>
+		</div>
+	</div>
+</section>
+@section scripts {
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript">
+		$('.custom-dropdown').on('show.bs.dropdown', function () {
+			var that = $(this);
+			setTimeout(function () {
+				that.find('.dropdown-menu').addClass('active');
+			}, 100);
+
+
+		});
+
+		$('.custom-dropdown').on('hide.bs.dropdown', function () {
+			$(this).find('.dropdown-menu').removeClass('active');
+		});
+	</script>
+}
