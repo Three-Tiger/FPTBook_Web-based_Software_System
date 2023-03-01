@@ -26,7 +26,6 @@ namespace BusinessObjects
 		public string BookDescription { get; set; }
 		[Required(ErrorMessage = "The Book Description can not empty!")]
 		[MinLength(5, ErrorMessage = "The Book Detail must be more than 5 character!")]
-		[MaxLength(100, ErrorMessage = "The Book Detail must be lesser than 100 character!")]
 		[Display(Name = "Book Detail")]
 		public string BookDetail { get; set; }
 		[RegularExpression(@"^(^(\$)?\d+(\.\d+)?$|^(-)?\d+(\.\d+)?$)$|^(^(\$)?((\d\d\d\,){1,4}|(\d\d\,){1,4}|(\d\,){1,4}){1,4}\d\d\d(\.\d+)?$|^(-)?\d+(\.\d+)?$)$",

@@ -47,7 +47,7 @@
 						<input type="hidden" name="page" value="1">
 						<input class="form-control" type="search" id="myInput" name="search" placeholder="Search product"
 							   aria-label="Search" required>
-						<a class="btn btn-outline-info ms-2" type="submit">Search</a>
+						<button class="btn btn-outline-info ms-2" type="submit">Search</button>
 					</form>
 					<input type="hidden" id="arr" value="">
 					<script>
@@ -154,7 +154,7 @@
 				</div>
 				<div class="col-lg-auto col-md-12 col-12 d-flex justify-content-center my-2 my-lg-0">
 					<ul class="nav fw-bold">
-						<li><a asp-controller="Home" asp-action="Index" class="nav-link text-dark text-uppercase">Home</a></li>
+						<li><a asp-controller="Home" asp-action="Index" asp-route-pg="1" class="nav-link text-dark text-uppercase">Home</a></li>
 						<li><a asp-controller="Home" asp-action="Shop" class="nav-link text-dark text-uppercase">Shop</a></li>
 						<li><a asp-controller="Home" asp-action="About" class="nav-link text-dark text-uppercase">About</a></li>
 					</ul>
