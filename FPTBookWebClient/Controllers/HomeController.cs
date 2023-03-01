@@ -13,6 +13,8 @@ namespace FPTBookWebClient.Controllers
 	{
 		private readonly HttpClient client = null;
 		private string api;
+		private string apiBook;
+		private string apiFeedback;
 
 		public HomeController()
 		{
@@ -20,6 +22,8 @@ namespace FPTBookWebClient.Controllers
 			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
 			client.DefaultRequestHeaders.Accept.Add(contentType);
 			this.api = "https://localhost:7076/api/Homes";
+			this.apiBook = "https://localhost:7076/api/Books";
+			this.apiFeedback = "https://localhost:7076/api/Feedbacks";
 		}
 
 		public async Task<IActionResult> Index()
@@ -43,7 +47,7 @@ namespace FPTBookWebClient.Controllers
 			return View(showIndex);
 		}
 
-		public async Task<IActionResult> Shop()
+		public async Task<IActionResult> Shop(int pg = 1)
 		{
 			HttpResponseMessage httpResponse = await client.GetAsync(api + "/Shop/Genres");
 			string data = await httpResponse.Content.ReadAsStringAsync();
@@ -62,18 +66,41 @@ namespace FPTBookWebClient.Controllers
 			var options3 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Book> books = JsonSerializer.Deserialize<List<Book>>(data3, options3);
 
-			return View(books);
+			const int pageSize = 8;
+			if (pg < 1)
+			{
+				pg = 1;
+			}
+			int recsCount = books.Count;
+			var paper = new Pager(recsCount, pg, pageSize);
+			int recSkip = (pg - 1) * pageSize;
+			var dataBooks = books.Skip(recSkip).Take(paper.PageSize).ToList();
+
+			this.ViewBag.Pager = paper;
+
+			return View(dataBooks);
 		}
 
 		public async Task<IActionResult> Detail(int id)
 		{
-			HttpResponseMessage response = await client.GetAsync(api + "/Detail/" + id);
-			if (response.IsSuccessStatusCode)
+			HttpResponseMessage responseBook = await client.GetAsync(apiBook + "/" + id);
+			HttpResponseMessage responseFeedback = await client.GetAsync(apiFeedback + "/Checked/" + id);
+			if (responseBook.IsSuccessStatusCode && responseFeedback.IsSuccessStatusCode)
 			{
-				var data = response.Content.ReadAsStringAsync().Result;
-				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				Book obj = JsonSerializer.Deserialize<Book>(data, options);
-				return View(obj);
+				var dataBook = responseBook.Content.ReadAsStringAsync().Result;
+				var optionsBook = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				Book book = JsonSerializer.Deserialize<Book>(dataBook, optionsBook);
+
+				var dataFeedback = responseFeedback.Content.ReadAsStringAsync().Result;
+				var optionsFeedback = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				List<Feedback> feedbacks = JsonSerializer.Deserialize<List<Feedback>>(dataFeedback, optionsFeedback);
+
+				BookDetailView bookDetailView = new BookDetailView()
+				{
+					Book = book,
+					Feedbacks = feedbacks
+				};
+				return View(bookDetailView);
 			}
 			return NotFound();
 		}

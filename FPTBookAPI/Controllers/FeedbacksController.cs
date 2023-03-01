@@ -20,11 +20,11 @@ namespace FPTBookAPI.Controllers
 			return repository.GetFeedbacks();
 		}
 
-		// GET: api/<FeedbacksController>/Checked
-		[HttpGet("Checked")]
-		public ActionResult<IEnumerable<Feedback>> GetCheckedFeedback()
+		// GET: api/<FeedbacksController>/Checked/38
+		[HttpGet("Checked/{bookId}")]
+		public ActionResult<IEnumerable<Feedback>> GetCheckedFeedback(int bookId)
 		{
-			return repository.GetCheckedFeedbacks();
+			return repository.GetCheckedFeedbacks(bookId);
 		}
 
 		// GET api/<FeedbacksController>/5

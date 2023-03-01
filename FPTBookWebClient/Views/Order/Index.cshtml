@@ -1,1 +1,59 @@
-﻿
+﻿@model IEnumerable<BusinessObjects.Order>
+@{
+	ViewData["Title"] = "Orders List";
+}
+<div class="pt-2 mb-2">
+	<h1 class="text-center mb-4">Orders List</h1>
+
+	<table id="example" class="table table-striped" style="width:100%">
+		<thead>
+			<tr>
+				<th>
+					<strong>ID</strong>
+				</th>
+				<th>
+					<strong>Order date</strong>
+				</th>
+				<th>
+					<strong>Delivery date</strong>
+				</th>
+				<th>
+					<strong>Customer Name</strong>
+				</th>
+				<th>
+					<strong>Telephone</strong>
+				</th>
+				<th>
+					<strong>Address</strong>
+				</th>
+				<th>
+					<strong>Shipping Fee</strong>
+				</th>
+				<th>
+					<strong>Status</strong>
+				</th>
+			</tr>
+		</thead>
+		@{
+			int count = 0;
+		}
+		<tbody>
+			@foreach (var order in Model)
+			{
+				count++;
+				<tr>
+					<td>
+						<a asp-controller="OrderDetail" asp-action="Index" asp-route-orderId="@order.OrderId" style="text-decoration: none;">@count</a>
+					</td>
+					<td>@order.OrderDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
+					<td>@order.DeliveryDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
+					<td>@order.OrderName</td>
+					<td>@order.OrderPhone</td>
+					<td>@order.DeliveryLocal</td>
+					<td><b>$@order.ShippingFee.ToString("N2")</b></td>
+					<td>@order.OrderStatus.ToString()</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

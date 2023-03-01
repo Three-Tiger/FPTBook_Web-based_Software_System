@@ -26,6 +26,23 @@ namespace DataAccess
 			return listOrders;
 		}
 
+		public static List<Order> FindOrderByUserId(string userId)
+		{
+			var lstOrders = new List<Order>();
+			try
+			{
+				using (var context = new ApplicationDbContext())
+				{
+					lstOrders = context.Orders.Where(o => o.UserId == userId && o.IsDeleted == false).ToList();
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return lstOrders;
+		}
+
 		public static Order FindOrderById(int orderId)
 		{
 			Order order = new Order();

@@ -1,0 +1,23 @@
+﻿@model BusinessObjects.Feedback
+@{
+	ViewData["Title"] = "Feedback";
+}
+
+<form asp-controller="Feedback" asp-action="Give" asp-route-id="@ViewBag.BookId" class="border my-2 px-5" method="post">
+	<h1 class="text-center my-3">GIVE FEEDBACK FOR US</h1>
+	<!--Section description-->
+	<p class="text-center w-responsive mx-3 mx-md-5 mb-4">
+		Do you have any feedback? Please do not hesitate to contact us directly.
+	</p>
+
+	<!--Grid row-->
+	<div class="row">
+		<div class="col-12 px-0">
+			<label for="message" class="mb-2">Content</label>
+			<textarea asp-for="@Model.Content" class="form-control mb-4" cols="30" rows="10"></textarea>
+		</div>
+	</div>
+	<div class="text-center">
+		<input class="btn btn-primary mb-3" type="submit" value="Send Feedback">
+	</div>
+</form>

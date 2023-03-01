@@ -19,6 +19,13 @@ namespace FPTBookAPI.Controllers
 			return repository.GetOrders();
 		}
 
+		// GET api/<OrdersController>/User/8461a3e4-1021-44b2-ac47-e19df95c8465
+		[HttpGet("User/{userId}")]
+		public ActionResult<IEnumerable<Order>> GetOrderUsers(string userId)
+		{
+			return repository.FindOrderByUserId(userId);
+		}
+
 		// GET api/<OrdersController>/5
 		[HttpGet("{id}")]
 		public ActionResult<Order> Get(int id)

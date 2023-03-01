@@ -371,3 +371,7 @@ D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_co
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\FPTBookWebClient.pdb
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\FPTBookWebClient.genruntimeconfig.cache
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\ref\FPTBookWebClient.dll
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Views\OrderDetail\Index.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Views\Feedback\Index.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Views\PurchaseHistory\Index.cshtml.g.cs
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\obj\Debug\net6.0\Razor\Views\OrderDetail\Purchase.cshtml.g.cs

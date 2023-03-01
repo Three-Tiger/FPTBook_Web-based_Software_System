@@ -10,7 +10,7 @@ using System.Text.Json;
 
 namespace FPTBookWebClient.Controllers
 {
-	[Authorize]
+	[Authorize(Roles = "User")]
 	public class CartController : Controller
 	{
 		private readonly ApplicationDbContext _db;

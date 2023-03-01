@@ -17,9 +17,9 @@ namespace BusinessObjects
 		public string ContactEmail { get; set; }
 		public string ContactSubject { get; set; }
 		public string ContactMessage { get; set; }
-		public DateTime ContactDate { get; set; } = DateTime.Now;
+		public DateTime? ContactDate { get; set; } = DateTime.Now;
 		public string? Reply { get; set; }
 		public DateTime? ReplyDate { get; set; }
-		public bool IsDeleted { get; set; } = false;
+		public bool? IsDeleted { get; set; } = false;
 	}
 }
