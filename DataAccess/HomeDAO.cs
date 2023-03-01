@@ -72,17 +72,18 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					//listBooks = context.Books.Where(x => x.IsDeleted == false).Include(t => t.GenreId).ToList();
-					listBooks = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false).Select(b => new Book
-					{
-						BookId = b.BookId,
-						BookTitle = b.BookTitle,
-						BookPrice = b.BookPrice,
-						BookOriginalPrice = b.BookOriginalPrice,
-						SalePercent = b.SalePercent,
-						BookImage = b.BookImage,
-						Genre = b.Genre,
-					}).ToList();
+					listBooks = context.Books.Include(g => g.Genre).Include(a => a.Author).Include(p => p.Publisher).Where(x => x.IsDeleted == false)
+						.OrderByDescending(b => b.BookLastUpdated)
+						.Select(b => new Book
+						{
+							BookId = b.BookId,
+							BookTitle = b.BookTitle,
+							BookPrice = b.BookPrice,
+							BookOriginalPrice = b.BookOriginalPrice,
+							SalePercent = b.SalePercent,
+							BookImage = b.BookImage,
+							Genre = b.Genre,
+						}).ToList();
 				}
 			}
 			catch (Exception e)

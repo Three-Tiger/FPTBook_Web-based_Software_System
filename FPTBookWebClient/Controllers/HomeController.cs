@@ -66,7 +66,7 @@ namespace FPTBookWebClient.Controllers
 			var options3 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Book> books = JsonSerializer.Deserialize<List<Book>>(data3, options3);
 
-			const int pageSize = 12;
+			const int pageSize = 8;
 			if (pg < 1)
 			{
 				pg = 1;

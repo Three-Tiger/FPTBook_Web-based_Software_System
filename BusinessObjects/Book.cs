@@ -41,7 +41,7 @@ namespace BusinessObjects
 		[RegularExpression(@"^(^(\$)?\d+(\.\d+)?$|^(-)?\d+(\.\d+)?$)$|^(^(\$)?((\d\d\d\,){1,4}|(\d\d\,){1,4}|(\d\,){1,4}){1,4}\d\d\d(\.\d+)?$|^(-)?\d+(\.\d+)?$)$",
 		ErrorMessage = "The Sale Percent must be a number!")]
 		[Required(ErrorMessage = "The Sale Percent can not empty!")]
-		[Range(1, 99, ErrorMessage = "The Sale Percent is invalid!")]
+		[Range(0, 99, ErrorMessage = "The Sale Percent is invalid!")]
 		[Display(Name = "Sale Percent")]
 		public int SalePercent { get; set; }
 		[Display(Name = "Stock")]
