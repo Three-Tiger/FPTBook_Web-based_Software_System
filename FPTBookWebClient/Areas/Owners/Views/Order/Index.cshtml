@@ -76,9 +76,9 @@
 		$(".orderStatus").change(function (event) {
 			event.preventDefault();
 			var id = $(this).attr("data-id");
-			
+			var api = "@ViewBag.api";
 			$.ajax({
-				url: "https://localhost:7076/api/Orders/" + id,
+				url: api + "/api/Orders/" + id,
 				type: "get",
 				data: {
 					id: id
@@ -90,7 +90,7 @@
 					result['orderStatus'] = orderStatus;
 
 					$.ajax({
-						url: "https://localhost:7076/api/Orders/" + id,
+						url: api + "/api/Orders/" + id,
 						type: "put",
 						data: {
 							id: result['orderId'],

@@ -7,28 +7,38 @@ using Newtonsoft.Json;
 using System.Globalization;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using static System.Net.WebRequestMethods;
 
 namespace FPTBookWebClient.Controllers
 {
 	[Authorize(Roles = "User")]
 	public class CartController : Controller
 	{
+		private readonly IConfiguration _configuration;
 		private readonly ApplicationDbContext _db;
 		private readonly UserManager<AppUser> _userManager;
 		private readonly HttpClient client = null;
 		private string api;
+		private string apiUser;
+		private string apiOrder;
+		private string apiOrderDetail;
 
 		// Cart's json string key
 		public const string CARTKEY = "cart";
 
-		public CartController(UserManager<AppUser> userManager, ApplicationDbContext db)
+		public CartController(UserManager<AppUser> userManager, ApplicationDbContext db, IConfiguration configuration)
 		{
+			_configuration = configuration;
 			_userManager = userManager;
 			_db = db;
 			client = new HttpClient();
+			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
 			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
 			client.DefaultRequestHeaders.Accept.Add(contentType);
-			this.api = "https://localhost:7076/api/Books";
+			this.api = "/api/Books";
+			this.apiUser = "/api/Users";
+			this.apiOrder = "/api/Orders";
+			this.apiOrderDetail = "/api/OrderDetails";
 		}
 
 		public IActionResult Index()
@@ -130,7 +140,7 @@ namespace FPTBookWebClient.Controllers
 		public async Task<IActionResult> CheckOut(decimal shipping)
 		{
 			var userId = _userManager.GetUserId(User);
-			string apiGetUser = "https://localhost:7076/api/Users/Account/" + userId;
+			string apiGetUser = apiUser + "/Account/" + userId;
 			HttpResponseMessage reponse = await client.GetAsync(apiGetUser);
 			if (reponse.IsSuccessStatusCode)
 			{
@@ -161,7 +171,7 @@ namespace FPTBookWebClient.Controllers
 			};
 			string dataOrder = System.Text.Json.JsonSerializer.Serialize(order);
 			var contentOrder = new StringContent(dataOrder, System.Text.Encoding.UTF8, "application/json");
-			HttpResponseMessage responseOrder = await client.PostAsync("https://localhost:7076/api/Orders", contentOrder);
+			HttpResponseMessage responseOrder = await client.PostAsync(apiOrder, contentOrder);
 			if (responseOrder.IsSuccessStatusCode)
 			{
 				// Retrieve order id inserted
@@ -181,13 +191,14 @@ namespace FPTBookWebClient.Controllers
 
 					string dataOrderDetail = System.Text.Json.JsonSerializer.Serialize(orderDetail);
 					var contentOrderDetail = new StringContent(dataOrderDetail, System.Text.Encoding.UTF8, "application/json");
-					HttpResponseMessage responseOrderDetail = await client.PostAsync("https://localhost:7076/api/OrderDetails", contentOrderDetail);
+					HttpResponseMessage responseOrderDetail = await client.PostAsync(apiOrderDetail, contentOrderDetail);
 
 					if (responseOrderDetail.IsSuccessStatusCode)
 					{
+						Book book = _db.Books.Find(cartItem.Book.BookId);
 						// Minus stock
-						cartItem.Book.BookStock -= cartItem.Quantity;
-						_db.Books.Update(cartItem.Book);
+						book.BookStock -= cartItem.Quantity;
+						_db.Books.Update(book);
 						_db.SaveChanges();
 					}
 				}

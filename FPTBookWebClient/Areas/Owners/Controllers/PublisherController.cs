@@ -11,14 +11,17 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
     [Area("Owners")]
     public class PublisherController : Controller
     {
-        private readonly HttpClient client = null;
+		private readonly IConfiguration _configuration;
+		private readonly HttpClient client = null;
         private string api;
-        public PublisherController()
+        public PublisherController(IConfiguration configuration)
         {
+            _configuration = configuration;
             client = new HttpClient();
-            var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
-            this.api = "https://localhost:7076/api/Publishers";
+            this.api = "/api/Publishers";
         }
         public async Task<IActionResult> Index()
         {

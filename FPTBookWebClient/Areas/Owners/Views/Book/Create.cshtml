@@ -78,8 +78,9 @@
 		e.preventDefault();
 		var files = $('#ImageFile')[0].files;
 		if (files.length > 0) {
+			var api = "@ViewBag.api";
 			$.ajax({
-				url: "https://localhost:7076/api/Books",
+				url: api + "/api/Books",
 				type: "post",
 				data: new FormData(this),
 				processData: false,

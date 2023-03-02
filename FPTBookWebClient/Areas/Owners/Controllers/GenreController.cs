@@ -10,15 +10,19 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
     [Area("Owners")]
     public class GenreController : Controller
     {
-        private readonly HttpClient client = null;
+		private readonly IConfiguration _configuration;
+		private readonly HttpClient client = null;
         private string api;
-        public GenreController()
+        public GenreController(IConfiguration configuration)
         {
+            _configuration = configuration;
             client = new HttpClient();
-            var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
-            this.api = "https://localhost:7076/api/Genres";
+            this.api = "/api/Genres";
         }
+
         public async Task<IActionResult> Index()
         {
             HttpResponseMessage httpResponse = await client.GetAsync(api + "/Approvel");
@@ -27,8 +31,10 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
             List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
             return View(genres);
         }
+
         public IActionResult Create()
         {
+            ViewData["api"] = _configuration["BaseAddress"];
             return View();
         }
 

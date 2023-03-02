@@ -15,6 +15,7 @@ namespace FPTBookWebClient.Areas.Admins.Controllers
 
     public class MemberController : Controller
     {
+		private readonly IConfiguration _configuration;
 		private readonly SignInManager<AppUser> _signInManager;
 		private readonly UserManager<AppUser> _userManager;
 		private readonly IUserStore<AppUser> _userStore;
@@ -23,12 +24,14 @@ namespace FPTBookWebClient.Areas.Admins.Controllers
 
 		private readonly HttpClient client = null;
         private string api;
-        public MemberController(UserManager<AppUser> userManager, IUserStore<AppUser> userStore, SignInManager<AppUser> signInManager, IPasswordHasher<AppUser> passwordHash)
+        public MemberController(UserManager<AppUser> userManager, IUserStore<AppUser> userStore, SignInManager<AppUser> signInManager, IPasswordHasher<AppUser> passwordHash, IConfiguration configuration)
         {
+			_configuration = configuration;
             client = new HttpClient();
-            var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
-            this.api = "https://localhost:7076/api/Users";
+            this.api = "/api/Users";
 
 			_userManager = userManager;
 			_userStore = userStore;

@@ -75,8 +75,9 @@
 <script>
 	$('#frmUpdateBook').submit(function (e) {
 		e.preventDefault();
+		var api = "@ViewBag.api";
 		$.ajax({
-			url: "https://localhost:7076/api/Books/" + @Model.BookId,
+			url: api + "/api/Books/" + @Model.BookId,
 			type: "put",
 			data: new FormData(this),
 			processData: false,

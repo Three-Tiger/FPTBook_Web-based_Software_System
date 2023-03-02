@@ -128,7 +128,7 @@
 								</div>
 							</div>
 							<div class="card-body text-center mx-auto">
-								<a href="#" class="btn details px-auto text-dark fw-bold">view details</a><br />
+								<a asp-controller="Home" asp-action="Detail" asp-route-id="@best.BookId" class="btn details px-auto text-dark fw-bold">view details</a><br />
 								<form asp-controller="Cart" asp-action="AddToCart" asp-route-bookId="@best.BookId" method="post" onsubmit="return CheckStock(@best.BookStock)" class="mb-2">
 									<input type="hidden" name="quantity" value="1">
 									<button type="submit" class="btn cart px-auto">ADD TO CART</button>

@@ -48,6 +48,7 @@
 		e.preventDefault();
 		var id = $(this).attr("data-id");
 		var el = this
+		var api = "@ViewBag.api";
 		const swalWithBootstrapButtons = Swal.mixin({
 			customClass: {
 				confirmButton: 'btn btn-success',
@@ -67,7 +68,7 @@
 		}).then((result) => {
 			if (result.isConfirmed) {
 				$.ajax({
-					url: "https://localhost:7076/api/Genres/Approvel/" + id,
+					url: api + "/api/Genres/Approvel/" + id,
 					type: "put",
 					data: {
 						id: id,
@@ -106,6 +107,7 @@
 		e.preventDefault();
 		var id = $(this).attr("data-id");
 		var el = this
+		var api = "@ViewBag.api";
 		const swalWithBootstrapButtons = Swal.mixin({
 			customClass: {
 				confirmButton: 'btn btn-success',
@@ -125,7 +127,7 @@
 		}).then((result) => {
 			if (result.isConfirmed) {
 				$.ajax({
-					url: "https://localhost:7076/api/Genres/Reject/" + id,
+					url: api + "/api/Genres/Reject/" + id,
 					type: "put",
 					data: {
 						id: id,

@@ -10,17 +10,20 @@ namespace FPTBookWebClient.Controllers
     [Authorize(Roles = "User")]
     public class OrderController : Controller
     {
+		private readonly IConfiguration _configuration;
 		private readonly UserManager<AppUser> _userManager;
 
 		private readonly HttpClient client = null;
 		private string api;
 
-		public OrderController(UserManager<AppUser> userManager)
+		public OrderController(UserManager<AppUser> userManager, IConfiguration configuration)
         {
+			_configuration = configuration;
 			client = new HttpClient();
+			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
 			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
 			client.DefaultRequestHeaders.Accept.Add(contentType);
-			this.api = "https://localhost:7076/api/Orders";
+			this.api = "/api/Orders";
 
 			_userManager = userManager;
         }

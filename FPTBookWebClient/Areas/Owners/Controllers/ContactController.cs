@@ -11,14 +11,17 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 	[Area("Owners")]
 	public class ContactController : Controller
 	{
+		private readonly IConfiguration _configuration;
 		private readonly HttpClient client = null;
 		private string api;
-		public ContactController()
+		public ContactController(IConfiguration configuration)
 		{
+			_configuration = configuration;
 			client = new HttpClient();
+			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
 			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
 			client.DefaultRequestHeaders.Accept.Add(contentType);
-			this.api = "https://localhost:7076/api/Contacts";
+			this.api = "/api/Contacts";
 		}
 		public async Task<IActionResult> Index()
 		{
