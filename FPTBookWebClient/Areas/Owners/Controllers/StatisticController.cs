@@ -22,7 +22,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			client.BaseAddress = new Uri(_configuration["BaseAddress"]);
 			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
 			client.DefaultRequestHeaders.Accept.Add(contentType);
-			this.api = "https://localhost:7076/api/Statistics";
+			this.api = "/api/Statistics";
 		}
 
 		// GET: DataStatisticController

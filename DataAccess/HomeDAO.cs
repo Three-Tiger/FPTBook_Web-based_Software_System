@@ -19,12 +19,6 @@ namespace DataAccess
 			{
 				using (var context = new ApplicationDbContext())
 				{
-					/*var query = (from od in context.OrderDetails
-								 group od.Quantity by od.Book.BookId into b
-								 orderby b.Sum() descending
-								 select b.Key).Take(4);
-
-					listBooks = query.ToList();*/
 					var lstBookId = context.OrderDetails.Where(od => od.Book.IsDeleted == false).GroupBy(od => od.BookId)
 						.OrderByDescending(d => d.Sum(f => f.Quantity))
 						.Select(b => b.Key)
