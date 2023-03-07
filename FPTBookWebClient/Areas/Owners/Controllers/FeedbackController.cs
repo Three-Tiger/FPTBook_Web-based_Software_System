@@ -1,7 +1,6 @@
 ﻿using BusinessObjects;
 using BusinessObjects.Constraints;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text.Json;
@@ -44,6 +43,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 
 			string data = JsonSerializer.Serialize<Feedback>(feedback);
 			var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
+
 			if (feedback.FeedStatus == FeedStatus.Unchecked)
 			{
 				HttpResponseMessage response = await client.PutAsync(api + "/" + id + "/Checked", content);
@@ -62,6 +62,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			}
 			return NotFound();
 		}
+
 		public async Task<IActionResult> Delete(int id)
 		{
 			HttpResponseMessage reponse = await client.DeleteAsync(api + "/" + id);

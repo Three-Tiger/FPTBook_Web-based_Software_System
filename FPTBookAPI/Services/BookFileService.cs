@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace FPTBookAPI.Services
+﻿namespace FPTBookAPI.Services
 {
 	public class BookFileService : IBookFileService
 	{

@@ -1,7 +1,6 @@
 ﻿using BusinessObjects;
 using FPTBookWebClient.Areas.Owners.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text.Json;

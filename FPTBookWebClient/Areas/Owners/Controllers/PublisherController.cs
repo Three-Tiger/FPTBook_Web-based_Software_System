@@ -1,6 +1,5 @@
 ﻿using BusinessObjects;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text.Json;
@@ -53,15 +52,22 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
         }
         public async Task<IActionResult> Update(int id)
         {
-            HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
-            if (reponse.IsSuccessStatusCode)
+            try
             {
-                var data = reponse.Content.ReadAsStringAsync().Result;
-                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                var obj = JsonSerializer.Deserialize<Publisher>(data, options);
-                return View(obj);
+				HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
+				if (reponse.IsSuccessStatusCode)
+				{
+					var data = reponse.Content.ReadAsStringAsync().Result;
+					var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					var obj = JsonSerializer.Deserialize<Publisher>(data, options);
+					return View(obj);
+				}
+				return RedirectToAction("Index");
+			}
+            catch (Exception)
+            {
+				return RedirectToAction("Index");
             }
-            return NotFound();
         }
 
         [HttpPost]

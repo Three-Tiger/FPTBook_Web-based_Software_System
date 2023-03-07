@@ -1,5 +1,4 @@
 ﻿using BusinessObjects;
-using BusinessObjects.Constraints;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
@@ -26,11 +25,18 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 
 		public async Task<IActionResult> Index(int orderId)
 		{
-			HttpResponseMessage httpResponse = await client.GetAsync(api + "/" + orderId);
-			string data = await httpResponse.Content.ReadAsStringAsync();
-			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-			List<OrderDetail> orderDetails = JsonSerializer.Deserialize<List<OrderDetail>>(data, options);
-			return View(orderDetails);
+			try
+			{
+				HttpResponseMessage httpResponse = await client.GetAsync(api + "/" + orderId);
+				string data = await httpResponse.Content.ReadAsStringAsync();
+				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+				List<OrderDetail> orderDetails = JsonSerializer.Deserialize<List<OrderDetail>>(data, options);
+				return View(orderDetails);
+			}
+			catch (Exception)
+			{
+				return RedirectToAction("Index", "Order");
+			}
 		}
 	}
 }

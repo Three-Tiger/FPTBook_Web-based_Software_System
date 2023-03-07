@@ -13,6 +13,7 @@ namespace FPTBookWebClient.Areas.Admins.Controllers
 		private readonly IConfiguration _configuration;
 		private readonly HttpClient client = null;
 		private string api;
+
 		public ApproveController(IConfiguration configuration)
 		{
 			_configuration = configuration;
@@ -22,7 +23,6 @@ namespace FPTBookWebClient.Areas.Admins.Controllers
 			client.DefaultRequestHeaders.Accept.Add(contentType);
 			this.api = "/api/Genres";
 		}
-
 
 		public async Task<IActionResult> Index()
 		{

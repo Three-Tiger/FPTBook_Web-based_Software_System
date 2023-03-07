@@ -2,7 +2,6 @@
 using BusinessObjects.Constraints;
 using FPTBookWebClient.Areas.Admins.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
@@ -111,7 +110,6 @@ namespace FPTBookWebClient.Areas.Admins.Controllers
 			}
             return View(addUser);
         }
-
 
         public async Task<IActionResult> Edit(string id)
         {

@@ -13,6 +13,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 		private readonly IConfiguration _configuration;
 		private readonly HttpClient client = null;
         private string api;
+
         public GenreController(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -53,17 +54,25 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
             }
             return View(genre);
         }
+
 		public async Task<IActionResult> Update(int id)
 		{
-			HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
-			if (reponse.IsSuccessStatusCode)
-			{
-				var data = reponse.Content.ReadAsStringAsync().Result;
-				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				var obj = JsonSerializer.Deserialize<Genre>(data, options);
-				return View(obj);
+            try
+            {
+				HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
+				if (reponse.IsSuccessStatusCode)
+				{
+					var data = reponse.Content.ReadAsStringAsync().Result;
+					var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					var obj = JsonSerializer.Deserialize<Genre>(data, options);
+					return View(obj);
+				}
+				return RedirectToAction("Index");
 			}
-			return NotFound();
+            catch (Exception)
+            {
+				return RedirectToAction("Index");
+            }
 		}
 
 		[HttpPost]
@@ -79,6 +88,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			}
 			return View(genre);
 		}
+
         public async Task<IActionResult> Delete(int id)
         {
             HttpResponseMessage reponse = await client.DeleteAsync(api + "/" + id);

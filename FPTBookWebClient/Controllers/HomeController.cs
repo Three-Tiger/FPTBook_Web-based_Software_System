@@ -1,11 +1,7 @@
 ﻿using BusinessObjects;
 using FPTBookWebClient.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Diagnostics;
-using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace FPTBookWebClient.Controllers
@@ -126,26 +122,33 @@ namespace FPTBookWebClient.Controllers
 
 		public async Task<IActionResult> Detail(int id)
 		{
-			HttpResponseMessage responseBook = await client.GetAsync(apiBook + "/" + id);
-			HttpResponseMessage responseFeedback = await client.GetAsync(apiFeedback + "/Checked/" + id);
-			if (responseBook.IsSuccessStatusCode && responseFeedback.IsSuccessStatusCode)
+			try
 			{
-				var dataBook = responseBook.Content.ReadAsStringAsync().Result;
-				var optionsBook = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				Book book = JsonSerializer.Deserialize<Book>(dataBook, optionsBook);
-
-				var dataFeedback = responseFeedback.Content.ReadAsStringAsync().Result;
-				var optionsFeedback = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				List<Feedback> feedbacks = JsonSerializer.Deserialize<List<Feedback>>(dataFeedback, optionsFeedback);
-
-				BookDetailView bookDetailView = new BookDetailView()
+				HttpResponseMessage responseBook = await client.GetAsync(apiBook + "/" + id);
+				HttpResponseMessage responseFeedback = await client.GetAsync(apiFeedback + "/Checked/" + id);
+				if (responseBook.IsSuccessStatusCode && responseFeedback.IsSuccessStatusCode)
 				{
-					Book = book,
-					Feedbacks = feedbacks
-				};
-				return View(bookDetailView);
+					var dataBook = responseBook.Content.ReadAsStringAsync().Result;
+					var optionsBook = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					Book book = JsonSerializer.Deserialize<Book>(dataBook, optionsBook);
+
+					var dataFeedback = responseFeedback.Content.ReadAsStringAsync().Result;
+					var optionsFeedback = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					List<Feedback> feedbacks = JsonSerializer.Deserialize<List<Feedback>>(dataFeedback, optionsFeedback);
+
+					BookDetailView bookDetailView = new BookDetailView()
+					{
+						Book = book,
+						Feedbacks = feedbacks
+					};
+					return View(bookDetailView);
+				}
+				return RedirectToAction("Shop");
 			}
-			return NotFound();
+			catch (Exception)
+			{
+				return RedirectToAction("Shop");
+			}
 		}
 
 		public IActionResult About()

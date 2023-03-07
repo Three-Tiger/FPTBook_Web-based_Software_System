@@ -1,6 +1,5 @@
 ﻿using BusinessObjects;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text.Json;
@@ -14,6 +13,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 		private readonly IConfiguration _configuration;
 		private readonly HttpClient client = null;
 		private string api;
+
 		public ContactController(IConfiguration configuration)
 		{
 			_configuration = configuration;
@@ -34,15 +34,22 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 
 		public async Task<IActionResult> Update(int id)
 		{
-			HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
-			if (reponse.IsSuccessStatusCode)
+			try
 			{
-				var data = reponse.Content.ReadAsStringAsync().Result;
-				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				var obj = JsonSerializer.Deserialize<Contact>(data, options);
-				return View("Reply", obj);
+				HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
+				if (reponse.IsSuccessStatusCode)
+				{
+					var data = reponse.Content.ReadAsStringAsync().Result;
+					var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					var obj = JsonSerializer.Deserialize<Contact>(data, options);
+					return View("Reply", obj);
+				}
+				return RedirectToAction("Index");
 			}
-			return NotFound();
+			catch (Exception)
+			{
+				return RedirectToAction("Index");
+			}
 		}
 
 		[HttpPost]

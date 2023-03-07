@@ -1,9 +1,5 @@
 ﻿using BusinessObjects;
-using BusinessObjects.Constraints;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Repositories;
 
 namespace FPTBookAPI.Controllers
@@ -13,11 +9,6 @@ namespace FPTBookAPI.Controllers
 	public class UsersController : ControllerBase
 	{
 		IUserRepository repository = new UserRepository();
-		//private readonly UserManager<AppUser> _userManager;
-		/*public UsersController(UserManager<AppUser> userManager)
-		{
-			_userManager = userManager;
-		}*/
 
 		// GET: api/<UsersController>/Members
 		[HttpGet("Members")]

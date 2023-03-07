@@ -4,10 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Globalization;
 using System.Net.Http.Headers;
 using System.Text.Json;
-using static System.Net.WebRequestMethods;
 
 namespace FPTBookWebClient.Controllers
 {

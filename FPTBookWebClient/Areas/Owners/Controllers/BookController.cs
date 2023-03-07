@@ -1,6 +1,5 @@
 ﻿using BusinessObjects;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using System.Text.Json;
@@ -11,7 +10,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 	[Authorize(Roles = "Owner")]
 	[Area("Owners")]
 	public class BookController : Controller
-    {
+	{
 		private readonly IConfiguration _configuration;
 		private readonly HttpClient client = null;
 		private string api;
@@ -97,40 +96,48 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			List<Publisher> publishers = JsonSerializer.Deserialize<List<Publisher>>(data2, options2);
 			ViewData["PublisherId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(publishers, "PublisherId", "PublisherName");
 
-			return View(book);	
+			return View(book);
 		}
+
 		public async Task<IActionResult> Update(int id)
 		{
-			HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
-			if (reponse.IsSuccessStatusCode)
+			try
 			{
-				ViewData["api"] = _configuration["BaseAddress"];
+				HttpResponseMessage reponse = await client.GetAsync(api + "/" + id);
+				if (reponse.IsSuccessStatusCode)
+				{
+					ViewData["api"] = _configuration["BaseAddress"];
 
-				var data3 = reponse.Content.ReadAsStringAsync().Result;
-				var options3 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				var obj = JsonSerializer.Deserialize<Book>(data3, options3);
+					var data3 = reponse.Content.ReadAsStringAsync().Result;
+					var options3 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					var obj = JsonSerializer.Deserialize<Book>(data3, options3);
 
-				HttpResponseMessage httpResponse = await client.GetAsync(apiGenre);
-				string data = await httpResponse.Content.ReadAsStringAsync();
-				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
-				ViewData["GenreId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(genres, "GenreId", "GenreName");
+					HttpResponseMessage httpResponse = await client.GetAsync(apiGenre);
+					string data = await httpResponse.Content.ReadAsStringAsync();
+					var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					List<Genre> genres = JsonSerializer.Deserialize<List<Genre>>(data, options);
+					ViewData["GenreId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(genres, "GenreId", "GenreName");
 
-				HttpResponseMessage httpResponse1 = await client.GetAsync(apiAuthor);
-				string data1 = await httpResponse1.Content.ReadAsStringAsync();
-				var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
-				ViewData["AuthorId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(authors, "AuthorId", "AuthorName");
+					HttpResponseMessage httpResponse1 = await client.GetAsync(apiAuthor);
+					string data1 = await httpResponse1.Content.ReadAsStringAsync();
+					var options1 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					List<Author> authors = JsonSerializer.Deserialize<List<Author>>(data1, options1);
+					ViewData["AuthorId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(authors, "AuthorId", "AuthorName");
 
-				HttpResponseMessage httpResponse2 = await client.GetAsync(apiPublisher);
-				string data2 = await httpResponse2.Content.ReadAsStringAsync();
-				var options2 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-				List<Publisher> publishers = JsonSerializer.Deserialize<List<Publisher>>(data2, options2);
-				ViewData["PublisherId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(publishers, "PublisherId", "PublisherName");
+					HttpResponseMessage httpResponse2 = await client.GetAsync(apiPublisher);
+					string data2 = await httpResponse2.Content.ReadAsStringAsync();
+					var options2 = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+					List<Publisher> publishers = JsonSerializer.Deserialize<List<Publisher>>(data2, options2);
+					ViewData["PublisherId"] = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(publishers, "PublisherId", "PublisherName");
 
-				return View(obj);
+					return View(obj);
+				}
+				return RedirectToAction("Index");
 			}
-			return NotFound();
+			catch (Exception)
+			{
+				return RedirectToAction("Index");
+			}
 		}
 
 		[HttpPost]
