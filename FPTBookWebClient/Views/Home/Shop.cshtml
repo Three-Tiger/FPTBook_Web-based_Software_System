@@ -31,7 +31,7 @@
 		<nav id="sidebarMenu" class="collapse d-md-block bg-white">
 			<input type="radio" name="accordion" id="cb1" />
 			<section class="box">
-				<label class="all-book"><a asp-controller="Home" asp-action="Shop" class="nav-link">All Book</a></label>
+				<label class="all-book"><a asp-controller="Home" asp-action="Shop" class="text-reset">All Book</a></label>
 			</section>
 			<input type="radio" name="accordion" id="cb2" />
 			<section class="box">
@@ -40,7 +40,7 @@
 				@foreach (var genre in ViewBag.Genre)
 				{
 					<div class="box-content">
-						<a asp-route="displaybookbygenre" asp-route-genreId="@genre.GenreId" class="nav-link">@genre.GenreName</a>
+						<a asp-route="displaybookbygenre" asp-route-genreId="@genre.GenreId" class="nav-link text-reset">@genre.GenreName</a>
 					</div>
 				}
 			</section>
@@ -51,7 +51,7 @@
 				@foreach (var author in ViewBag.Author)
 				{
 					<div class="box-content">
-						<a asp-route="displaybookbyauthor" asp-route-authorId="@author.AuthorId" class="nav-link">@author.AuthorName</a>
+						<a asp-route="displaybookbyauthor" asp-route-authorId="@author.AuthorId" class="nav-link text-reset">@author.AuthorName</a>
 					</div>
 				}
 			</section>
@@ -66,7 +66,7 @@
 					<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
 						<div class="card">
 							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-								<img src="@book.BookImage" class="w-100" style="width: auto; height: 35rem;" />
+								<img src="@book.BookImage" class="w-100" style="width: auto; height: 35rem;" loading="lazy" />
 								<a asp-controller="Home" asp-action="Detail" asp-route-id="@book.BookId">
 									<div class="mask">
 										<div class="d-flex justify-content-start align-items-end h-100">

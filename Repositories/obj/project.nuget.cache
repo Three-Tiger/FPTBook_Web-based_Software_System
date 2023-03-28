@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "33RY2jsPh03rDshcVqOuTBsNNeVMmS/Umam6GlSr2lGak5vk8Jv73NcjDWjwaWUKYpm67t6lQhnF9K6ooZN+7w==",
+  "dgSpecHash": "Yr3B1vxjlsW8qVF865e1JHN23j9DHE7264O/nTf/3Ny8gRQP586HMTk7ozSQ5zDzUwjlPexThvqQLZWdi7xkpg==",
   "success": true,
   "projectFilePath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\Repositories\\Repositories.csproj",
   "expectedPackageFiles": [
@@ -58,10 +58,7 @@
     "C:\\Users\\Duy Quang\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512"
+    "C:\\Users\\Duy Quang\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

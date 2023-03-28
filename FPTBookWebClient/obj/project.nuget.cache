@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Rskia0TR0dCLkeE8x7+Om6hnGkNjYwc6H9XoymeKD8uzBduMODzL7bVnz8xwofVTJUi7hdaw8Jjc/2cN8mbM7g==",
+  "dgSpecHash": "gftktt4PtSKbuAo7qS1bbAec0iad5HTD1TRELQoqI2VoRjADkIepejlXvbwGQWVk6kNXQ8HS9HnI3+Qe3Iziuw==",
   "success": true,
   "projectFilePath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookWebClient\\FPTBookWebClient.csproj",
   "expectedPackageFiles": [
@@ -198,11 +198,7 @@
     "C:\\Users\\Duy Quang\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Duy Quang\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
+    "C:\\Users\\Duy Quang\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

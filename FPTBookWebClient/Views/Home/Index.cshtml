@@ -3,9 +3,7 @@
 	ViewData["Title"] = "Home Page";
 }
 @section stylesheets {
-	<!-- Vendor CSS Files -->
 	<link href="~/vendor/aos/aos.css" rel="stylesheet">
-	<link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 	<link href="~/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 	<link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 	<link href="~/css/homepage.css" rel="stylesheet">
@@ -116,7 +114,7 @@
 					decimal PriceSale = best.BookPrice - (best.BookPrice * ((decimal)best.SalePercent / 100m));
 					<div class="col-lg-3 mb-4">
 						<div class="card">
-							<img class="mx-auto" src="@best.BookImage" style="border: none;" width="100%" height="100%" />
+							<img class="mx-auto" src="@best.BookImage" style="border: none;" width="100%" height="100%" alt="@best.BookTitle" />
 							<div class="card-body text-center mx-auto">
 								<h5 class="card-title fw-bold">@best.BookTitle</h5>
 								<div class="d-flex justify-content-center align-items-end">
@@ -140,83 +138,13 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- ======= Contact Section ======= -->
-	<section id="contact" class="contact">
-		<div class="container" data-aos="fade-up">
-
-			<div class="section-title">
-				<h2>Contact</h2>
-				<p>
-					Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-					sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-					ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
-				</p>
-			</div>
-
-			<div class="row">
-
-				<div class="col-lg-6">
-					<div class="row">
-						<div class="col-lg-6 info">
-							<i class="bx bx-map"></i>
-							<h4>Address</h4>
-							<p>A108 Adam Street,<br>New York, NY 535022</p>
-						</div>
-						<div class="col-lg-6 info">
-							<i class="bx bx-phone"></i>
-							<h4>Call Us</h4>
-							<p>+1 5589 55488 55<br>+1 5589 22548 64</p>
-						</div>
-						<div class="col-lg-6 info">
-							<i class="bx bx-envelope"></i>
-							<h4>Email Us</h4>
-							<p>contact@example.com<br>info@example.com</p>
-						</div>
-						<div class="col-lg-6 info">
-							<i class="bx bx-time-five"></i>
-							<h4>Working Hours</h4>
-							<p>Mon - Fri: 9AM to 5PM<br>Sunday: 9AM to 1PM</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-6">
-					<form asp-controller="Contact" asp-action="Send" method="post" class="php-email-form" data-aos="fade-up">
-						<div class="form-group">
-							<input asp-for="@Model.Contact.ContactName" placeholder="Your Name" class="form-control" required />
-						</div>
-						<div class="form-group mt-3">
-							<input asp-for="@Model.Contact.ContactEmail" placeholder="Your Email" class="form-control" required>
-						</div>
-						<div class="form-group mt-3">
-							<input asp-for="@Model.Contact.ContactSubject" placeholder="Subject" class="form-control" required>
-						</div>
-						<div class="form-group mt-3">
-							<textarea asp-for="@Model.Contact.ContactMessage" placeholder="Message" class="form-control" rows="5" required></textarea>
-						</div>
-						@*<div class="my-3">
-						<div class="loading">Loading</div>
-						<div class="error-message"></div>
-						<div class="sent-message">Your message has been sent. Thank you!</div>
-						</div>*@
-						<div class="text-center">
-							<button type="submit">Send Message</button>
-						</div>
-					</form>
-				</div>
-
-			</div>
-
-		</div>
-	</section><!-- End Contact Section -->
 </main><!-- End #main -->
 @section scripts {
-	<!-- Vendor JS Files -->
 	<script src="~/vendor/aos/aos.js"></script>
 	<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="~/vendor/glightbox/js/glightbox.min.js"></script>
 	<script src="~/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="~/vendor/php-email-form/validate.js"></script>
 
 	<!-- Template Main JS File -->
 	<script src="~/js/main.js"></script>

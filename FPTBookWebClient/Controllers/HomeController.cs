@@ -156,6 +156,13 @@ namespace FPTBookWebClient.Controllers
 			return View();
 		}
 
+		public IActionResult Contact()
+		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
+			return View();
+		}
+
 		[Route("/Home/Shop/Genre/{genreId:int}", Name = "displaybookbygenre")]
 		public async Task<IActionResult> Genre(int genreId)
 		{

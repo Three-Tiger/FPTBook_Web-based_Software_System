@@ -11,6 +11,7 @@ namespace FPTBookWebClient.Controllers
 		private readonly IConfiguration _configuration;
 		private readonly HttpClient client = null;
 		private string api;
+
 		public ContactController(IConfiguration configuration)
 		{
 			_configuration = configuration;
@@ -22,17 +23,18 @@ namespace FPTBookWebClient.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Send(ShowIndexView obj)
+		public async Task<IActionResult> Send(Contact obj)
 		{
-			Contact contact = obj.Contact;
-			string data = JsonSerializer.Serialize(contact);
+			ViewData["api"] = _configuration["BaseAddress"];
+
+			string data = JsonSerializer.Serialize(obj);
 			var content = new StringContent(data, System.Text.Encoding.UTF8, "application/json");
 			HttpResponseMessage response = await client.PostAsync(api, content);
 			if (response.IsSuccessStatusCode)
 			{
-				return RedirectToAction("Index", "Home");
+				return RedirectToAction("Contact", "Home");
 			}
-			return RedirectToAction("Index", "Home", obj);
+			return RedirectToAction("Contact", "Home", obj);
 		}
 	}
 }

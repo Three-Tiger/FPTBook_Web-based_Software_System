@@ -1,0 +1,128 @@
+﻿@model BusinessObjects.Contact
+@{
+	ViewData["Title"] = "Contact";
+}
+@section stylesheets {
+	<link href="~/vendor/aos/aos.css" rel="stylesheet">
+	<link href="~/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+	<link href="~/css/contact.css" rel="stylesheet">
+}
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+	<div class="container" data-aos="fade-up">
+
+		<div class="section-title">
+			<p>
+				Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+				sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+				ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+			</p>
+		</div>
+
+		<div class="row">
+
+			<div class="col-lg-6">
+				<div class="row">
+					<div class="col-lg-6 info">
+						<i class="bx bx-map"></i>
+						<h4>Address</h4>
+						<p>A108 Adam Street,<br>New York, NY 535022</p>
+					</div>
+					<div class="col-lg-6 info">
+						<i class="bx bx-phone"></i>
+						<h4>Call Us</h4>
+						<p>+1 5589 55488 55<br>+1 5589 22548 64</p>
+					</div>
+					<div class="col-lg-6 info">
+						<i class="bx bx-envelope"></i>
+						<h4>Email Us</h4>
+						<p>contact@example.com<br>info@example.com</p>
+					</div>
+					<div class="col-lg-6 info">
+						<i class="bx bx-time-five"></i>
+						<h4>Working Hours</h4>
+						<p>Mon - Fri: 9AM to 5PM<br>Sunday: 9AM to 1PM</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<form id="frmSendContact" method="post" class="php-email-form" data-aos="fade-up">
+					<div class="form-group">
+						<input asp-for="@Model.ContactName" placeholder="Your Name" class="form-control" />
+					</div>
+					<div class="form-group mt-3">
+						<input asp-for="@Model.ContactEmail" placeholder="Your Email" class="form-control" />
+					</div>
+					<div class="form-group mt-3">
+						<input asp-for="@Model.ContactSubject" placeholder="Subject" class="form-control" />
+					</div>
+					<div class="form-group mt-3">
+						<textarea asp-for="@Model.ContactMessage" placeholder="Message" class="form-control" rows="5"></textarea>
+					</div>
+					@*<div class="my-3">
+					<div class="loading">Loading</div>
+					<div class="error-message"></div>
+					<div class="sent-message">Your message has been sent. Thank you!</div>
+					</div>*@
+					<div class="text-center mt-3">
+						<button type="submit">Send Message</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+</section><!-- End Contact Section -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+	$('#frmSendContact').submit(function (e) {
+		e.preventDefault();
+		const formData = new FormData(this);
+		for (const [key, value] of formData) {
+			if (value === "") {
+				Swal.fire(
+					'The Warning',
+					'Please do not leave any fields blank',
+					'warning'
+				)
+				return
+			}
+		}
+		var api = "@ViewBag.api";
+		$.ajax({
+			url: api + "/api/Contacts",
+			type: "post",
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function (result, status, xhr) {
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: 'Your contact has been sent',
+					showConfirmButton: false,
+					timer: 2000
+				}).then(() => {
+					window.location.href = '/Home/Contact';
+				})
+			},
+			error: function (xhr, status, error) {
+				console.log(xhr);
+			}
+		});
+	});
+</script>
+@section scripts {
+	<script src="~/vendor/aos/aos.js"></script>
+	<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="~/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="~/vendor/swiper/swiper-bundle.min.js"></script>
+	@*<script src="~/vendor/php-email-form/validate.js"></script>*@
+
+	<!-- Template Main JS File -->
+	<script src="~/js/main.js"></script>
+}

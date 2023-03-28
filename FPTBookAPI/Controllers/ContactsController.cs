@@ -26,7 +26,7 @@ namespace FPTBookAPI.Controllers
 
 		// POST api/<ContactsController>
 		[HttpPost]
-		public IActionResult Post([FromBody] Contact obj)
+		public IActionResult Post([FromForm] Contact obj)
 		{
 			repository.SaveContact(obj);
 			return NoContent();
