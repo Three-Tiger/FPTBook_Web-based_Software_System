@@ -58,16 +58,18 @@
 									</div>
 								</div>
 
-								<div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-									<h6 class="mb-0 me-4">Gender: </h6>
-									<div class="form-check form-check-inline mb-0 me-4">
-										<input class="form-check-input" type="radio" asp-for="Input.Gender" id="maleGender" autocomplete="off" value="true" />
-										<label class="form-check-label" for="maleGender">Male</label>
-									</div>
+								<div class="mb-4 py-2">
+									<div class="d-flex align-items-center">
+										<h6 class="mb-0 me-4">Gender: </h6>
+										<div class="form-check form-check-inline mb-0 me-4">
+											<input class="form-check-input" type="radio" asp-for="Input.Gender" id="maleGender" autocomplete="off" value="true" />
+											<label class="form-check-label" for="maleGender">Male</label>
+										</div>
 
-									<div class="form-check form-check-inline mb-0 me-4">
-										<input class="form-check-input" type="radio" asp-for="Input.Gender" id="femaleGender" autocomplete="off" value="false" />
-										<label class="form-check-label" for="femaleGender">Female</label>
+										<div class="form-check form-check-inline mb-0 me-4">
+											<input class="form-check-input" type="radio" asp-for="Input.Gender" id="femaleGender" autocomplete="off" value="false" />
+											<label class="form-check-label" for="femaleGender">Female</label>
+										</div>
 									</div>
 									<span asp-validation-for="Input.Gender" class="text-danger"></span>
 								</div>
@@ -91,7 +93,7 @@
 								</div>
 
 								<div class="d-flex justify-content-end pt-3">
-									<a class="btn btn-light"asp-area="Identity" asp-page="/Account/Register">Reset all</a>
+									<a class="btn btn-light" asp-area="Identity" asp-page="/Account/Register">Reset all</a>
 									<button type="submit" id="registerSubmit" class="btn btn-warning ms-2">Register</button>
 								</div>
 							</div>

@@ -8,12 +8,12 @@
 	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 	<div class="form-outline mb-4">
 		<label class="form-label fw-bold">Genre Name</label>
-		<input asp-for="GenreName" class="form-control" required />
+		<input asp-for="GenreName" class="form-control" />
 		<span asp-validation-for="GenreName" class="text-danger"></span>
 	</div>
 	<div class="form-outline mb-4">
 		<label class="form-label fw-bold">Description</label>
-		<input asp-for="GenreDescription" class="form-control" required />
+		<input asp-for="GenreDescription" class="form-control" />
 		<span asp-validation-for="GenreDescription" class="text-danger"></span>
 	</div>
 	<div class="form-outline text-center">
@@ -27,11 +27,17 @@
 <script>
 	$('#frmCreateGenre').submit(function (e) {
 		e.preventDefault();
+		const formData = new FormData(this);
+		for (const [key, value] of formData) {
+			if (value === "") {
+				return
+			}
+		}
 		var api = "@ViewBag.api";
 		$.ajax({
 			url: api + "/api/Genres",
 			type: "post",
-			data: new FormData(this),
+			data: formData,
 			processData: false,
 			contentType: false,
 			success: function (result, status, xhr) {

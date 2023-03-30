@@ -16,6 +16,7 @@ namespace FPTBookWebClient.Controllers
 		private readonly ApplicationDbContext _db;
 		private readonly UserManager<AppUser> _userManager;
 		private readonly HttpClient client = null;
+
 		private string api;
 		private string apiUser;
 		private string apiOrder;
@@ -47,7 +48,6 @@ namespace FPTBookWebClient.Controllers
 		// Get cart from Session (danh sách CartItem)
 		List<CartItem> GetCartItems()
 		{
-
 			var session = HttpContext.Session;
 			string jsoncart = session.GetString(CARTKEY);
 			if (jsoncart != null)
