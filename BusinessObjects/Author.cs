@@ -23,7 +23,7 @@ namespace BusinessObjects
 		ErrorMessage = "Please enter a valid email address")]
 		[Display(Name = "Email")]
 		public string AuthorMail { get; set; }
-		public bool IsDeleted { get; set; }
+		public bool IsDeleted { get; set; } = false;
 		public virtual ICollection<Book>? Books { get; set; }
 	}
 }

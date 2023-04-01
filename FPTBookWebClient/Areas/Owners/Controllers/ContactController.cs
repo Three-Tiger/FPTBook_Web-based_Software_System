@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using EmailService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
@@ -13,6 +14,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 		private readonly IConfiguration _configuration;
 		private readonly HttpClient client = null;
 		private string api;
+		private string apiEmail;
 
 		public ContactController(IConfiguration configuration)
 		{
@@ -22,6 +24,7 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			var contentType = new MediaTypeWithQualityHeaderValue("application/json");
 			client.DefaultRequestHeaders.Accept.Add(contentType);
 			this.api = "/api/Contacts";
+			this.apiEmail = "/api/Emails";
 		}
 		public async Task<IActionResult> Index()
 		{
@@ -61,9 +64,15 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 			HttpResponseMessage response = await client.PutAsync(api + "/" + id, content);
 			if (response.IsSuccessStatusCode)
 			{
-				return RedirectToAction("Index");
+				string dataReply = JsonSerializer.Serialize(new Message(contact.ContactEmail, "Reply your contact", contact.Reply));
+				var contentReply = new StringContent(dataReply, System.Text.Encoding.UTF8, "application/json");
+				HttpResponseMessage responseReply = await client.PostAsync(apiEmail, contentReply);
+				if (responseReply.IsSuccessStatusCode)
+				{
+					return RedirectToAction("Index");
+				}
 			}
-			return View(contact);
+			return View("Reply", contact);
 		}
 
 		public async Task<IActionResult> Delete(int id)
