@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using BusinessObjects;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using EmailService;
 
 namespace FPTBookWebClient.Areas.Identity.Pages.Account
 {
@@ -71,10 +71,8 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
 
-                await _emailSender.SendEmailAsync(
-                    Input.Email,
-                    "Reset Password",
-                    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+				Message message = new Message(Input.Email, "Reset Password", $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+				await _emailSender.SendEmailAsync(message);
 
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }
