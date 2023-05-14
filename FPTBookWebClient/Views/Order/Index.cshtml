@@ -32,28 +32,123 @@
 				<th>
 					<strong>Status</strong>
 				</th>
+				<th>
+					<strong>Confirm</strong>
+				</th>
 			</tr>
 		</thead>
 		@{
 			int count = 0;
 		}
 		<tbody>
-			@foreach (var order in Model)
+			@if (Model.Count() != 0)
 			{
-				count++;
+				@foreach (var order in Model)
+				{
+					@if (order.OrderStatus != BusinessObjects.Constraints.OrderStatus.Received)
+					{
+						count++;
+						<tr id="confirm_@order.OrderId">
+							<td>
+								<a asp-controller="OrderDetail" asp-action="Index" asp-route-orderId="@order.OrderId" style="text-decoration: none;">@count</a>
+							</td>
+							<td>@order.OrderDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
+							<td>@order.DeliveryDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
+							<td>@order.OrderName</td>
+							<td>@order.OrderPhone</td>
+							<td>@order.DeliveryLocal</td>
+							<td><b>$@order.ShippingFee.ToString("N2")</b></td>
+							<td>@order.OrderStatus.ToString()</td>
+							<td>
+								<button class="btn btn-outline-violet confirm" id="confirm_@order.OrderId" data-id="@order.OrderId">Has received the goods</button>
+							</td>
+						</tr>
+					}
+				}
+			}
+			else
+			{
 				<tr>
-					<td>
-						<a asp-controller="OrderDetail" asp-action="Index" asp-route-orderId="@order.OrderId" style="text-decoration: none;">@count</a>
-					</td>
-					<td>@order.OrderDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
-					<td>@order.DeliveryDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
-					<td>@order.OrderName</td>
-					<td>@order.OrderPhone</td>
-					<td>@order.DeliveryLocal</td>
-					<td><b>$@order.ShippingFee.ToString("N2")</b></td>
-					<td>@order.OrderStatus.ToString()</td>
+					<td colspan="9" class="text-center fw-bold">Do not any order</td>
 				</tr>
 			}
 		</tbody>
 	</table>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+<script>
+	$('.confirm').click(function (e) {
+		e.preventDefault();
+		var id = $(this).attr("data-id");
+		var el = this
+		var api = "@ViewBag.api";
+
+		const swalWithBootstrapButtons = Swal.mixin({
+			customClass: {
+				confirmButton: 'btn btn-success',
+				cancelButton: 'btn btn-danger me-2'
+			},
+			buttonsStyling: false
+		})
+
+		swalWithBootstrapButtons.fire({
+			title: 'Are you sure to approve it?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonText: 'Yes, approve it!',
+			cancelButtonText: 'No, cancel!',
+			reverseButtons: true
+		}).then((result) => {
+			if (result.isConfirmed) {
+				$.ajax({
+					url: api + "/api/Orders/" + id,
+					type: "get",
+					data: {
+						id: id
+					},
+					processData: false,
+					contentType: false,
+					success: function (result, status, xhr) {
+						var orderStatus = document.getElementById("confirm_" + id).value;
+						result['orderStatus'] = @BusinessObjects.Constraints.OrderStatus.Received.ToString("d");
+
+						$.ajax({
+							url: api + "/api/Orders/" + id,
+							type: "put",
+							data: {
+								id: result['orderId'],
+								obj: result
+							},
+							success: function (result, status, xhr) {
+								$(el).closest('tr').css('background', '#a5dc86')
+								$(el)
+									.closest('tr')
+									.fadeOut(800, function () {
+										$('#confirm_' + id).remove()
+									})
+							},
+							error: function (xhr, status, error) {
+								console.log(xhr);
+							}
+						});
+					},
+					error: function (xhr, status, error) {
+						console.log(xhr);
+					}
+				});
+			} else if (
+				/* Read more about handling dismissals below */
+				result.dismiss === Swal.DismissReason.cancel
+			) {
+				swalWithBootstrapButtons.fire(
+					'Cancelled',
+					'You have unconfirmed to have received the goods',
+					'error'
+				)
+			}
+		})
+	});
+</script>

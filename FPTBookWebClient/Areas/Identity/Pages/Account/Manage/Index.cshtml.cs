@@ -106,11 +106,11 @@ namespace FPTBookWebClient.Areas.Identity.Pages.Account.Manage
             {
                 Email = user.Email,
                 PhoneNumber = phoneNumber,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Gender = user.Gender.Value,
-                Birthday = user.Birthday.Value,
-                Address = user.Address,
+                FirstName = (user.FirstName == null) ? "" : user.FirstName,
+                LastName = (user.LastName == null) ? "" : user.LastName,
+                Gender = (user.Gender.Value == null) ? true : user.Gender.Value,
+                Birthday = (user.Birthday.Value == null) ? new DateTime() : user.Birthday.Value,
+                Address = (user.Address == null) ? "" : user.Address,
                 ProfilePicture = user.ProfilePicture,
             };
         }

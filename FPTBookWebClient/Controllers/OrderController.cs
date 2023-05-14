@@ -30,7 +30,9 @@ namespace FPTBookWebClient.Controllers
 
 		public async Task<IActionResult> Index()
         {
-            string userId = _userManager.GetUserId(User);
+			ViewData["api"] = _configuration["BaseAddress"];
+
+			string userId = _userManager.GetUserId(User);
 			HttpResponseMessage httpResponse = await client.GetAsync(api + "/User/" + userId);
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };

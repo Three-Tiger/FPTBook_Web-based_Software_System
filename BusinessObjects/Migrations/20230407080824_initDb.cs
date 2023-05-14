@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BusinessObjects.Migrations
 {
-    public partial class InitialDB : Migration
+    public partial class initDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,12 +28,13 @@ namespace BusinessObjects.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Gender = table.Column<bool>(type: "bit", nullable: false),
-                    Birthday = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Gender = table.Column<bool>(type: "bit", nullable: true),
+                    Birthday = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -60,13 +61,34 @@ namespace BusinessObjects.Migrations
                 {
                     AuthorId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AuthorName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AuthorPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AuthorMail = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    AuthorName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    AuthorPhone = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
+                    AuthorMail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Authors", x => x.AuthorId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Contacts",
+                columns: table => new
+                {
+                    ContactId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ContactName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContactEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContactSubject = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContactMessage = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContactDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Reply = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ReplyDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contacts", x => x.ContactId);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,9 +97,10 @@ namespace BusinessObjects.Migrations
                 {
                     GenreId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    GenreName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    GenreDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                    GenreName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    GenreDescription = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -90,10 +113,10 @@ namespace BusinessObjects.Migrations
                 {
                     PublisherId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PublisherName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublisherPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PublisherName = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    PublisherPhone = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
                     PublisherMail = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublisherAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PublisherAddress = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -218,19 +241,20 @@ namespace BusinessObjects.Migrations
                     DeliveryLocal = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OrderName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OrderPhone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OrderStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OrderStatus = table.Column<int>(type: "int", nullable: false),
+                    ShippingFee = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.OrderId);
                     table.ForeignKey(
-                        name: "FK_Orders_AspNetUsers_Id",
-                        column: x => x.Id,
+                        name: "FK_Orders_AspNetUsers_UserId",
+                        column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -239,13 +263,13 @@ namespace BusinessObjects.Migrations
                 {
                     BookId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    BookTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BookDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BookTitle = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    BookDescription = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     BookDetail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BookPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     BookOriginalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     SalePercent = table.Column<int>(type: "int", nullable: false),
-                    BookCount = table.Column<int>(type: "int", nullable: false),
+                    BookStock = table.Column<int>(type: "int", nullable: false),
                     BookCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BookLastUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BookImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -286,18 +310,19 @@ namespace BusinessObjects.Migrations
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FeedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BookId = table.Column<int>(type: "int", nullable: false),
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    FeedStatus = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    BookId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Feedbacks", x => x.FeedId);
                     table.ForeignKey(
-                        name: "FK_Feedbacks_AspNetUsers_Id",
-                        column: x => x.Id,
+                        name: "FK_Feedbacks_AspNetUsers_UserId",
+                        column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Feedbacks_Books_BookId",
                         column: x => x.BookId,
@@ -392,9 +417,9 @@ namespace BusinessObjects.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Feedbacks_Id",
+                name: "IX_Feedbacks_UserId",
                 table: "Feedbacks",
-                column: "Id");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderDetails_BookId",
@@ -402,9 +427,9 @@ namespace BusinessObjects.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_Id",
+                name: "IX_Orders_UserId",
                 table: "Orders",
-                column: "Id");
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -423,6 +448,9 @@ namespace BusinessObjects.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Contacts");
 
             migrationBuilder.DropTable(
                 name: "Feedbacks");

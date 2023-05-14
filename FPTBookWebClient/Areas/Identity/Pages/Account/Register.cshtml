@@ -4,6 +4,10 @@
 	ViewData["Title"] = "Register";
 }
 
+@section stylesheets {
+	<link rel="stylesheet" href="~/css/register.css">
+}
+
 <section class="h-100 bg-dark">
 	<div class="container py-5 h-100">
 		<div class="row d-flex justify-content-center align-items-center h-100">
@@ -15,89 +19,105 @@
 								 alt="Sample photo" class="img-fluid"
 								 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
 						</div>
-						<form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="col-xl-6">
-							<div class="card-body p-md-5 text-black">
-								<h3 class="mb-5 text-uppercase">Registration form</h3>
-								<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-								<div class="form-outline mb-4">
-									<label class="form-label" asp-for="Input.Email"></label>
-									<input class="form-control" asp-for="Input.Email" autocomplete="off" aria-required="true" />
-									<span asp-validation-for="Input.Email" class="text-danger"></span>
-								</div>
+						<div class="col-xl-6">
+							<form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+								<div class="card-body pt-md-5 text-black">
+									<h3 class="mb-5 text-uppercase">Registration form</h3>
+									<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+									<div class="form-outline mb-4">
+										<label class="form-label" asp-for="Input.Email"></label>
+										<input class="form-control" asp-for="Input.Email" autocomplete="off" aria-required="true" />
+										<span asp-validation-for="Input.Email" class="text-danger"></span>
+									</div>
 
-								<div class="row">
-									<div class="col-md-6 mb-4">
-										<div class="form-outline">
-											<label asp-for="Input.Password" class="form-label"></label>
-											<input asp-for="Input.Password" class="form-control" autocomplete="off" aria-required="true" />
-											<span asp-validation-for="Input.Password" class="text-danger"></span>
+									<div class="row">
+										<div class="col-md-6 mb-4">
+											<div class="form-outline">
+												<label asp-for="Input.Password" class="form-label"></label>
+												<input asp-for="Input.Password" class="form-control" autocomplete="off" aria-required="true" />
+												<span asp-validation-for="Input.Password" class="text-danger"></span>
+											</div>
+										</div>
+										<div class="col-md-6 mb-4">
+											<div class="form-outline">
+												<label asp-for="Input.ConfirmPassword" class="form-label"></label>
+												<input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="off" aria-required="true" />
+												<span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+											</div>
 										</div>
 									</div>
-									<div class="col-md-6 mb-4">
-										<div class="form-outline">
-											<label asp-for="Input.ConfirmPassword" class="form-label"></label>
-											<input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="off" aria-required="true" />
-											<span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+									<div class="row">
+										<div class="col-md-6 mb-4">
+											<div class="form-outline">
+												<label asp-for="Input.FirstName" class="form-label"></label>
+												<input asp-for="Input.FirstName" class="form-control" autocomplete="off" aria-required="true" />
+												<span asp-validation-for="Input.FirstName" class="text-danger"></span>
+											</div>
+										</div>
+										<div class="col-md-6 mb-4">
+											<div class="form-outline">
+												<label asp-for="Input.LastName" class="form-label"></label>
+												<input asp-for="Input.LastName" class="form-control" autocomplete="off" aria-required="true" />
+												<span asp-validation-for="Input.LastName" class="text-danger"></span>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6 mb-4">
-										<div class="form-outline">
-											<label asp-for="Input.FirstName" class="form-label"></label>
-											<input asp-for="Input.FirstName" class="form-control" autocomplete="off" aria-required="true" />
-											<span asp-validation-for="Input.FirstName" class="text-danger"></span>
+
+									<div class="mb-4 py-2">
+										<div class="d-flex align-items-center">
+											<h6 class="mb-0 me-4">Gender: </h6>
+											<div class="form-check form-check-inline mb-0 me-4">
+												<input class="form-check-input" type="radio" asp-for="Input.Gender" id="maleGender" autocomplete="off" value="true" />
+												<label class="form-check-label" for="maleGender">Male</label>
+											</div>
+
+											<div class="form-check form-check-inline mb-0 me-4">
+												<input class="form-check-input" type="radio" asp-for="Input.Gender" id="femaleGender" autocomplete="off" value="false" />
+												<label class="form-check-label" for="femaleGender">Female</label>
+											</div>
 										</div>
+										<span asp-validation-for="Input.Gender" class="text-danger"></span>
 									</div>
-									<div class="col-md-6 mb-4">
-										<div class="form-outline">
-											<label asp-for="Input.LastName" class="form-label"></label>
-											<input asp-for="Input.LastName" class="form-control" autocomplete="off" aria-required="true" />
-											<span asp-validation-for="Input.LastName" class="text-danger"></span>
-										</div>
+
+									<div class="form-outline mb-4">
+										<label asp-for="Input.Birthday" class="form-label"></label>
+										<input type="date" asp-for="Input.Birthday" class="form-control" autocomplete="off" aria-required="true" />
+										<span asp-validation-for="Input.Birthday" class="text-danger"></span>
+									</div>
+
+									<div class="form-outline mb-4">
+										<label asp-for="Input.PhoneNumber" class="form-label"></label>
+										<input asp-for="Input.PhoneNumber" class="form-control" autocomplete="off" aria-required="true" />
+										<span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+									</div>
+
+									<div class="form-outline mb-4">
+										<label asp-for="Input.Address" class="form-label"></label>
+										<input asp-for="Input.Address" class="form-control" autocomplete="off" aria-required="true" />
+										<span asp-validation-for="Input.Address" class="text-danger"></span>
+									</div>
+
+									<div class="d-flex justify-content-end pt-3">
+										<a class="btn btn-light" asp-area="Identity" asp-page="/Account/Register">Reset all</a>
+										<button type="submit" id="registerSubmit" class="btn btn-warning ms-2">Register</button>
 									</div>
 								</div>
+							</form>
 
-								<div class="mb-4 py-2">
-									<div class="d-flex align-items-center">
-										<h6 class="mb-0 me-4">Gender: </h6>
-										<div class="form-check form-check-inline mb-0 me-4">
-											<input class="form-check-input" type="radio" asp-for="Input.Gender" id="maleGender" autocomplete="off" value="true" />
-											<label class="form-check-label" for="maleGender">Male</label>
-										</div>
-
-										<div class="form-check form-check-inline mb-0 me-4">
-											<input class="form-check-input" type="radio" asp-for="Input.Gender" id="femaleGender" autocomplete="off" value="false" />
-											<label class="form-check-label" for="femaleGender">Female</label>
-										</div>
-									</div>
-									<span asp-validation-for="Input.Gender" class="text-danger"></span>
+							<div class="px-3 mb-3">
+								<div class="or-container">
+									<div class="line-separator"></div>
+									<div class="or-label">OR</div>
+									<div class="line-separator"></div>
 								</div>
-
-								<div class="form-outline mb-4">
-									<label asp-for="Input.Birthday" class="form-label"></label>
-									<input type="date" asp-for="Input.Birthday" class="form-control" autocomplete="off" aria-required="true" />
-									<span asp-validation-for="Input.Birthday" class="text-danger"></span>
-								</div>
-
-								<div class="form-outline mb-4">
-									<label asp-for="Input.PhoneNumber" class="form-label"></label>
-									<input asp-for="Input.PhoneNumber" class="form-control" autocomplete="off" aria-required="true" />
-									<span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-								</div>
-
-								<div class="form-outline mb-4">
-									<label asp-for="Input.Address" class="form-label"></label>
-									<input asp-for="Input.Address" class="form-control" autocomplete="off" aria-required="true" />
-									<span asp-validation-for="Input.Address" class="text-danger"></span>
-								</div>
-
-								<div class="d-flex justify-content-end pt-3">
-									<a class="btn btn-light" asp-area="Identity" asp-page="/Account/Register">Reset all</a>
-									<button type="submit" id="registerSubmit" class="btn btn-warning ms-2">Register</button>
-								</div>
+								<form id="external-account gSignInWrapper" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="text-center">
+									<button type="submit" id="customBtn" class="customGPlusSignIn" name="provider" value="Google">
+										<span class="icon"></span>
+										<span class="buttonText">Sign up with Google</span>
+									</button>
+								</form>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -35,23 +35,32 @@
 			int count = 0;
 		}
 		<tbody>
-			@foreach (var order in Model)
+			@if (Model.Count() != 0)
 			{
-				@if (order.OrderStatus == BusinessObjects.Constraints.OrderStatus.Received)
+				@foreach (var order in Model)
 				{
-					count++;
-					<tr>
-						<td>
-							<a asp-controller="OrderDetail" asp-action="Purchase" asp-route-orderId="@order.OrderId" style="text-decoration: none;">@count</a>
-						</td>
-						<td>@order.OrderDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
-						<td>@order.DeliveryDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
-						<td>@order.OrderName</td>
-						<td>@order.OrderPhone</td>
-						<td>@order.DeliveryLocal</td>
-						<td><b>$@order.ShippingFee.ToString("N2")</b></td>
-					</tr>
+					@if (order.OrderStatus == BusinessObjects.Constraints.OrderStatus.Received)
+					{
+						count++;
+						<tr>
+							<td>
+								<a asp-controller="OrderDetail" asp-action="Purchase" asp-route-orderId="@order.OrderId" style="text-decoration: none;">@count</a>
+							</td>
+							<td>@order.OrderDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
+							<td>@order.DeliveryDate.ToString("MM/dd/yyyy HH:mm:ss")</td>
+							<td>@order.OrderName</td>
+							<td>@order.OrderPhone</td>
+							<td>@order.DeliveryLocal</td>
+							<td><b>$@order.ShippingFee.ToString("N2")</b></td>
+						</tr>
+					}
 				}
+			}
+			else
+			{
+				<tr>
+					<td colspan="7" class="text-center fw-bold">Do not any purchase history</td>
+				</tr>
 			}
 		</tbody>
 	</table>

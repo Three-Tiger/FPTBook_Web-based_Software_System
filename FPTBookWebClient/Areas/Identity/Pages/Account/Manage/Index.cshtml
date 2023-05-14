@@ -83,8 +83,8 @@
 								</div>
 
 								<div class="row">
-									<div class="col-lg-3 col-md-4 label">@(Model.Input.Gender ? "Male" : "Female")</div>
-									<div class="col-lg-9 col-md-8">Male</div>
+									<div class="col-lg-3 col-md-4 label">Gender</div>
+									<div class="col-lg-9 col-md-8">@(Model.Input.Gender ? "Male" : "Female")</div>
 								</div>
 
 								<div class="row">
@@ -122,15 +122,15 @@
 											@{
 												if (!string.IsNullOrEmpty(Model.Input.ProfilePicture))
 												{
-													<img src="/ProfilePicture/@Model.Input.ProfilePicture" alt="Profile">
+													<img src="/ProfilePicture/@Model.Input.ProfilePicture" id="changeImage" alt="Profile">
 												}
 												else
 												{
-													<img src="~/img/default-avt.jpg" alt="Profile">
+													<img src="~/img/default-avt.jpg" id="changeImage" alt="Profile">
 												}
 											}
 											<div class="pt-2">
-												<input asp-for="Input.ImageFile" class="btn btn-primary btn-sm" />
+												<input asp-for="Input.ImageFile" id="changePic" class="btn btn-primary btn-sm" />
 												<a class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
 											</div>
 										</div>
@@ -220,4 +220,12 @@
 </section><!-- End #main -->
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
+	<script>
+		const image = document.getElementById('changeImage')
+		const input = document.getElementById('changePic')
+
+		input.addEventListener("change", () => {
+			image.src = URL.createObjectURL(input.files[0])
+		})
+	</script>
 }

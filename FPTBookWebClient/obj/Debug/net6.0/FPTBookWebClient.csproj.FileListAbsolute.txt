@@ -383,3 +383,4 @@ D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_co
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\EmailService.dll
 D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\EmailService.pdb
+D:\Greenwich\Personal\Junior\1670 - Application Development\Assignment\Source_code\FPTBook_Web-based_Software_System\FPTBookWebClient\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll

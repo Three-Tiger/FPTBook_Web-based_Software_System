@@ -20,6 +20,12 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options => options.SignIn.Re
 	.AddDefaultUI()
 	.AddDefaultTokenProviders();
 
+builder.Services.AddAuthentication().AddGoogle(googleOptions =>
+{
+	googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+	googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+});
+
 builder.Services.Configure<IdentityOptions>(options =>
 {
 	options.Password.RequireUppercase = false;
