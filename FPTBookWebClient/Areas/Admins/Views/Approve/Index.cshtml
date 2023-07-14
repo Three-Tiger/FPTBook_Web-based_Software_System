@@ -83,7 +83,7 @@
 						$(el)
 							.closest('tr')
 							.fadeOut(800, function () {
-								$('#genre' + id).remove()
+								$('#genre_' + id).remove()
 							})
 					},
 					error: function (xhr, status, error) {
@@ -142,7 +142,7 @@
 						$(el)
 							.closest('tr')
 							.fadeOut(800, function () {
-								$('#genre' + id).remove()
+								$('#genre_' + id).remove()
 							})
 					},
 					error: function (xhr, status, error) {
