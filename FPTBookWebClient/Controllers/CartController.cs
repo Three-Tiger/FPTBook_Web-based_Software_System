@@ -42,6 +42,8 @@ namespace FPTBookWebClient.Controllers
 
 		public IActionResult Index()
 		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			return View(GetCartItems());
 		}
 
@@ -137,6 +139,8 @@ namespace FPTBookWebClient.Controllers
 		[HttpPost]
 		public async Task<IActionResult> CheckOut(decimal shipping)
 		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			var userId = _userManager.GetUserId(User);
 			string apiGetUser = apiUser + "/Account/" + userId;
 			HttpResponseMessage reponse = await client.GetAsync(apiGetUser);

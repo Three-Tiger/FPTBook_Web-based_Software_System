@@ -57,7 +57,6 @@
 		<tbody>
 			@foreach (var item in Model)
 			{
-
 				<tr>
 					<td>@item.BookId</td>
 					<td>@item.BookTitle</td>
@@ -68,7 +67,7 @@
 					<td>@item.BookOriginalPrice</td>
 					<td>@item.SalePercent%</td>
 					<td>@item.BookStock</td>
-					<td><img src="@item.BookImage" height="80" width="50" /></td>
+					<td><img src="@ViewBag.api/@item.BookImage" height="80" width="50" /></td>
 					<td>
 						<a asp-area="Owners" asp-controller="Book" asp-action="Update" asp-route-id="@item.BookId"><i class="bi bi-pen-fill" style="color: black;"></i></a>
 					</td>

@@ -28,6 +28,8 @@ namespace FPTBookWebClient.Controllers
 
 		public async Task<IActionResult> Index()
 		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			HttpResponseMessage httpResponseGallary = await client.GetAsync(api + "/Galleries");
 			string dataGallary = await httpResponseGallary.Content.ReadAsStringAsync();
 			var optionsGallary = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
@@ -49,6 +51,8 @@ namespace FPTBookWebClient.Controllers
 
 		public async Task<IActionResult> Shop(int pg = 1)
 		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			HttpResponseMessage httpResponse = await client.GetAsync(api + "/Shop/Genres");
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
@@ -124,6 +128,8 @@ namespace FPTBookWebClient.Controllers
 		{
 			try
 			{
+				ViewData["api"] = _configuration["BaseAddress"];
+
 				HttpResponseMessage responseBook = await client.GetAsync(apiBook + "/" + id);
 				HttpResponseMessage responseFeedback = await client.GetAsync(apiFeedback + "/Checked/" + id);
 				if (responseBook.IsSuccessStatusCode && responseFeedback.IsSuccessStatusCode)

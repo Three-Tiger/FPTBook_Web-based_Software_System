@@ -47,7 +47,7 @@
 					<td>$@orderDetail.Book.BookPrice.ToString("N2")</td>
 					<td>@orderDetail.Quantity</td>
 					<td>$@amount.ToString("N2")</td>
-					<td><img src="@orderDetail.Book.BookImage" height="80" width="50" /></td>
+					<td><img src="@ViewBag.api/@orderDetail.Book.BookImage" height="80" width="50" /></td>
 					<td><a asp-controller="Feedback" asp-action="Index" asp-route-bookId="@orderDetail.BookId" class="btn btn-warning">Give</a></td>
 				</tr>
 			}

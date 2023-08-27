@@ -32,7 +32,9 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 
 		public async Task<IActionResult> Index()
 		{
-			HttpResponseMessage httpResponse = await client.GetAsync(api);
+            ViewData["api"] = _configuration["BaseAddress"];
+
+            HttpResponseMessage httpResponse = await client.GetAsync(api);
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 			List<Book> books = JsonSerializer.Deserialize<List<Book>>(data, options);

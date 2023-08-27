@@ -45,11 +45,10 @@
 
 		public string GetImageByBook(string fileName)
 		{
-			string imageUrl = string.Empty;
-			string hostUrl = "https://localhost:7076/";
+            string hostUrl = "https://localhost:7076/";
 			string imagePath = "BookImages/" + fileName;
-			imageUrl = hostUrl + imagePath;
-			return imageUrl;
+            string imageUrl = hostUrl + imagePath;
+            return imagePath;
 		}
 
 		public bool DeleteBookImage(string imagePath)

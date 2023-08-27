@@ -54,7 +54,7 @@
 					{
 						<div class="swiper-slide">
 							<a href="@gallary.BookImage" class="gallery-lightbox" data-gall="gallery-carousel">
-								<img src="@gallary.BookImage" class="img-fluid" alt="@gallary.BookTitle">
+								<img src="@ViewBag.api/@gallary.BookImage" class="img-fluid" alt="@gallary.BookTitle">
 							</a>
 						</div>
 					}
@@ -111,7 +111,7 @@
 					decimal PriceSale = best.BookPrice - (best.BookPrice * ((decimal)best.SalePercent / 100m));
 					<div class="col-lg-3 mb-4">
 						<div class="card">
-							<img class="mx-auto" src="@best.BookImage" style="border: none;" width="100%" height="100%" alt="@best.BookTitle" />
+							<img class="mx-auto" src="@ViewBag.api/@best.BookImage" style="border: none;" width="100%" height="100%" alt="@best.BookTitle" />
 							<div class="card-body text-center mx-auto">
 								<h5 class="card-title fw-bold">@best.BookTitle</h5>
 								<div class="d-flex justify-content-center align-items-end">

@@ -27,6 +27,8 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 		{
 			try
 			{
+				ViewData["api"] = _configuration["BaseAddress"];
+
 				HttpResponseMessage httpResponse = await client.GetAsync(api + "/" + orderId);
 				string data = await httpResponse.Content.ReadAsStringAsync();
 				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };

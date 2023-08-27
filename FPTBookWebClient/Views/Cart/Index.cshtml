@@ -41,7 +41,7 @@
 						<div class="row main align-items-center">
 							<div class="col-2">
 								<a asp-controller="Home" asp-action="Detail" asp-route-id="@cartItem.Book.BookId">
-									<img class="img-fluid img-cart" src="@cartItem.Book.BookImage">
+									<img class="img-fluid img-cart" src="@ViewBag.api/@cartItem.Book.BookImage">
 								</a>
 							</div>
 							<div class="col-4">

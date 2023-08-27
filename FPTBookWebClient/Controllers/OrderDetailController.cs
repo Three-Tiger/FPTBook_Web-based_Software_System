@@ -24,6 +24,8 @@ namespace FPTBookWebClient.Controllers
 
 		public async Task<IActionResult> Index(int orderId)
 		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			HttpResponseMessage httpResponse = await client.GetAsync(api + "/" + orderId);
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
@@ -33,6 +35,8 @@ namespace FPTBookWebClient.Controllers
 
 		public async Task<IActionResult> Purchase(int orderId)
 		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			HttpResponseMessage httpResponse = await client.GetAsync(api + "/" + orderId);
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
