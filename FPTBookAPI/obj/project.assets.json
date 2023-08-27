@@ -3273,7 +3273,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Duy Quang\\.nuget\\packages\\": {}
+    "C:\\Users\\ndqua\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -3281,11 +3281,11 @@
       "projectUniqueName": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\FPTBookAPI.csproj",
       "projectName": "FPTBookAPI",
       "projectPath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\FPTBookAPI.csproj",
-      "packagesPath": "C:\\Users\\Duy Quang\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\ndqua\\.nuget\\packages\\",
       "outputPath": "D:\\Greenwich\\Personal\\Junior\\1670 - Application Development\\Assignment\\Source_code\\FPTBook_Web-based_Software_System\\FPTBookAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Duy Quang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ndqua\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3293,6 +3293,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3362,7 +3363,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }
