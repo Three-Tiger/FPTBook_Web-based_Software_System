@@ -1,9 +1,10 @@
 ﻿using BusinessObjects;
 using DataAccess;
+using Repositories.Interfaces;
 
 namespace Repositories
 {
-	public class GenreRepository : IGenreRepository
+    public class GenreRepository : IGenreRepository
 	{
 		public List<Genre> GetGenres() => GenreDAO.GetGenres();
 		public List<Genre> GetApprovelGenres() => GenreDAO.GetApprovelGenres();

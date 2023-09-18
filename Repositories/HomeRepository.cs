@@ -1,9 +1,10 @@
 ﻿using BusinessObjects;
 using DataAccess;
+using Repositories.Interfaces;
 
 namespace Repositories
 {
-	public class HomeRepository : IHomeRepository
+    public class HomeRepository : IHomeRepository
 	{
 		public List<Book> Gallery() => HomeDAO.Gallery();
 		public List<Book> BestSelling() => HomeDAO.BestSelling();

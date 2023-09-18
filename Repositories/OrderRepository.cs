@@ -1,9 +1,10 @@
 ﻿using BusinessObjects;
 using DataAccess;
+using Repositories.Interfaces;
 
 namespace Repositories
 {
-	public class OrderRepository : IOrderRepository
+    public class OrderRepository : IOrderRepository
 	{
 		public List<Order> GetOrders() => OrderDAO.GetOrders();
 		public List<Order> FindOrderByUserId(string userId) => OrderDAO.FindOrderByUserId(userId);

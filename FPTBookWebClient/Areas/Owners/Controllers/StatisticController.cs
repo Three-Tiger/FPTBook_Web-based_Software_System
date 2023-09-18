@@ -27,6 +27,8 @@ namespace FPTBookWebClient.Areas.Owners.Controllers
 		// GET: DataStatisticController
 		public async Task<IActionResult> Index()
         {
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			HttpResponseMessage httpResponseUser = await client.GetAsync(api + "/Users");
 			string dataUser = await httpResponseUser.Content.ReadAsStringAsync();
 			var optionsUser = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };

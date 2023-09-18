@@ -1,9 +1,10 @@
 ﻿using BusinessObjects;
 using DataAccess;
+using Repositories.Interfaces;
 
 namespace Repositories
 {
-	public class BookRepository : IBookRepository
+    public class BookRepository : IBookRepository
 	{
 		public List<Book> GetBooks() => BookDAO.GetBooks();
 		public Book GetBookById(int id) => BookDAO.FindBookById(id);

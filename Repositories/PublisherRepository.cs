@@ -1,9 +1,10 @@
 ﻿using BusinessObjects;
 using DataAccess;
+using Repositories.Interfaces;
 
 namespace Repositories
 {
-	public class PublisherRepository : IPublisherRepository
+    public class PublisherRepository : IPublisherRepository
 	{
 		public List<Publisher> GetPublishers() => PublisherDAO.GetPublishers();
 		public Publisher GetPublisherById(int id) => PublisherDAO.FindPublisherById(id);

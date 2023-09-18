@@ -172,6 +172,8 @@ namespace FPTBookWebClient.Controllers
 		[Route("/Home/Shop/Genre/{genreId:int}", Name = "displaybookbygenre")]
 		public async Task<IActionResult> Genre(int genreId)
 		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			HttpResponseMessage httpResponse = await client.GetAsync(api + "/Shop/Genres");
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
@@ -195,6 +197,8 @@ namespace FPTBookWebClient.Controllers
 		[Route("/Home/Shop/Author/{authorId:int}", Name = "displaybookbyauthor")]
 		public async Task<IActionResult> Author(int authorId)
 		{
+			ViewData["api"] = _configuration["BaseAddress"];
+
 			HttpResponseMessage httpResponse = await client.GetAsync(api + "/Shop/Genres");
 			string data = await httpResponse.Content.ReadAsStringAsync();
 			var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };

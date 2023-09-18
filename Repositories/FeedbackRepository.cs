@@ -1,9 +1,10 @@
 ﻿using BusinessObjects;
 using DataAccess;
+using Repositories.Interfaces;
 
 namespace Repositories
 {
-	public class FeedbackRepository : IFeedbackRepository
+    public class FeedbackRepository : IFeedbackRepository
 	{
 		public List<Feedback> GetFeedbacks() => FeedbackDAO.GetFeedbacks();
 		public List<Feedback> GetCheckedFeedbacks(int bookId) => FeedbackDAO.GetCheckedFeedbacks(bookId);
